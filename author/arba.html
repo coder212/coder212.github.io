@@ -2,7 +2,7 @@
 <html lang="in">
 <head>
         <meta charset="utf-8" />
-        <title>gnu/linux info and reviews - arba</title>
+        <title>gnu/linux info, reviews and log - arba</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
 
         <!--[if IE]>
@@ -12,7 +12,7 @@
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="/">gnu/linux info and reviews </a></h1>
+                <h1><a href="/">gnu/linux info, reviews and log </a></h1>
                 <nav><ul>
                     <li><a href="/category/gnulinux.html">gnu/linux</a></li>
                 </ul></nav>
@@ -31,20 +31,24 @@
         </address>
 <p>In <a href="/category/gnulinux.html">gnu/linux</a>.</p>
 
-</footer><!-- /.post-info --><p>Cara Compile Kernel Di GNU/Linux.</p>
+</footer><!-- /.post-info --><p>Cara Menginstal Kernel Di GNU/Linux.</p>
 <p>apa it kernel? kernel adalah inti dari sistem operasi tiap sistem operasi mempunyai kernelnya masing masing, tergantung bagaimana platform itu diciptakan.
 platform windows tentu berbeda dengan platform gnu karena sifat gnu sendiri yang bebas.</p>
 <p>ok cukup sampai disini saja ngga usah dipanjang lebarin lagi.
-langkah-langkah compile kernel adalah sebagai berikut:
-<p>1. make mrproper (dilakukan jika udah pernah melakukan compile di source yang saat ini dpakai, kalau belum langsung langkah kedua).</p>
-<p>2. make allyesconfig, allmodulesconfig atau pun menuconfig.</p>
-<p>3. make  &amp;&amp; make install.</p>
+langkah-langkah compile kernel adalah sebagai berikut:</p>
+<ol class="arabic simple">
+<li>make mrproper (dilakukan jika udah pernah melakukan compile di source yang saat ini dpakai, kalau belum langsung langkah kedua).</li>
+<li>make allyesconfig, allmodulesconfig atau pun menuconfig.</li>
+<li>make  &amp;&amp; make install</li>
+</ol>
 <p>3a. make &amp;&amp; make modules_install &amp;&amp; make install jika kita pilih config sebagai modules.</p>
 <p>catatan :</p>
-<p>1. pastikan sebagai root (#) atau superuser bukan ($) user kalo sebagai user gunakan sudo.</p>
-<p>2. mkinitrd sesuai dengan distro yang digunakan.</p>
-<p>3. update grub jika menggunakan grub berdasarkan dengan distro.</p>
-saya menggunakan crux gnu linux jadi saya mengetikan perintah berikut ini saya dalam posisi sebagai root.
+<ol class="arabic simple">
+<li>pastikan sebagai root (#) atau superuser bukan ($) user kalo sebagai user gunakan sudo.</li>
+<li>mkinitrd sesuai dengan distro yang digunakan.</li>
+<li>update grub jika menggunakan grub berdasarkan dengan distro.</li>
+</ol>
+<p>saya menggunakan crux gnu linux jadi saya mengetikan perintah berikut ini saya dalam posisi sebagai root.
 nano /boot/grub/grub.cfg lalu tekan enter.
 kemudian saya ketikan &quot; menuentry &quot; CRUX kernel 4.5&quot;{
 linux(hd0,msdos1)/boo/vmlinuz-4.5.0-rc6-Asboot root=/dev/sda1 quiet
