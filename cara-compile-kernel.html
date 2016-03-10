@@ -41,14 +41,14 @@
 platform windows tentu berbeda dengan platform gnu karena sifat gnu sendiri yang bebas.</p>
 <p>ok cukup sampai disini saja ngga usah dipanjang lebarin lagi.
 langkah-langkah compile kernel adalah sebagai berikut:
-<p>1. make mrproper (dilakukan jika udah pernah melakukan compile di source yang saat ini dpakai, kalau belum langsung langkah kedua).</p>
-<p>2. make allyesconfig, allmodulesconfig atau pun menuconfig.</p>
-<p>3. make  &amp;&amp; make install</p>
-<p>3a. make &amp;&amp; make modules_install &amp;&amp; make install jika kita pilih config sebagai modules.</p>
-<p>catatan :</p>
-<p>1. pastikan sebagai root (#) atau superuser bukan ($) user kalo sebagai user gunakan sudo.</p>
-<p>2. mkinitrd sesuai dengan distro yang digunakan.</p>
-<p>3. update grub jika menggunakan grub berdasarkan dengan distro.</p>
+<p><h1>1. make mrproper (dilakukan jika udah pernah melakukan compile di source yang saat ini dpakai, kalau belum langsung langkah kedua).</h1></p>
+<p><h1>2. make allyesconfig, allmodulesconfig atau pun menuconfig.</h1></p>
+<p><h1>3. make  &amp;&amp; make install.</h1></p>
+<p><h1>3a. make &amp;&amp; make modules_install &amp;&amp; make install jika kita pilih config sebagai modules.</h1></p>
+<p><h1>catatan :</h1></p>
+<p><h1>1. pastikan sebagai root (#) atau superuser bukan ($) user kalo sebagai user gunakan sudo.</h1></p>
+<p></h1>2. mkinitrd sesuai dengan distro yang digunakan.</h1></p>
+<p></h1>3. update grub jika menggunakan grub berdasarkan dengan distro.</h1></p>
 saya menggunakan crux gnu linux jadi saya mengetikan perintah berikut ini saya dalam posisi sebagai root.
 nano /boot/grub/grub.cfg lalu tekan enter.
 kemudian saya ketikan &quot; menuentry &quot; CRUX kernel 4.5&quot;{
