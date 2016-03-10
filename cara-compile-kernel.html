@@ -45,7 +45,7 @@ langkah-langkah compile kernel adalah sebagai berikut:</p>
 <ol class="arabic simple">
 <li>make mrproper (dilakukan jika udah pernah melakukan compile di source yang saat ini dpakai, kalau belum langsung langkah kedua).</li>
 <li>make allyesconfig, allmodulesconfig atau pun menuconfig.</li>
-<li>make  &amp;&amp; make install</li>
+<li>make  &amp;&amp; make install.</li>
 </ol>
 <p>3a. make &amp;&amp; make modules_install &amp;&amp; make install jika kita pilih config sebagai modules.</p>
 <p>catatan :</p>
@@ -57,7 +57,7 @@ langkah-langkah compile kernel adalah sebagai berikut:</p>
 <p>saya menggunakan crux gnu linux jadi saya mengetikan perintah berikut ini saya dalam posisi sebagai root.
 nano /boot/grub/grub.cfg lalu tekan enter.
 kemudian saya ketikan &quot; menuentry &quot; CRUX kernel 4.5&quot;{
-linux(hd0,msdos1)/boo/vmlinuz-4.5.0-rc6-Asboot root=/dev/sda1 quiet
+linux(hd0,msdos1)/boot/vmlinuz-4.5.0-rc6-Asboot root=/dev/sda1 quiet
 } tergantung type partisi jenis memory yang kamu install gnu/linuxnya terus masuk /dev/sda1 atau yang lainnya root partisinya, bisa juga vmlinuz saja liat apa yang ada dalam /boot.
 demikian catatan saya semoga bermanfaat.</p>
 
