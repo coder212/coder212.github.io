@@ -1,28 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>gnu/linux info, reviews and log</title><link href="coder212.github.io/" rel="alternate"></link><link href="coder212.github.io/feeds/gnulinux.atom.xml" rel="self"></link><id>coder212.github.io/</id><updated>2016-03-10T18:00:00+07:00</updated><entry><title>Cara compile kernel</title><link href="coder212.github.io/cara-compile-kernel.html" rel="alternate"></link><updated>2016-03-10T18:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-10:coder212.github.io/cara-compile-kernel.html</id><summary type="html">&lt;p&gt;Cara Compile Kernel Di GNU/Linux.&lt;/p&gt;
-&lt;p&gt;apa itu kernel? kernel adalah inti dari sistem operasi tiap sistem operasi mempunyai kernelnya masing masing, tergantung bagaimana platform itu diciptakan.
-platform windows tentu berbeda dengan platform gnu karena sifat gnu sendiri yang bebas.&lt;/p&gt;
-&lt;p&gt;ok cukup sampai disini saja ngga usah dipanjang lebarin lagi.
-langkah-langkah compile kernel adalah sebagai berikut:&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;make mrproper (dilakukan jika udah pernah melakukan compile di source yang saat ini dpakai, kalau belum langsung langkah kedua).&lt;/li&gt;
-&lt;li&gt;make allyesconfig, allmodulesconfig atau pun menuconfig.&lt;/li&gt;
-&lt;li&gt;make  &amp;amp;&amp;amp; make install.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;3a. make &amp;amp;&amp;amp; make modules_install &amp;amp;&amp;amp; make install jika kita pilih config sebagai modules.&lt;/p&gt;
-&lt;p&gt;catatan :&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;pastikan sebagai root (#) atau superuser bukan ($) user kalo sebagai user gunakan sudo.&lt;/li&gt;
-&lt;li&gt;mkinitrd sesuai dengan distro yang digunakan.&lt;/li&gt;
-&lt;li&gt;update grub jika menggunakan grub berdasarkan dengan distro.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;saya menggunakan crux gnu linux jadi saya mengetikan perintah berikut ini saya dalam posisi sebagai root.
-nano /boot/grub/grub.cfg lalu tekan enter.
-kemudian saya ketikan &amp;quot; menuentry &amp;quot; CRUX kernel 4.5&amp;quot;{
-linux(hd0,msdos1)/boot/vmlinuz-4.5.0-rc6-Asboot root=/dev/sda1 quiet
-} tergantung type partisi jenis memory yang kamu install gnu/linuxnya terus masuk /dev/sda1 atau yang lainnya root partisinya, bisa juga vmlinuz saja liat apa yang ada dalam /boot.
-demikian catatan saya semoga bermanfaat.&lt;/p&gt;
-</summary><category term="kernel linux"></category><category term="compile"></category></entry><entry><title>review crux</title><link href="coder212.github.io/review-crux.html" rel="alternate"></link><updated>2016-03-10T15:17:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-10:coder212.github.io/review-crux.html</id><summary type="html">&lt;p&gt;Apa itu Crux gnu/linux.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>gnu/linux info, reviews and log</title><link href="coder212.github.io/" rel="alternate"></link><link href="coder212.github.io/feeds/gnulinux.atom.xml" rel="self"></link><id>coder212.github.io/</id><updated>2016-03-11T11:47:00+07:00</updated><entry><title>review crux</title><link href="coder212.github.io/review-crux.html" rel="alternate"></link><updated>2016-03-11T11:47:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-11:coder212.github.io/review-crux.html</id><summary type="html">&lt;p&gt;Apa itu Crux gnu/linux.&lt;/p&gt;
 &lt;p&gt;crux gnu/linux adalah distribusi gnu/linux yang kecil dan diperuntukan bagi user berpengalaman karena, semuanya di distribusikan dalam bentuk source code.
 crux gnu/linux enak dipake buat belajar membuat konfigurasi system dan karena sebagian dicompile di komputer kita jadi lebih bagus hasilnya meskipun tak begitu signifikan sih hehe.
 crux gnu/linux sangat minimalis dan enak untuk dikelola dengan manajer paket prt-get dan pkg-utils lumayan membantu.&lt;/p&gt;
@@ -48,24 +25,6 @@ crux gnu/linux sangat minimalis dan enak untuk dikelola dengan manajer paket prt
 &lt;p&gt;Cara Install Crux&lt;/p&gt;
 &lt;p&gt;buka ini &lt;a class="reference external" href="https://crux.nu/Main/Handbook3-2"&gt;https://crux.nu/Main/Handbook3-2&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;cara install crux buat partisi dengan cfdisk /dev/sda&lt;/p&gt;
-&lt;p&gt;saya asumsikan seperti ini&lt;/p&gt;
-&lt;p&gt;Partisi&lt;/p&gt;
-&lt;p&gt;Tipe&lt;/p&gt;
-&lt;p&gt;Ukuran&lt;/p&gt;
-&lt;p&gt;Device Node&lt;/p&gt;
-&lt;p&gt;(asumsi)&lt;/p&gt;
-&lt;p&gt;/&lt;/p&gt;
-&lt;p&gt;Logical, ext4 , +boot&lt;/p&gt;
-&lt;p&gt;11gb&lt;/p&gt;
-&lt;p&gt;/dev/sda6&lt;/p&gt;
-&lt;p&gt;swap&lt;/p&gt;
-&lt;p&gt;Logical, swap&lt;/p&gt;
-&lt;p&gt;1gb&lt;/p&gt;
-&lt;p&gt;/dev/sda5&lt;/p&gt;
-&lt;p&gt;/home&lt;/p&gt;
-&lt;p&gt;Primary, ext4&lt;/p&gt;
-&lt;p&gt;18gb&lt;/p&gt;
-&lt;p&gt;/dev/sda2&lt;/p&gt;
 &lt;p&gt;Lanjut dengan format tiap partisi&lt;/p&gt;
 &lt;p&gt;# mkswap /dev/sda5&lt;/p&gt;
 &lt;p&gt;# mkfs.ext4 /dev/sda6&lt;/p&gt;
@@ -143,4 +102,27 @@ uncomment mv /etc/ports/contrib.rsync.inactive /etc/ports/contrib.rsync&lt;/p&gt
 &lt;p&gt;kemudian ketikan perintah ports -u, lalu ports -d untuk melihat perbedaannya, untuk install bisa ketikan prt-get install nama-paket.&lt;/p&gt;
 &lt;p&gt;kemudian login sebagai user name dengan perintah su user-name.&lt;/p&gt;
 &lt;p&gt;ketik nano .xinitrc dan tulis exec openbox atau bisa juga openbox-session, sekian review dari saya semoga bermanfaat.&lt;/p&gt;
-</summary><category term="crux"></category><category term="gnu/linux"></category><category term="review"></category></entry></feed>
+</summary><category term="crux"></category><category term="gnu/linux"></category><category term="review"></category></entry><entry><title>Cara compile kernel</title><link href="coder212.github.io/cara-compile-kernel.html" rel="alternate"></link><updated>2016-03-10T18:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-10:coder212.github.io/cara-compile-kernel.html</id><summary type="html">&lt;p&gt;Cara Compile Kernel Di GNU/Linux.&lt;/p&gt;
+&lt;p&gt;apa itu kernel? kernel adalah inti dari sistem operasi tiap sistem operasi mempunyai kernelnya masing masing, tergantung bagaimana platform itu diciptakan.
+platform windows tentu berbeda dengan platform gnu karena sifat gnu sendiri yang bebas.&lt;/p&gt;
+&lt;p&gt;ok cukup sampai disini saja ngga usah dipanjang lebarin lagi.
+langkah-langkah compile kernel adalah sebagai berikut:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;make mrproper (dilakukan jika udah pernah melakukan compile di source yang saat ini dpakai, kalau belum langsung langkah kedua).&lt;/li&gt;
+&lt;li&gt;make allyesconfig, allmodulesconfig atau pun menuconfig.&lt;/li&gt;
+&lt;li&gt;make  &amp;amp;&amp;amp; make install.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;3a. make &amp;amp;&amp;amp; make modules_install &amp;amp;&amp;amp; make install jika kita pilih config sebagai modules.&lt;/p&gt;
+&lt;p&gt;catatan :&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;pastikan sebagai root (#) atau superuser bukan ($) user kalo sebagai user gunakan sudo.&lt;/li&gt;
+&lt;li&gt;mkinitrd sesuai dengan distro yang digunakan.&lt;/li&gt;
+&lt;li&gt;update grub jika menggunakan grub berdasarkan dengan distro.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;saya menggunakan crux gnu linux jadi saya mengetikan perintah berikut ini saya dalam posisi sebagai root.
+nano /boot/grub/grub.cfg lalu tekan enter.
+kemudian saya ketikan &amp;quot; menuentry &amp;quot; CRUX kernel 4.5&amp;quot;{
+linux(hd0,msdos1)/boot/vmlinuz-4.5.0-rc6-Asboot root=/dev/sda1 quiet
+} tergantung type partisi jenis memory yang kamu install gnu/linuxnya terus masuk /dev/sda1 atau yang lainnya root partisinya, bisa juga vmlinuz saja liat apa yang ada dalam /boot.
+demikian catatan saya semoga bermanfaat.&lt;/p&gt;
+</summary><category term="kernel linux"></category><category term="compile"></category></entry></feed>

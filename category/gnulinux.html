@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
         <meta charset="utf-8" />
-        <title>gnu/linux info, reviews and log - gnu/linux</title>
+        <title>gnu/linux info, reviews and log - GNU/Linux</title>
         <link rel="stylesheet" href="../theme/css/main.css" />
         <link href="coder212.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="gnu/linux info, reviews and log Atom Feed" />
 
@@ -15,13 +15,140 @@
         <header id="banner" class="body">
                 <h1><a href="../">gnu/linux info, reviews and log </a></h1>
                 <nav><ul>
-                    <li class="active"><a href="../category/gnulinux.html">gnu/linux</a></li>
+                    <li class="active"><a href="../category/gnulinux.html">GNU/Linux</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../cara-compile-kernel.html">Cara compile kernel</a></h1>
+                    <h1 class="entry-title"><a href="../review-crux.html">review crux</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2016-03-11T11:47:00+07:00">
+                Published: Jum 11 Maret 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/arba.html">arba</a>
+        </address>
+<p>In <a href="../category/gnulinux.html">GNU/Linux</a>.</p>
+<p>tags: <a href="../tag/crux.html">crux</a> <a href="../tag/gnulinux.html">gnu/linux</a> <a href="../tag/review.html">review</a> </p>
+</footer><!-- /.post-info --><p>Apa itu Crux gnu/linux.</p>
+<p>crux gnu/linux adalah distribusi gnu/linux yang kecil dan diperuntukan bagi user berpengalaman karena, semuanya di distribusikan dalam bentuk source code.
+crux gnu/linux enak dipake buat belajar membuat konfigurasi system dan karena sebagian dicompile di komputer kita jadi lebih bagus hasilnya meskipun tak begitu signifikan sih hehe.
+crux gnu/linux sangat minimalis dan enak untuk dikelola dengan manajer paket prt-get dan pkg-utils lumayan membantu.</p>
+<p>jika kamu tidak menemukan paket yang kamu butuhkan kamu dapat mengunduh source code dan mengompilenya didalam systemmu, jadi filosofinya adalah lakukan apa yang kamu suka.</p>
+<p>aku mencobanya di laptop compaq presario cq45 sangat memuaskan hasilnya bootingnya cepet, dengan bsd init stylenya yang luar biasa, jadi saya memahami bagaimana system saya boot dan mati proses apa saja yang dibutuhkan untuk on dan off distro saya.</p>
+<p>kelebihan:</p>
+<ol class="arabic simple">
+<li>compile kernel sendiri.</li>
+<li>atur konfigurasi system sendiri.</li>
+<li>simple dan cepat.</li>
+<li>hemat kuota karena cuma 333mb doang.</li>
+<li>dapat dipakai dengan berbagai tujuan.</li>
+</ol>
+<p>kekurangan:</p>
+<ol class="arabic simple">
+<li>kompile kernel.</li>
+</ol>
+<p>kompile kernel menjadi kelebihan dan sekaligus kekurangannya karena sebagian orang ogah untuk compile kernel, karena ribet.</p>
+<ol class="arabic simple" start="2">
+<li>paket yang disediakan repo crux sangat terbatas.</li>
+<li>no office ketika pertama kali install, jadi masih harus install office suite.</li>
+</ol>
+<p>Cara Install Crux</p>
+<p>buka ini <a class="reference external" href="https://crux.nu/Main/Handbook3-2">https://crux.nu/Main/Handbook3-2</a></p>
+<p>cara install crux buat partisi dengan cfdisk /dev/sda</p>
+<p>Lanjut dengan format tiap partisi</p>
+<p># mkswap /dev/sda5</p>
+<p># mkfs.ext4 /dev/sda6</p>
+<p># mkfs.ext4 /dev/sda2</p>
+<p>kemudian mount filesystem</p>
+<p>mount partisi baru ke lokasi temporer (/mnt) dan install base packages</p>
+<p># swapon /dev/sda5</p>
+<p># mount /dev/sda6 /mnt</p>
+<p># mkdir /mnt/home</p>
+<p># mount /dev/sda2 /mnt/home</p>
+<p># setup</p>
+<p>terus aja ok ok bisa kan</p>
+<p># mount --bind /dev /mnt/dev
+# mount --bind /tmp /mnt/tmp
+# mount -t proc proc /mnt/proc
+# mount -t sysfs none /mnt/sys
+# mount -t devpts devpts /mnt/dev/pts
+# chroot /mnt /bin/bash
+atau
+# setup-chroot</p>
+<p>kemudian buat fstab
+# nano /etc/fstab
+/dev/sda6 / ext4 defaults,noatime,nodiratime,discard,errors=remount-ro 0 1
+/dev/sda5 swap swap sw,noatime,nodiratime 0 0
+/dev/sda2 /home ext4 defaults,noatime,nodiratime,discard,errors=remount-ro 0 1
+ctrl + x lalu ctrl + y
+kemudia buat rc.conf
+FONT=default
+KEYMAP=us
+TIMEZONE=Asia/Jakarta
+HOSTNAME=cucurucrux
+SYSLOG=sysklogd
+SERVICES=(crond)</p>
+<p>generate bahasa system (locales)
+# localedef -i en_US -f UTF-8 en_US.UTF-8
+# localedef -i id_ID -f UTF-8 id_ID.UTF-8
+di lanjutkan dengan
+# ln -s /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+kemudian kompile kernelnya
+caranya disini
+# cd /usr/src/linux-3.12.24
+# patch -p1 &lt; ../linux-ptrace-bug.patch
+# make menuconfig general setup ---&gt;
+(-ucrut) Local Version – append to kernel release
+lalu di save
+# make</p>
+<p># make modules_install
+# make install
+lalu  install bootloader (syslinux)
+# mkdir /boot/syslinux
+# nano /boot/syslinux/syslinux.cfg
+DEFAULT crux
+PROMPT 0
+TIMEOUT 50
+LABEL crux
+MENU LABEL CRUX
+LINUX ../vmlinuz
+APPEND root=/dev/sda6 ro</p>
+<p># extlinux -i /booot/syslinux
+# dd if=/usr/share/syslinux/mbr.bin of=/dev/sda bs=440 count=1
+# passwd
+masukin password root baru
+# useradd -m -s /bin/bash -G audio,lp,video,wheel,scanner -U nama_user
+# passwd nama_user
+masukin password user
+lalu
+# nano /etc/sudoers
+nama_user ALL=(ALL) ALL
+# exit
+# umount /mnt/{dev{/pts,},tmp,proc,sys,home,}
+# reboot</p>
+<p>kemudian login sebagai root</p>
+<p>ketikan nano /etc/prt-get.conf
+uncomment mv /etc/ports/contrib.rsync.inactive /etc/ports/contrib.rsync</p>
+<p>kemudian ketikan perintah ports -u, lalu ports -d untuk melihat perbedaannya, untuk install bisa ketikan prt-get install nama-paket.</p>
+<p>kemudian login sebagai user name dengan perintah su user-name.</p>
+<p>ketik nano .xinitrc dan tulis exec openbox atau bisa juga openbox-session, sekian review dari saya semoga bermanfaat.</p>
+<p>There are <a href="../review-crux.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../cara-compile-kernel.html" rel="bookmark"
+                           title="Permalink to Cara compile kernel">Cara compile kernel</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2016-03-10T18:00:00+07:00">
                 Published: Kam 10 Maret 2016
@@ -32,58 +159,12 @@
         </address>
 <p>In <a href="../category/gnulinux.html">gnu/linux</a>.</p>
 <p>tags: <a href="../tag/kernel-linux.html">kernel linux</a> <a href="../tag/compile.html">compile</a> </p>
-</footer><!-- /.post-info --><p>Cara Compile Kernel Di GNU/Linux.</p>
+</footer><!-- /.post-info -->                <p>Cara Compile Kernel Di GNU/Linux.</p>
 <p>apa itu kernel? kernel adalah inti dari sistem operasi tiap sistem operasi mempunyai kernelnya masing masing, tergantung bagaimana platform itu diciptakan.
 platform windows tentu berbeda dengan platform gnu karena sifat gnu sendiri yang bebas.</p>
-<p>ok cukup sampai disini saja ngga usah dipanjang lebarin lagi.
-langkah-langkah compile kernel adalah sebagai berikut:</p>
-<ol class="arabic simple">
-<li>make mrproper (dilakukan jika udah pernah melakukan compile di source yang saat ini dpakai, kalau belum langsung langkah kedua).</li>
-<li>make allyesconfig, allmodulesconfig atau pun menuconfig.</li>
-<li>make  &amp;&amp; make install.</li>
-</ol>
-<p>3a. make &amp;&amp; make modules_install &amp;&amp; make install jika kita pilih config sebagai modules.</p>
-<p>catatan :</p>
-<ol class="arabic simple">
-<li>pastikan sebagai root (#) atau superuser bukan ($) user kalo sebagai user gunakan sudo.</li>
-<li>mkinitrd sesuai dengan distro yang digunakan.</li>
-<li>update grub jika menggunakan grub berdasarkan dengan distro.</li>
-</ol>
-<p>saya menggunakan crux gnu linux jadi saya mengetikan perintah berikut ini saya dalam posisi sebagai root.
-nano /boot/grub/grub.cfg lalu tekan enter.
-kemudian saya ketikan &quot; menuentry &quot; CRUX kernel 4.5&quot;{
-linux(hd0,msdos1)/boot/vmlinuz-4.5.0-rc6-Asboot root=/dev/sda1 quiet
-} tergantung type partisi jenis memory yang kamu install gnu/linuxnya terus masuk /dev/sda1 atau yang lainnya root partisinya, bisa juga vmlinuz saja liat apa yang ada dalam /boot.
-demikian catatan saya semoga bermanfaat.</p>
-<p>There are <a href="../cara-compile-kernel.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="../review-crux.html" rel="bookmark"
-                           title="Permalink to review crux">review crux</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-03-10T15:17:00+07:00">
-                Published: Kam 10 Maret 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="../author/arba.html">arba</a>
-        </address>
-<p>In <a href="../category/gnulinux.html">GNU/Linux</a>.</p>
-<p>tags: <a href="../tag/crux.html">crux</a> <a href="../tag/gnulinux.html">gnu/linux</a> <a href="../tag/review.html">review</a> </p>
-</footer><!-- /.post-info -->                <p>Apa itu Crux gnu/linux.</p>
-<p>crux gnu/linux adalah distribusi gnu/linux yang kecil dan diperuntukan bagi user berpengalaman karena, semuanya di distribusikan dalam bentuk source code.
-crux gnu/linux enak dipake buat belajar membuat konfigurasi system dan karena sebagian dicompile di komputer kita jadi lebih bagus hasilnya meskipun tak ...</p>
-                <a class="readmore" href="../review-crux.html">read more</a>
-<p>There are <a href="../review-crux.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+<p>ok cukup sampai disini saja ngga usah dipanjang lebarin lagi ...</p>
+                <a class="readmore" href="../cara-compile-kernel.html">read more</a>
+<p>There are <a href="../cara-compile-kernel.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->
                 </section><!-- /#content -->
