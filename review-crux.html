@@ -28,7 +28,7 @@
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2016-03-11T11:47:00+07:00">
+        <abbr class="published" title="2016-03-11T13:25:00+07:00">
                 Published: Jum 11 Maret 2016
         </abbr>
 
@@ -75,65 +75,65 @@ crux gnu/linux sangat minimalis dan enak untuk dikelola dengan manajer paket prt
 <p># mount /dev/sda2 /mnt/home</p>
 <p># setup</p>
 <p>terus aja ok ok bisa kan</p>
-<p># mount --bind /dev /mnt/dev
-# mount --bind /tmp /mnt/tmp
-# mount -t proc proc /mnt/proc
-# mount -t sysfs none /mnt/sys
-# mount -t devpts devpts /mnt/dev/pts
-# chroot /mnt /bin/bash
-atau
-# setup-chroot</p>
-<p>kemudian buat fstab
-# nano /etc/fstab
-/dev/sda6 / ext4 defaults,noatime,nodiratime,discard,errors=remount-ro 0 1
-/dev/sda5 swap swap sw,noatime,nodiratime 0 0
-/dev/sda2 /home ext4 defaults,noatime,nodiratime,discard,errors=remount-ro 0 1
-ctrl + x lalu ctrl + y
-kemudia buat rc.conf
-FONT=default
-KEYMAP=us
-TIMEZONE=Asia/Jakarta
-HOSTNAME=cucurucrux
-SYSLOG=sysklogd
-SERVICES=(crond)</p>
-<p>generate bahasa system (locales)
-# localedef -i en_US -f UTF-8 en_US.UTF-8
-# localedef -i id_ID -f UTF-8 id_ID.UTF-8
-di lanjutkan dengan
-# ln -s /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
-kemudian kompile kernelnya
-caranya disini
-# cd /usr/src/linux-3.12.24
-# patch -p1 &lt; ../linux-ptrace-bug.patch
-# make menuconfig general setup ---&gt;
-(-ucrut) Local Version – append to kernel release
-lalu di save
-# make</p>
-<p># make modules_install
-# make install
-lalu  install bootloader (syslinux)
-# mkdir /boot/syslinux
-# nano /boot/syslinux/syslinux.cfg
-DEFAULT crux
-PROMPT 0
-TIMEOUT 50
-LABEL crux
-MENU LABEL CRUX
-LINUX ../vmlinuz
-APPEND root=/dev/sda6 ro</p>
-<p># extlinux -i /booot/syslinux
-# dd if=/usr/share/syslinux/mbr.bin of=/dev/sda bs=440 count=1
-# passwd
-masukin password root baru
-# useradd -m -s /bin/bash -G audio,lp,video,wheel,scanner -U nama_user
-# passwd nama_user
-masukin password user
-lalu
-# nano /etc/sudoers
-nama_user ALL=(ALL) ALL
-# exit
-# umount /mnt/{dev{/pts,},tmp,proc,sys,home,}
-# reboot</p>
+<p># mount --bind /dev /mnt/dev</p>
+<p># mount --bind /tmp /mnt/tmp</p>
+<p># mount -t proc proc /mnt/proc</p>
+<p># mount -t sysfs none /mnt/sys</p>
+<p># mount -t devpts devpts /mnt/dev/pts</p>
+<p># chroot /mnt /bin/bash</p>
+<p>atau</p>
+<p># setup-chroot</p>
+<p>kemudian buat fstab</p>
+<p># nano /etc/fstab</p>
+<p>/dev/sda6 / ext4 defaults,noatime,nodiratime,discard,errors=remount-ro 0 1</p>
+<p>/dev/sda5 swap swap sw,noatime,nodiratime 0 0</p>
+<p>/dev/sda2 /home ext4 defaults,noatime,nodiratime,discard,errors=remount-ro 0 1</p>
+<p>ctrl + x lalu ctrl + y</p>
+<p>kemudia buat rc.conf</p>
+<p>FONT=default</p>
+<p>KEYMAP=us</p>
+<p>TIMEZONE=Asia/Jakarta</p>
+<p>HOSTNAME=cucurucrux</p>
+<p>SYSLOG=sysklogd</p>
+<p>SERVICES=(crond)</p>
+<p>generate bahasa system (locales)</p>
+<p># localedef -i en_US -f UTF-8 en_US.UTF-8</p>
+<p># localedef -i id_ID -f UTF-8 id_ID.UTF-8</p>
+<p>di lanjutkan dengan</p>
+<p># ln -s /usr/share/zoneinfo/Asia/Jakarta /etc/localtime</p>
+<p>kemudian kompile kernelnya</p>
+<p>caranya disini</p>
+<p># cd /usr/src/linux-3.12.24</p>
+<p># patch -p1 &lt; ../linux-ptrace-bug.patch</p>
+<p># make menuconfig general setup ---&gt;</p>
+<p>(-ucrut) Local Version – append to kernel release</p>
+<p>lalu di save</p>
+<p># make</p>
+<p># make modules_install</p>
+<p># make install</p>
+<p>lalu  install bootloader (syslinux)</p>
+<p># mkdir /boot/syslinux</p>
+<p># nano /boot/syslinux/syslinux.cfg</p>
+<p>DEFAULT crux</p>
+<p>PROMPT 0</p>
+<p>TIMEOUT 50</p>
+<p>LABEL crux</p>
+<p>MENU LABEL CRUX</p>
+<p>LINUX ../vmlinuz</p>
+<p>APPEND root=/dev/sda6 ro</p>
+<p># extlinux -i /booot/syslinux</p>
+<p># dd if=/usr/share/syslinux/mbr.bin of=/dev/sda bs=440 count=1</p>
+<p># passwd</p>
+<p>masukin password root baru</p>
+<p># useradd -m -s /bin/bash -G audio,lp,video,wheel,scanner -U nama_user</p>
+<p># passwd nama_user</p>
+<p>masukin password user</p>
+<p>lalu</p>
+<p># nano /etc/sudoers</p>
+<p>nama_user ALL=(ALL) ALL</p>
+<p># exit</p>
+<p># umount /mnt/{dev{/pts,},tmp,proc,sys,home,}</p>
+<p># reboot</p>
 <p>kemudian login sebagai root</p>
 <p>ketikan nano /etc/prt-get.conf
 uncomment mv /etc/ports/contrib.rsync.inactive /etc/ports/contrib.rsync</p>

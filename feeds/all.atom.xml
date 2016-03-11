@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>gnu/linux info, reviews and log</title><link href="coder212.github.io/" rel="alternate"></link><link href="coder212.github.io/feeds/all.atom.xml" rel="self"></link><id>coder212.github.io/</id><updated>2016-03-11T11:47:00+07:00</updated><entry><title>review crux</title><link href="coder212.github.io/review-crux.html" rel="alternate"></link><updated>2016-03-11T11:47:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-11:coder212.github.io/review-crux.html</id><summary type="html">&lt;p&gt;Apa itu Crux gnu/linux.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>gnu/linux info, reviews and log</title><link href="coder212.github.io/" rel="alternate"></link><link href="coder212.github.io/feeds/all.atom.xml" rel="self"></link><id>coder212.github.io/</id><updated>2016-03-11T13:25:00+07:00</updated><entry><title>review crux</title><link href="coder212.github.io/review-crux.html" rel="alternate"></link><updated>2016-03-11T13:25:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-11:coder212.github.io/review-crux.html</id><summary type="html">&lt;p&gt;Apa itu Crux gnu/linux.&lt;/p&gt;
 &lt;p&gt;crux gnu/linux adalah distribusi gnu/linux yang kecil dan diperuntukan bagi user berpengalaman karena, semuanya di distribusikan dalam bentuk source code.
 crux gnu/linux enak dipake buat belajar membuat konfigurasi system dan karena sebagian dicompile di komputer kita jadi lebih bagus hasilnya meskipun tak begitu signifikan sih hehe.
 crux gnu/linux sangat minimalis dan enak untuk dikelola dengan manajer paket prt-get dan pkg-utils lumayan membantu.&lt;/p&gt;
@@ -37,65 +37,65 @@ crux gnu/linux sangat minimalis dan enak untuk dikelola dengan manajer paket prt
 &lt;p&gt;# mount /dev/sda2 /mnt/home&lt;/p&gt;
 &lt;p&gt;# setup&lt;/p&gt;
 &lt;p&gt;terus aja ok ok bisa kan&lt;/p&gt;
-&lt;p&gt;# mount --bind /dev /mnt/dev
-# mount --bind /tmp /mnt/tmp
-# mount -t proc proc /mnt/proc
-# mount -t sysfs none /mnt/sys
-# mount -t devpts devpts /mnt/dev/pts
-# chroot /mnt /bin/bash
-atau
-# setup-chroot&lt;/p&gt;
-&lt;p&gt;kemudian buat fstab
-# nano /etc/fstab
-/dev/sda6 / ext4 defaults,noatime,nodiratime,discard,errors=remount-ro 0 1
-/dev/sda5 swap swap sw,noatime,nodiratime 0 0
-/dev/sda2 /home ext4 defaults,noatime,nodiratime,discard,errors=remount-ro 0 1
-ctrl + x lalu ctrl + y
-kemudia buat rc.conf
-FONT=default
-KEYMAP=us
-TIMEZONE=Asia/Jakarta
-HOSTNAME=cucurucrux
-SYSLOG=sysklogd
-SERVICES=(crond)&lt;/p&gt;
-&lt;p&gt;generate bahasa system (locales)
-# localedef -i en_US -f UTF-8 en_US.UTF-8
-# localedef -i id_ID -f UTF-8 id_ID.UTF-8
-di lanjutkan dengan
-# ln -s /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
-kemudian kompile kernelnya
-caranya disini
-# cd /usr/src/linux-3.12.24
-# patch -p1 &amp;lt; ../linux-ptrace-bug.patch
-# make menuconfig general setup ---&amp;gt;
-(-ucrut) Local Version – append to kernel release
-lalu di save
-# make&lt;/p&gt;
-&lt;p&gt;# make modules_install
-# make install
-lalu  install bootloader (syslinux)
-# mkdir /boot/syslinux
-# nano /boot/syslinux/syslinux.cfg
-DEFAULT crux
-PROMPT 0
-TIMEOUT 50
-LABEL crux
-MENU LABEL CRUX
-LINUX ../vmlinuz
-APPEND root=/dev/sda6 ro&lt;/p&gt;
-&lt;p&gt;# extlinux -i /booot/syslinux
-# dd if=/usr/share/syslinux/mbr.bin of=/dev/sda bs=440 count=1
-# passwd
-masukin password root baru
-# useradd -m -s /bin/bash -G audio,lp,video,wheel,scanner -U nama_user
-# passwd nama_user
-masukin password user
-lalu
-# nano /etc/sudoers
-nama_user ALL=(ALL) ALL
-# exit
-# umount /mnt/{dev{/pts,},tmp,proc,sys,home,}
-# reboot&lt;/p&gt;
+&lt;p&gt;# mount --bind /dev /mnt/dev&lt;/p&gt;
+&lt;p&gt;# mount --bind /tmp /mnt/tmp&lt;/p&gt;
+&lt;p&gt;# mount -t proc proc /mnt/proc&lt;/p&gt;
+&lt;p&gt;# mount -t sysfs none /mnt/sys&lt;/p&gt;
+&lt;p&gt;# mount -t devpts devpts /mnt/dev/pts&lt;/p&gt;
+&lt;p&gt;# chroot /mnt /bin/bash&lt;/p&gt;
+&lt;p&gt;atau&lt;/p&gt;
+&lt;p&gt;# setup-chroot&lt;/p&gt;
+&lt;p&gt;kemudian buat fstab&lt;/p&gt;
+&lt;p&gt;# nano /etc/fstab&lt;/p&gt;
+&lt;p&gt;/dev/sda6 / ext4 defaults,noatime,nodiratime,discard,errors=remount-ro 0 1&lt;/p&gt;
+&lt;p&gt;/dev/sda5 swap swap sw,noatime,nodiratime 0 0&lt;/p&gt;
+&lt;p&gt;/dev/sda2 /home ext4 defaults,noatime,nodiratime,discard,errors=remount-ro 0 1&lt;/p&gt;
+&lt;p&gt;ctrl + x lalu ctrl + y&lt;/p&gt;
+&lt;p&gt;kemudia buat rc.conf&lt;/p&gt;
+&lt;p&gt;FONT=default&lt;/p&gt;
+&lt;p&gt;KEYMAP=us&lt;/p&gt;
+&lt;p&gt;TIMEZONE=Asia/Jakarta&lt;/p&gt;
+&lt;p&gt;HOSTNAME=cucurucrux&lt;/p&gt;
+&lt;p&gt;SYSLOG=sysklogd&lt;/p&gt;
+&lt;p&gt;SERVICES=(crond)&lt;/p&gt;
+&lt;p&gt;generate bahasa system (locales)&lt;/p&gt;
+&lt;p&gt;# localedef -i en_US -f UTF-8 en_US.UTF-8&lt;/p&gt;
+&lt;p&gt;# localedef -i id_ID -f UTF-8 id_ID.UTF-8&lt;/p&gt;
+&lt;p&gt;di lanjutkan dengan&lt;/p&gt;
+&lt;p&gt;# ln -s /usr/share/zoneinfo/Asia/Jakarta /etc/localtime&lt;/p&gt;
+&lt;p&gt;kemudian kompile kernelnya&lt;/p&gt;
+&lt;p&gt;caranya disini&lt;/p&gt;
+&lt;p&gt;# cd /usr/src/linux-3.12.24&lt;/p&gt;
+&lt;p&gt;# patch -p1 &amp;lt; ../linux-ptrace-bug.patch&lt;/p&gt;
+&lt;p&gt;# make menuconfig general setup ---&amp;gt;&lt;/p&gt;
+&lt;p&gt;(-ucrut) Local Version – append to kernel release&lt;/p&gt;
+&lt;p&gt;lalu di save&lt;/p&gt;
+&lt;p&gt;# make&lt;/p&gt;
+&lt;p&gt;# make modules_install&lt;/p&gt;
+&lt;p&gt;# make install&lt;/p&gt;
+&lt;p&gt;lalu  install bootloader (syslinux)&lt;/p&gt;
+&lt;p&gt;# mkdir /boot/syslinux&lt;/p&gt;
+&lt;p&gt;# nano /boot/syslinux/syslinux.cfg&lt;/p&gt;
+&lt;p&gt;DEFAULT crux&lt;/p&gt;
+&lt;p&gt;PROMPT 0&lt;/p&gt;
+&lt;p&gt;TIMEOUT 50&lt;/p&gt;
+&lt;p&gt;LABEL crux&lt;/p&gt;
+&lt;p&gt;MENU LABEL CRUX&lt;/p&gt;
+&lt;p&gt;LINUX ../vmlinuz&lt;/p&gt;
+&lt;p&gt;APPEND root=/dev/sda6 ro&lt;/p&gt;
+&lt;p&gt;# extlinux -i /booot/syslinux&lt;/p&gt;
+&lt;p&gt;# dd if=/usr/share/syslinux/mbr.bin of=/dev/sda bs=440 count=1&lt;/p&gt;
+&lt;p&gt;# passwd&lt;/p&gt;
+&lt;p&gt;masukin password root baru&lt;/p&gt;
+&lt;p&gt;# useradd -m -s /bin/bash -G audio,lp,video,wheel,scanner -U nama_user&lt;/p&gt;
+&lt;p&gt;# passwd nama_user&lt;/p&gt;
+&lt;p&gt;masukin password user&lt;/p&gt;
+&lt;p&gt;lalu&lt;/p&gt;
+&lt;p&gt;# nano /etc/sudoers&lt;/p&gt;
+&lt;p&gt;nama_user ALL=(ALL) ALL&lt;/p&gt;
+&lt;p&gt;# exit&lt;/p&gt;
+&lt;p&gt;# umount /mnt/{dev{/pts,},tmp,proc,sys,home,}&lt;/p&gt;
+&lt;p&gt;# reboot&lt;/p&gt;
 &lt;p&gt;kemudian login sebagai root&lt;/p&gt;
 &lt;p&gt;ketikan nano /etc/prt-get.conf
 uncomment mv /etc/ports/contrib.rsync.inactive /etc/ports/contrib.rsync&lt;/p&gt;
