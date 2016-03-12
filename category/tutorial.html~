@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
         <meta charset="utf-8" />
-        <title>gnu/linux info, reviews and log - Tutorial , GNU/Linux</title>
+        <title>gnu/linux info, reviews and log - Tutorial</title>
         <link rel="stylesheet" href="../theme/css/main.css" />
         <link href="coder212.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="gnu/linux info, reviews and log Atom Feed" />
 
@@ -16,7 +16,7 @@
                 <h1><a href="../">gnu/linux info, reviews and log </a></h1>
                 <nav><ul>
                     <li><a href="../category/gnulinux.html">GNU/Linux</a></li>
-                    <li class="active"><a href="../category/tutorial-gnulinux.html">Tutorial , GNU/Linux</a></li>
+                    <li class="active"><a href="../category/tutorial.html">Tutorial</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
@@ -31,7 +31,7 @@
         <address class="vcard author">
                 By                         <a class="url fn" href="../author/arba.html">arba</a>
         </address>
-<p>In <a href="../category/tutorial-gnulinux.html">Tutorial , GNU/Linux</a>.</p>
+<p>In <a href="../category/tutorial.html">Tutorial</a>.</p>
 <p>tags: <a href="../tag/terminal.html">terminal</a> <a href="../tag/shell.html">shell</a> <a href="../tag/gnulinux.html">gnu/linux</a> </p>
 </footer><!-- /.post-info --><p>Perintah terminal yang sering digunakan</p>
 <p>berikut adalah perintah - perintah yang sering digunakan didalam terminal gnu/Linux distro, untuk melakukan suatu pekerjaan tertentu.</p>
