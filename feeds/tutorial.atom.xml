@@ -121,7 +121,7 @@ Berikut ini langkah-langkahnya
 &lt;tbody valign="top"&gt;
 &lt;tr class="field"&gt;&lt;th class="field-name"&gt;code:&lt;/th&gt;&lt;td class="field-body"&gt;tar xvjpf stage3*.bz2&lt;/td&gt;
 &lt;/tr&gt;
-&lt;tr class="field"&gt;&lt;th class="field-name"&gt;code:&lt;/th&gt;&lt;td class="field-body"&gt;&amp;quot;tar xvjf /mnt/gentoo/portage-20160306.tar.bz2 -C /mnt/gentoo/usr&lt;/td&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;code:&lt;/th&gt;&lt;td class="field-body"&gt;tar xvjf /mnt/gentoo/portage-20160306.tar.bz2 -C /mnt/gentoo/usr&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
