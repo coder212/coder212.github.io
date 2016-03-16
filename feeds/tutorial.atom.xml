@@ -1,5 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>gnu/linux info, reviews and log</title><link href="coder212.github.io/" rel="alternate"></link><link href="coder212.github.io/feeds/tutorial.atom.xml" rel="self"></link><id>coder212.github.io/</id><updated>2016-03-12T23:11:00+07:00</updated><entry><title>Tutorial Perintah - Perintah Terminal Yang Sering Digunakan</title><link href="coder212.github.io/tutorial-perintah-perintah-terminal-yang-sering-digunakan.html" rel="alternate"></link><updated>2016-03-12T23:11:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-12:coder212.github.io/tutorial-perintah-perintah-terminal-yang-sering-digunakan.html</id><summary type="html">&lt;p&gt;Perintah terminal yang sering digunakan&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>gnu/linux info, reviews and log</title><link href="coder212.github.io/" rel="alternate"></link><link href="coder212.github.io/feeds/tutorial.atom.xml" rel="self"></link><id>coder212.github.io/</id><updated>2016-03-16T14:00:00+07:00</updated><entry><title>Cara Install ArchLinux Ke Flashdisk</title><link href="coder212.github.io/cara-install-archlinux-ke-flashdisk.html" rel="alternate"></link><updated>2016-03-16T14:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-16:coder212.github.io/cara-install-archlinux-ke-flashdisk.html</id><summary type="html">&lt;p&gt;Cara install archlinux ke flashdisk&lt;/p&gt;
+&lt;p&gt;Terlebih dahulu jalankan liveusb archlinux gunakan unetbootin atau apa saja yang penting bisa membuat bootable archlinux.
+saya akan menuliskan cara install archlinux kedalam flashdisk menurut versi saya bukan versi orang lain loh ada yang tau archlinux itu apa? kalo menurutku archlinux ,os berkernel linux alias gnu/linux operating system yang mirip lego jadi systemnya bisa dibongkar pasang, sesuka usernya. langsung saja kita mulai tutorialnya sebagai berikut:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;buat partisi yang akan di install di fd  dengan cfdisk gparted terserah saja hehe kalo saya seperti ini sdb1 1,5g –&amp;gt; swap sdb2 5,5g –&amp;gt; / sdb3 dipake untuk /home&lt;/li&gt;
+&lt;li&gt;taruh vmlinuz di flashdisk lain kemudian rename jadi vmlinuz-linux vmlinuz bisa diambil di archlinux.iso /cd installer di folder arch/boot/i686/vmlinuz&lt;/li&gt;
+&lt;li&gt;mkswap /dev/sdb1 membuat swap di fd&lt;/li&gt;
+&lt;li&gt;mkfs.ext4 /dev/sdb2 membuat file system dengan format ext4&lt;/li&gt;
+&lt;li&gt;mkfs.ext4 /dev/sdb3 membuat file system dengan format ext4&lt;/li&gt;
+&lt;li&gt;swapon /dev/sdb1 menghidupkan swap di /dev/sdb1&lt;/li&gt;
+&lt;li&gt;mkdir /mnt/archlinux membuat folder archlinux di mnt&lt;/li&gt;
+&lt;li&gt;mount /dev/sdb2 /mnt/archlinux memuat fd ke folder archlinux&lt;/li&gt;
+&lt;li&gt;mkdir -p /mnt/archlinux/proc /mnt/archlinux/sys /mnt/archlinux/mnt /mnt/archlinux/home&lt;/li&gt;
+&lt;li&gt;mount /dev/sdb3 /mnt/archlinux/home memuat /dev/sdb3 ke home yang akan dijadikan home di system ente&lt;/li&gt;
+&lt;li&gt;cp -r /bin /dev /run /srv /tmp /var /boot /etc /lib /opt /root /sbin /usr /mnt/archlinux/&lt;/li&gt;
+&lt;li&gt;mkdir /mnt/file&lt;/li&gt;
+&lt;li&gt;mount /dev/sdc /mnt/file memuat fd kedua yang saya miliki&lt;/li&gt;
+&lt;li&gt;cp /mnt/file/vmlinuz-linux /mnt/archlinux/boot/&lt;/li&gt;
+&lt;li&gt;genfstab -U -p /mnt/archlinux &amp;lt;&amp;lt; /mnt/archlinux/etc/fstab generate file system arch gnu/linux u dipakai untuk dengan uid di fstab&lt;/li&gt;
+&lt;li&gt;arch-chroot /mnt/archlinux memindahkan root ke mnt/archlinux&lt;/li&gt;
+&lt;li&gt;nano /etc/locale.gen kemudian hapus komen di id_ID.UTF8 tekan ctrl+ x lalu tekan y&lt;/li&gt;
+&lt;li&gt;echo LANG=id_ID.UTF-8 &amp;gt;&amp;gt; /etc/locale.conf&lt;/li&gt;
+&lt;li&gt;export LANG=id_ID.UTF-8&lt;/li&gt;
+&lt;li&gt;hwclock –systohc –utc men set date ke utc&lt;/li&gt;
+&lt;li&gt;rm /etc/localtime menghapus localtime&lt;/li&gt;
+&lt;li&gt;ln -s /usr/share/zoneinfo/Asia/Jakarta /etc/localtime membuat&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;link ke localtime&lt;/p&gt;
+&lt;ol class="arabic simple" start="23"&gt;
+&lt;li&gt;nano /etc/hostname lalu ketikkan superarch&lt;/li&gt;
+&lt;li&gt;rm &lt;a class="reference external" href="mailto:/etc/systemd/system/getty&amp;#64;tty1.service.d/autologin.conf"&gt;/etc/systemd/system/getty&amp;#64;tty1.service.d/autologin.conf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;nano /etc/passwd ubah dari /usr/bin/zsh menjadi /bin/bash&lt;/li&gt;
+&lt;li&gt;passwd root masukkan password arch1234. arch1234.&lt;/li&gt;
+&lt;li&gt;useradd -m -g users -s /bin/bash user_name menambah user name&lt;/li&gt;
+&lt;li&gt;passwd user_name user2345 user2345&lt;/li&gt;
+&lt;li&gt;revisi /etc/mkinitcpio.conf HOOKS=”base udev autodetect modconf block filesystems keyboard fsck ” menjadi HOOKS=”base udev usb autodetect modconf block filesystems keyboard fsck ” kemudian ketik mkinitcpio -p linux&lt;/li&gt;
+&lt;li&gt;grub-install –target=i386-pc –no-floppy –recheck –debug /dev/sdb install grub ke flasdisk –target=i386-pc digunakan hanya untuk bios&lt;/li&gt;
+&lt;li&gt;grub-mkconfig – /boot/grub/grub.cfg membuat menu grub&lt;/li&gt;
+&lt;li&gt;exit –&amp;gt; keluar dari root /mnt/archlinux&lt;/li&gt;
+&lt;li&gt;umount /mnt/archlinux/home menutup mnt/archlinux/home akses ke /dev/sdb3&lt;/li&gt;
+&lt;li&gt;umount /mnt/archlinux&lt;/li&gt;
+&lt;li&gt;umount /mnt/file&lt;/li&gt;
+&lt;li&gt;reboot&lt;/li&gt;
+&lt;li&gt;keluarkan usb installer&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;selesai sudah kita install archlinux ke dalam flashdisk versi saya yang cuma cli , untuk guinya ketikan pacman -S namaprogram&lt;/p&gt;
+</summary><category term="Gnu/Linux"></category><category term="install archlinux"></category></entry><entry><title>Cara Install Gentoo</title><link href="coder212.github.io/cara-install-gentoo.html" rel="alternate"></link><updated>2016-03-16T13:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-16:coder212.github.io/cara-install-gentoo.html</id><summary type="html">&lt;p&gt;Cara install gentoo versi saya hehe
+pastikan kamu memiliki distro gnu/linux lainnya atau kamu menggunakan liveusb atau livecd boleh boleh saja dalam hal ini saya menggunakan distro ubuntu 14.04 sebagai hostnya
+pertama lakukan hal ini sudo apt-get install dchroot debootstrap melakukan chroot ke system gentoo nantinya.
+Berikut ini langkah-langkahnya
+//download stage3 dan portage
+1. buat partisi home  dan / dengan nama /dev/sdb2 /dev/sdb3 ---&amp;gt; dalam hal ini flashdisk saya kalo hardisk saya /dev/sda sesuaikan dengan /dev/sd* milikmu bisa sdc,sdd,sde,sdf dll jadi usahakan ls /dev/sd* , kemudian sudo -i sebagai root&lt;/p&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;mount partisi tersebut.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table class="docutils field-list" frame="void" rules="none"&gt;
+&lt;col class="field-name" /&gt;
+&lt;col class="field-body" /&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;code:&lt;/th&gt;&lt;td class="field-body"&gt;mount /dev/sdb2 /mnt/gentoo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;code:&lt;/th&gt;&lt;td class="field-body"&gt;mount /dev/sdb2 /mnt/gentoo/home&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol class="arabic simple" start="3"&gt;
+&lt;li&gt;masuk kedalam direktori /mnt/gentoo.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table class="docutils field-list" frame="void" rules="none"&gt;
+&lt;col class="field-name" /&gt;
+&lt;col class="field-body" /&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;code:&lt;/th&gt;&lt;td class="field-body"&gt;cd /mnt/gentoo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;4.download stage3 dan portage dengan menggunak wget&lt;/p&gt;
+&lt;p&gt;untuk unduh stage3
+:code: wget -t 0 &lt;a class="reference external" href="http://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64/stage3-amd64-20160310.tar.bz2"&gt;http://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64/stage3-amd64-20160310.tar.bz2&lt;/a&gt;
+untuk 64bit dan kalo 32 bit
+:code: wget -t 0 &lt;a class="reference external" href="http://distfiles.gentoo.org/releases/x86/autobuilds/current-stage3-i686/stage3-i686-20160308.tar.bz2"&gt;http://distfiles.gentoo.org/releases/x86/autobuilds/current-stage3-i686/stage3-i686-20160308.tar.bz2&lt;/a&gt;
+unduh portage
+:code: wget -t 0 &lt;a class="reference external" href="http://ftp.jaist.ac.jp/pub/Linux/Gentoo/snapshots/portage-20160306.tar.bz2"&gt;http://ftp.jaist.ac.jp/pub/Linux/Gentoo/snapshots/portage-20160306.tar.bz2&lt;/a&gt;
+5. un archive stage3 dan portage.
+:code: tar xvjpf stage3*.bz2
+:code&amp;quot;tar xvjf /mnt/gentoo/portage-20160306.tar.bz2 -C /mnt/gentoo/usr
+6.persiapan sebelum chroot.
+:code: cp -L /etc/resolv.conf /mnt/gentoo/etc/resolv.conf
+dipakai untuk nanti setelah chroot bisa konek internet
+:code: mount -t proc none /mnt/gentoo/proc
+:code: mount -o bind /sys /mnt/gentoo/sys
+:code: mount -o bind /dev /mnt/gentoo/dev
+:code: chroot /mnt/gentoo /bin/bash
+7. didalam root system gentoo update env
+:code: env-update
+:code: export PS1=&amp;quot;(ch) $PS1&amp;quot;
+:code: mirrorselect -i -r -o &amp;gt;&amp;gt; /mnt/gentoo/etc/portage/make.conf
+:code: eselect profile list
+:code: eselect profile set 11
+:code: nano -w /etc/portage/make.conf
+USE=&amp;quot;-gtk -gnome qt4 kde dvd alsa cdr&amp;quot;
+:code: ls /usr/share/zoneinfo
+:code: cp /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+:code: echo &amp;quot;Asia/Jakarta&amp;quot; &amp;gt; /etc/timezone
+8. unduh dan install genkernel untuk ngompile kernel dan membuat initramfs
+:code: emerge genkernel
+download kernel dengan perintah berikut ini
+:code: emerge gentoo-sources
+kalo saya mindahin dari hasil unduhan saya dan saya unarchive terus di rename menjadi linux
+9a kompile kernel.
+:code: make menuconfig
+:code: make j2 &amp;amp;&amp;amp; make modules_install
+:code: cp arch/x86_64/boot/bzImage /boot/kernel-4.4.3gentoo
+membuat initramfs ini optional
+:code: genkernel --install initramfs
+9b. jika terjadi error ketika ngompile kernel.
+:code: emerge sys-devel/bc
+dan ulangi compile kernel
+untuk running modules kernel
+:code: find /lib/modules/4.4.3gentoo/ -type f -iname '&lt;em&gt;.o' -or -iname '&lt;/em&gt;.ko'
+10. unduh dan install grub.
+:code: emerge grub
+:code: grub2-install /dev/sda
+:code: grep -v rootfs /proc/mounts &amp;gt; /etc/mtab
+:code: grub2-mkconfig -o /boot/grub/grub.cfg
+11. konfigurasi system
+:code: nano -w /etc/conf.d/modules
+modules_2_6=&amp;quot;3c59x&amp;quot;
+:code: nano -w /etc/fstab
+/dev/sdb3               /home           ext4            nodev,nosuid    0 2&lt;/p&gt;
+&lt;p&gt;/dev/sdb2               /               ext4            noatime         0 1&lt;/p&gt;
+&lt;p&gt;#/dev/SWAP              none            swap            sw              0 0&lt;/p&gt;
+&lt;p&gt;/dev/cdrom              /mnt/cdrom      auto            noauto,ro       0 0&lt;/p&gt;
+&lt;p&gt;/dev/fd0                /mnt/floppy     auto            noauto          0 0&lt;/p&gt;
+&lt;table class="docutils field-list" frame="void" rules="none"&gt;
+&lt;col class="field-name" /&gt;
+&lt;col class="field-body" /&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;code:&lt;/th&gt;&lt;td class="field-body"&gt;nano -w /etc/conf.d/hostname&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;hostname=&amp;quot;gentux&amp;quot;&lt;/p&gt;
+&lt;table class="docutils field-list" frame="void" rules="none"&gt;
+&lt;col class="field-name" /&gt;
+&lt;col class="field-body" /&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;code:&lt;/th&gt;&lt;td class="field-body"&gt;passwd&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;code:&lt;/th&gt;&lt;td class="field-body"&gt;nano -w /etc/locale.gen&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;uncommet yang english
+id_ID.UTF-8 UTF-8
+:code: locale-gen
+:code: nano -w /etc/env.d/02locale
+LANG=&amp;quot;id_ID.UTF-8&amp;quot;
+LC_COLLATE=&amp;quot;C&amp;quot;
+:code: useradd -m -G users,wheel,audio -s /bin/bash arba
+:code: passwd arba
+:code: exit
+:code: umount /mnt/gentoo/{proc,sys,dev,home}
+:code: umount /mnt/gentoo
+:code: reboot
+hehe udah beres gan enakan gan caranya hehehehe
+source problem solve : &lt;a class="reference external" href="https://forums.gentoo.org/viewtopic-t-989588-view-next.html?sid=313069c74850025626661e39729cd83a"&gt;https://forums.gentoo.org/viewtopic-t-989588-view-next.html?sid=313069c74850025626661e39729cd83a&lt;/a&gt;
+&lt;a class="reference external" href="http://dev.gentoo.org/~swift/tmp/handbook-amd64.pdf"&gt;http://dev.gentoo.org/~swift/tmp/handbook-amd64.pdf&lt;/a&gt;&lt;/p&gt;
+</summary><category term="gnu/linux"></category><category term="install gentoo"></category></entry><entry><title>Tutorial Perintah - Perintah Terminal Yang Sering Digunakan</title><link href="coder212.github.io/tutorial-perintah-perintah-terminal-yang-sering-digunakan.html" rel="alternate"></link><updated>2016-03-12T23:11:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-12:coder212.github.io/tutorial-perintah-perintah-terminal-yang-sering-digunakan.html</id><summary type="html">&lt;p&gt;Perintah terminal yang sering digunakan&lt;/p&gt;
 &lt;p&gt;berikut adalah perintah - perintah yang sering digunakan didalam terminal gnu/Linux distro, untuk melakukan suatu pekerjaan tertentu.&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;cp&lt;/li&gt;

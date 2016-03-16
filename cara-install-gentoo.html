@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+        <meta charset="utf-8" />
+        <title>Cara Install Gentoo</title>
+        <link rel="stylesheet" href="./theme/css/main.css" />
+        <link href="coder212.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="gnu/linux info, reviews and log Atom Feed" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="./">gnu/linux info, reviews and log </a></h1>
+                <nav><ul>
+                    <li><a href="./category/about.html">about</a></li>
+                    <li><a href="./category/gnulinux.html">GNU/Linux</a></li>
+                    <li class="active"><a href="./category/tutorial.html">Tutorial</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="./cara-install-gentoo.html" rel="bookmark"
+           title="Permalink to Cara Install Gentoo">Cara Install Gentoo</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-03-16T13:00:00+07:00">
+                Published: Rab 16 Maret 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="./author/arba.html">arba</a>
+        </address>
+<p>In <a href="./category/tutorial.html">Tutorial</a>.</p>
+<p>tags: <a href="./tag/gnulinux.html">gnu/linux</a> <a href="./tag/install-gentoo.html">install gentoo</a> </p>
+</footer><!-- /.post-info -->      <p>Cara install gentoo versi saya hehe
+pastikan kamu memiliki distro gnu/linux lainnya atau kamu menggunakan liveusb atau livecd boleh boleh saja dalam hal ini saya menggunakan distro ubuntu 14.04 sebagai hostnya
+pertama lakukan hal ini sudo apt-get install dchroot debootstrap melakukan chroot ke system gentoo nantinya.
+Berikut ini langkah-langkahnya
+//download stage3 dan portage
+1. buat partisi home  dan / dengan nama /dev/sdb2 /dev/sdb3 ---&gt; dalam hal ini flashdisk saya kalo hardisk saya /dev/sda sesuaikan dengan /dev/sd* milikmu bisa sdc,sdd,sde,sdf dll jadi usahakan ls /dev/sd* , kemudian sudo -i sebagai root</p>
+<ol class="arabic simple" start="2">
+<li>mount partisi tersebut.</li>
+</ol>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">mount /dev/sdb2 /mnt/gentoo</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">mount /dev/sdb2 /mnt/gentoo/home</td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="3">
+<li>masuk kedalam direktori /mnt/gentoo.</li>
+</ol>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">cd /mnt/gentoo</td>
+</tr>
+</tbody>
+</table>
+<p>4.download stage3 dan portage dengan menggunak wget</p>
+<p>untuk unduh stage3
+:code: wget -t 0 <a class="reference external" href="http://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64/stage3-amd64-20160310.tar.bz2">http://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64/stage3-amd64-20160310.tar.bz2</a>
+untuk 64bit dan kalo 32 bit
+:code: wget -t 0 <a class="reference external" href="http://distfiles.gentoo.org/releases/x86/autobuilds/current-stage3-i686/stage3-i686-20160308.tar.bz2">http://distfiles.gentoo.org/releases/x86/autobuilds/current-stage3-i686/stage3-i686-20160308.tar.bz2</a>
+unduh portage
+:code: wget -t 0 <a class="reference external" href="http://ftp.jaist.ac.jp/pub/Linux/Gentoo/snapshots/portage-20160306.tar.bz2">http://ftp.jaist.ac.jp/pub/Linux/Gentoo/snapshots/portage-20160306.tar.bz2</a>
+5. un archive stage3 dan portage.
+:code: tar xvjpf stage3*.bz2
+:code&quot;tar xvjf /mnt/gentoo/portage-20160306.tar.bz2 -C /mnt/gentoo/usr
+6.persiapan sebelum chroot.
+:code: cp -L /etc/resolv.conf /mnt/gentoo/etc/resolv.conf
+dipakai untuk nanti setelah chroot bisa konek internet
+:code: mount -t proc none /mnt/gentoo/proc
+:code: mount -o bind /sys /mnt/gentoo/sys
+:code: mount -o bind /dev /mnt/gentoo/dev
+:code: chroot /mnt/gentoo /bin/bash
+7. didalam root system gentoo update env
+:code: env-update
+:code: export PS1=&quot;(ch) $PS1&quot;
+:code: mirrorselect -i -r -o &gt;&gt; /mnt/gentoo/etc/portage/make.conf
+:code: eselect profile list
+:code: eselect profile set 11
+:code: nano -w /etc/portage/make.conf
+USE=&quot;-gtk -gnome qt4 kde dvd alsa cdr&quot;
+:code: ls /usr/share/zoneinfo
+:code: cp /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+:code: echo &quot;Asia/Jakarta&quot; &gt; /etc/timezone
+8. unduh dan install genkernel untuk ngompile kernel dan membuat initramfs
+:code: emerge genkernel
+download kernel dengan perintah berikut ini
+:code: emerge gentoo-sources
+kalo saya mindahin dari hasil unduhan saya dan saya unarchive terus di rename menjadi linux
+9a kompile kernel.
+:code: make menuconfig
+:code: make j2 &amp;&amp; make modules_install
+:code: cp arch/x86_64/boot/bzImage /boot/kernel-4.4.3gentoo
+membuat initramfs ini optional
+:code: genkernel --install initramfs
+9b. jika terjadi error ketika ngompile kernel.
+:code: emerge sys-devel/bc
+dan ulangi compile kernel
+untuk running modules kernel
+:code: find /lib/modules/4.4.3gentoo/ -type f -iname '<em>.o' -or -iname '</em>.ko'
+10. unduh dan install grub.
+:code: emerge grub
+:code: grub2-install /dev/sda
+:code: grep -v rootfs /proc/mounts &gt; /etc/mtab
+:code: grub2-mkconfig -o /boot/grub/grub.cfg
+11. konfigurasi system
+:code: nano -w /etc/conf.d/modules
+modules_2_6=&quot;3c59x&quot;
+:code: nano -w /etc/fstab
+/dev/sdb3               /home           ext4            nodev,nosuid    0 2</p>
+<p>/dev/sdb2               /               ext4            noatime         0 1</p>
+<p>#/dev/SWAP              none            swap            sw              0 0</p>
+<p>/dev/cdrom              /mnt/cdrom      auto            noauto,ro       0 0</p>
+<p>/dev/fd0                /mnt/floppy     auto            noauto          0 0</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">nano -w /etc/conf.d/hostname</td>
+</tr>
+</tbody>
+</table>
+<p>hostname=&quot;gentux&quot;</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">passwd</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">nano -w /etc/locale.gen</td>
+</tr>
+</tbody>
+</table>
+<p>uncommet yang english
+id_ID.UTF-8 UTF-8
+:code: locale-gen
+:code: nano -w /etc/env.d/02locale
+LANG=&quot;id_ID.UTF-8&quot;
+LC_COLLATE=&quot;C&quot;
+:code: useradd -m -G users,wheel,audio -s /bin/bash arba
+:code: passwd arba
+:code: exit
+:code: umount /mnt/gentoo/{proc,sys,dev,home}
+:code: umount /mnt/gentoo
+:code: reboot
+hehe udah beres gan enakan gan caranya hehehehe
+source problem solve : <a class="reference external" href="https://forums.gentoo.org/viewtopic-t-989588-view-next.html?sid=313069c74850025626661e39729cd83a">https://forums.gentoo.org/viewtopic-t-989588-view-next.html?sid=313069c74850025626661e39729cd83a</a>
+<a class="reference external" href="http://dev.gentoo.org/~swift/tmp/handbook-amd64.pdf">http://dev.gentoo.org/~swift/tmp/handbook-amd64.pdf</a></p>
+
+    </div><!-- /.entry-content -->
+    <div class="comments">
+      <h2>Comments !</h2>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'coder212';
+        var disqus_identifier = 'cara-install-gentoo.html';
+        var disqus_url = './cara-install-gentoo.html';
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//coder212.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the comments.</noscript>
+    </div>
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://bocahjenius-programmer.blogspot.com/">blogger</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="coder212.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="http://github.com/coder212">github</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'google-analytics-id']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = 'https://ssl.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'coder212';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>
