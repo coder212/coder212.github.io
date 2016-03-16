@@ -47,9 +47,16 @@ saya akan menuliskan cara install archlinux kedalam flashdisk menurut versi saya
 &lt;p&gt;selesai sudah kita install archlinux ke dalam flashdisk versi saya yang cuma cli , untuk guinya ketikan pacman -S namaprogram&lt;/p&gt;
 </summary><category term="Gnu/Linux"></category><category term="install archlinux"></category></entry><entry><title>Cara Install Gentoo</title><link href="coder212.github.io/cara-install-gentoo.html" rel="alternate"></link><updated>2016-03-16T13:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-16:coder212.github.io/cara-install-gentoo.html</id><summary type="html">&lt;p&gt;Cara install gentoo versi saya hehe
 pastikan kamu memiliki distro gnu/linux lainnya atau kamu menggunakan liveusb atau livecd boleh boleh saja dalam hal ini saya menggunakan distro ubuntu 14.04 sebagai hostnya
-pertama lakukan hal ini
-:code: sudo apt-get install dchroot debootstrap
-akan digunakan untuk melakukan chroot ke system gentoo nantinya.
+pertama lakukan hal ini&lt;/p&gt;
+&lt;table class="docutils field-list" frame="void" rules="none"&gt;
+&lt;col class="field-name" /&gt;
+&lt;col class="field-body" /&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;code:&lt;/th&gt;&lt;td class="field-body"&gt;sudo apt-get install dchroot debootstrap&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;akan digunakan untuk melakukan chroot ke system gentoo nantinya.
 Berikut ini langkah-langkahnya
 //download stage3 dan portage&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
