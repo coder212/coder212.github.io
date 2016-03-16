@@ -36,11 +36,13 @@
 <p>tags: <a href="../tag/gnulinux.html">gnu/linux</a> <a href="../tag/install-gentoo.html">install gentoo</a> </p>
 </footer><!-- /.post-info --><p>Cara install gentoo versi saya hehe
 pastikan kamu memiliki distro gnu/linux lainnya atau kamu menggunakan liveusb atau livecd boleh boleh saja dalam hal ini saya menggunakan distro ubuntu 14.04 sebagai hostnya
-pertama lakukan hal ini sudo apt-get install dchroot debootstrap melakukan chroot ke system gentoo nantinya.
+pertama lakukan hal ini
+:code: sudo apt-get install dchroot debootstrap
+akan digunakan untuk melakukan chroot ke system gentoo nantinya.
 Berikut ini langkah-langkahnya
-//download stage3 dan portage
-1. buat partisi home  dan / dengan nama /dev/sdb2 /dev/sdb3 ---&gt; dalam hal ini flashdisk saya kalo hardisk saya /dev/sda sesuaikan dengan /dev/sd* milikmu bisa sdc,sdd,sde,sdf dll jadi usahakan ls /dev/sd* , kemudian sudo -i sebagai root</p>
-<ol class="arabic simple" start="2">
+//download stage3 dan portage</p>
+<ol class="arabic simple">
+<li>buat partisi home  dan / dengan nama /dev/sdb2 /dev/sdb3 ---&gt; dalam hal ini flashdisk saya kalo hardisk saya /dev/sda sesuaikan dengan /dev/sd* milikmu bisa sdc,sdd,sde,sdf dll jadi usahakan ls /dev/sd* , kemudian sudo -i sebagai root.</li>
 <li>mount partisi tersebut.</li>
 </ol>
 <table class="docutils field-list" frame="void" rules="none">
@@ -64,60 +66,204 @@ Berikut ini langkah-langkahnya
 </tr>
 </tbody>
 </table>
-<p>4.download stage3 dan portage dengan menggunak wget</p>
-<p>untuk unduh stage3
-:code: wget -t 0 <a class="reference external" href="http://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64/stage3-amd64-20160310.tar.bz2">http://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64/stage3-amd64-20160310.tar.bz2</a>
-untuk 64bit dan kalo 32 bit
-:code: wget -t 0 <a class="reference external" href="http://distfiles.gentoo.org/releases/x86/autobuilds/current-stage3-i686/stage3-i686-20160308.tar.bz2">http://distfiles.gentoo.org/releases/x86/autobuilds/current-stage3-i686/stage3-i686-20160308.tar.bz2</a>
-unduh portage
-:code: wget -t 0 <a class="reference external" href="http://ftp.jaist.ac.jp/pub/Linux/Gentoo/snapshots/portage-20160306.tar.bz2">http://ftp.jaist.ac.jp/pub/Linux/Gentoo/snapshots/portage-20160306.tar.bz2</a>
-5. un archive stage3 dan portage.
-:code: tar xvjpf stage3*.bz2
-:code&quot;tar xvjf /mnt/gentoo/portage-20160306.tar.bz2 -C /mnt/gentoo/usr
-6.persiapan sebelum chroot.
-:code: cp -L /etc/resolv.conf /mnt/gentoo/etc/resolv.conf
-dipakai untuk nanti setelah chroot bisa konek internet
-:code: mount -t proc none /mnt/gentoo/proc
-:code: mount -o bind /sys /mnt/gentoo/sys
-:code: mount -o bind /dev /mnt/gentoo/dev
-:code: chroot /mnt/gentoo /bin/bash
-7. didalam root system gentoo update env
-:code: env-update
-:code: export PS1=&quot;(ch) $PS1&quot;
-:code: mirrorselect -i -r -o &gt;&gt; /mnt/gentoo/etc/portage/make.conf
-:code: eselect profile list
-:code: eselect profile set 11
-:code: nano -w /etc/portage/make.conf
-USE=&quot;-gtk -gnome qt4 kde dvd alsa cdr&quot;
-:code: ls /usr/share/zoneinfo
-:code: cp /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
-:code: echo &quot;Asia/Jakarta&quot; &gt; /etc/timezone
-8. unduh dan install genkernel untuk ngompile kernel dan membuat initramfs
-:code: emerge genkernel
-download kernel dengan perintah berikut ini
-:code: emerge gentoo-sources
-kalo saya mindahin dari hasil unduhan saya dan saya unarchive terus di rename menjadi linux
-9a kompile kernel.
-:code: make menuconfig
-:code: make j2 &amp;&amp; make modules_install
-:code: cp arch/x86_64/boot/bzImage /boot/kernel-4.4.3gentoo
-membuat initramfs ini optional
-:code: genkernel --install initramfs
-9b. jika terjadi error ketika ngompile kernel.
-:code: emerge sys-devel/bc
-dan ulangi compile kernel
-untuk running modules kernel
-:code: find /lib/modules/4.4.3gentoo/ -type f -iname '<em>.o' -or -iname '</em>.ko'
-10. unduh dan install grub.
-:code: emerge grub
-:code: grub2-install /dev/sda
-:code: grep -v rootfs /proc/mounts &gt; /etc/mtab
-:code: grub2-mkconfig -o /boot/grub/grub.cfg
-11. konfigurasi system
-:code: nano -w /etc/conf.d/modules
-modules_2_6=&quot;3c59x&quot;
-:code: nano -w /etc/fstab
-/dev/sdb3               /home           ext4            nodev,nosuid    0 2</p>
+<p>4.download stage3 dan portage dengan menggunak wget.</p>
+<p>untuk unduh stage3</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">wget -t 0 <a class="reference external" href="http://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64/stage3-amd64-20160310.tar.bz2">http://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64/stage3-amd64-20160310.tar.bz2</a></td>
+</tr>
+</tbody>
+</table>
+<p>untuk 64bit dan kalo 32 bit</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">wget -t 0 <a class="reference external" href="http://distfiles.gentoo.org/releases/x86/autobuilds/current-stage3-i686/stage3-i686-20160308.tar.bz2">http://distfiles.gentoo.org/releases/x86/autobuilds/current-stage3-i686/stage3-i686-20160308.tar.bz2</a></td>
+</tr>
+</tbody>
+</table>
+<p>unduh portage</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">wget -t 0 <a class="reference external" href="http://ftp.jaist.ac.jp/pub/Linux/Gentoo/snapshots/portage-20160306.tar.bz2">http://ftp.jaist.ac.jp/pub/Linux/Gentoo/snapshots/portage-20160306.tar.bz2</a></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="5">
+<li>un archive stage3 dan portage.</li>
+</ol>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">tar xvjpf stage3*.bz2</td>
+</tr>
+</tbody>
+</table>
+<p>:code&quot;tar xvjf /mnt/gentoo/portage-20160306.tar.bz2 -C /mnt/gentoo/usr</p>
+<p>6.persiapan sebelum chroot.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">cp -L /etc/resolv.conf /mnt/gentoo/etc/resolv.conf</td>
+</tr>
+</tbody>
+</table>
+<p>dipakai untuk nanti setelah chroot bisa konek internet</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">mount -t proc none /mnt/gentoo/proc</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">mount -o bind /sys /mnt/gentoo/sys</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">mount -o bind /dev /mnt/gentoo/dev</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">chroot /mnt/gentoo /bin/bash</td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="7">
+<li>didalam root system gentoo update env.</li>
+</ol>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">env-update</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">export PS1=&quot;(ch) $PS1&quot;</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">mirrorselect -i -r -o &gt;&gt; /mnt/gentoo/etc/portage/make.conf</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">eselect profile list</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">eselect profile set 11</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">nano -w /etc/portage/make.conf</td>
+</tr>
+</tbody>
+</table>
+<p>USE=&quot;-gtk -gnome qt4 kde dvd alsa cdr&quot;</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">ls /usr/share/zoneinfo</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">cp /usr/share/zoneinfo/Asia/Jakarta /etc/localtime</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">echo &quot;Asia/Jakarta&quot; &gt; /etc/timezone</td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="8">
+<li>unduh dan install genkernel untuk ngompile kernel dan membuat initramfs.</li>
+</ol>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">emerge genkernel</td>
+</tr>
+</tbody>
+</table>
+<p>download kernel dengan perintah berikut ini</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">emerge gentoo-sources</td>
+</tr>
+</tbody>
+</table>
+<p>kalo saya mindahin dari hasil unduhan saya dan saya unarchive terus di rename menjadi linux</p>
+<p>9a kompile kernel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">make menuconfig</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">make j2 &amp;&amp; make modules_install</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">cp arch/x86_64/boot/bzImage /boot/kernel-4.4.3gentoo</td>
+</tr>
+</tbody>
+</table>
+<p>membuat initramfs ini optional</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">genkernel --install initramfs</td>
+</tr>
+</tbody>
+</table>
+<p>9b. jika terjadi error ketika ngompile kernel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">emerge sys-devel/bc</td>
+</tr>
+</tbody>
+</table>
+<p>dan ulangi compile kernel</p>
+<p>untuk running modules kernel</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">find /lib/modules/4.4.3gentoo/ -type f -iname '<em>.o' -or -iname '</em>.ko'</td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="10">
+<li>unduh dan install grub.</li>
+</ol>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">emerge grub</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">grub2-install /dev/sda</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">grep -v rootfs /proc/mounts &gt; /etc/mtab</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">grub2-mkconfig -o /boot/grub/grub.cfg</td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="11">
+<li>konfigurasi system.</li>
+</ol>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">nano -w /etc/conf.d/modules</td>
+</tr>
+</tbody>
+</table>
+<p>modules_2_6=&quot;3c59x&quot;</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">nano -w /etc/fstab</td>
+</tr>
+</tbody>
+</table>
+<p>/dev/sdb3               /home           ext4            nodev,nosuid    0 2</p>
 <p>/dev/sdb2               /               ext4            noatime         0 1</p>
 <p>#/dev/SWAP              none            swap            sw              0 0</p>
 <p>/dev/cdrom              /mnt/cdrom      auto            noauto,ro       0 0</p>
@@ -141,21 +287,41 @@ modules_2_6=&quot;3c59x&quot;
 </tr>
 </tbody>
 </table>
-<p>uncommet yang english
-id_ID.UTF-8 UTF-8
-:code: locale-gen
-:code: nano -w /etc/env.d/02locale
-LANG=&quot;id_ID.UTF-8&quot;
-LC_COLLATE=&quot;C&quot;
-:code: useradd -m -G users,wheel,audio -s /bin/bash arba
-:code: passwd arba
-:code: exit
-:code: umount /mnt/gentoo/{proc,sys,dev,home}
-:code: umount /mnt/gentoo
-:code: reboot
-hehe udah beres gan enakan gan caranya hehehehe
-source problem solve : <a class="reference external" href="https://forums.gentoo.org/viewtopic-t-989588-view-next.html?sid=313069c74850025626661e39729cd83a">https://forums.gentoo.org/viewtopic-t-989588-view-next.html?sid=313069c74850025626661e39729cd83a</a>
-<a class="reference external" href="http://dev.gentoo.org/~swift/tmp/handbook-amd64.pdf">http://dev.gentoo.org/~swift/tmp/handbook-amd64.pdf</a></p>
+<p>uncommet yang english</p>
+<p>id_ID.UTF-8 UTF-8</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">locale-gen</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">nano -w /etc/env.d/02locale</td>
+</tr>
+</tbody>
+</table>
+<p>LANG=&quot;id_ID.UTF-8&quot;</p>
+<p>LC_COLLATE=&quot;C&quot;</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">useradd -m -G users,wheel,audio -s /bin/bash arba</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">passwd arba</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">exit</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">umount /mnt/gentoo/{proc,sys,dev,home}</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">umount /mnt/gentoo</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">reboot</td>
+</tr>
+</tbody>
+</table>
+<p>hehe udah beres gan enakan gan caranya hehehehe.</p>
+<p>source problem solve: <a class="reference external" href="https://forums.gentoo.org/viewtopic-t-989588-view-next.html?sid=313069c74850025626661e39729cd83a">https://forums.gentoo.org/viewtopic-t-989588-view-next.html?sid=313069c74850025626661e39729cd83a</a></p>
+<p>source install gentoo: <a class="reference external" href="http://dev.gentoo.org/~swift/tmp/handbook-amd64.pdf">http://dev.gentoo.org/~swift/tmp/handbook-amd64.pdf</a></p>
 <p>There are <a href="../cara-install-gentoo.html#disqus_thread">comments</a>.</p>                </article>
             </aside><!-- /#featured -->
         <section id="extras" class="body">
