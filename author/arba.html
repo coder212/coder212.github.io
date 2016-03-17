@@ -23,7 +23,57 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../cara-install-archlinux-ke-flashdisk.html">Cara Install ArchLinux Ke Flashdisk</a></h1>
+                    <h1 class="entry-title"><a href="../review-gentoo.html">Review gentoo</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2016-03-18T01:00:00+07:00">
+                Published: Jum 18 Maret 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/arba.html">arba</a>
+        </address>
+<p>In <a href="../category/gnulinux.html">GNU/Linux</a>.</p>
+<p>tags: <a href="../tag/review.html">review</a> <a href="../tag/gentoo.html">gentoo</a> </p>
+</footer><!-- /.post-info --><p>Apa itu gentoo gnu/linux?</p>
+<p>Gentoo adalah distribusi gnu/linux yang berintikan portage untuk pembaruan system, portage itu hampir serupa dengan port pada bsd system.</p>
+<p>cara baca gentoo adalah seperti huruf g, untuk kata angel jadi bacanya jentu.</p>
+<p>Gentoo gnu/linux dibuat oleh Daniels robbins, distro ini lumayan menantang karena, di build dari source code jadi dikompil disystem kita jadi sedikit membantu kecepatan performa hardware.</p>
+<p>dengan adanya portage make.conf memudahkan kita untuk mengkonfigurasi system kita, ditambah genkernel yang sungguh powerfull, satu hall lagi yang membuat saya jatuh hati dengan gentoo adalah karena systemnya enak dipakai untuk ngompile paket yang source codenya dari git.</p>
+<p>gentoo gnu/linux emang termasuk dalam kategory distro kelas berat yang powerfull , jadi sangat gila rasanya kalo diajarkan kepada mereka yang pemula tapi bagi mereka yang menyukai tantangan silahkan untuk mencoba dan rasakan sensasinya.</p>
+<p>setiap hal pasti ada kekurangan dan kelebihan nah saya akan berikan kekurangan dan kelebihannya.</p>
+<p>kekurangan:</p>
+<ol class="arabic simple">
+<li>semua system harus kita kompilasi sendiri.</li>
+<li>minimal install isonya buggy.</li>
+<li>membutuhkan kerja keras dan kerja cerdas.</li>
+</ol>
+<p>kelebihan:</p>
+<ol class="arabic simple">
+<li>rolling release dan bleeding edge.</li>
+<li>bisa optimal di performa.</li>
+<li>multipurpose distro.</li>
+</ol>
+<p>alasan saya menggunakan gentoo untuk sehari-hari adalah karena,</p>
+<p>sebagai berikut:</p>
+<ol class="arabic simple">
+<li>menggunakan openrc untuk boot systemnya.</li>
+<li>bisa dibuat untuk system yang saya butuhkan.</li>
+<li>kostumisasinya bener-bener bagus.</li>
+</ol>
+<p>There are <a href="../review-gentoo.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../cara-install-archlinux-ke-flashdisk.html" rel="bookmark"
+                           title="Permalink to Cara Install ArchLinux Ke Flashdisk">Cara Install ArchLinux Ke Flashdisk</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2016-03-16T14:00:00+07:00">
                 Published: Rab 16 Maret 2016
@@ -34,58 +84,12 @@
         </address>
 <p>In <a href="../category/tutorial.html">Tutorial</a>.</p>
 <p>tags: <a href="../tag/gnulinux.html">Gnu/Linux</a> <a href="../tag/install-archlinux.html">install archlinux</a> </p>
-</footer><!-- /.post-info --><p>Cara install archlinux ke flashdisk</p>
+</footer><!-- /.post-info -->                <p>Cara install archlinux ke flashdisk</p>
 <p>Terlebih dahulu jalankan liveusb archlinux gunakan unetbootin atau apa saja yang penting bisa membuat bootable archlinux.
-saya akan menuliskan cara install archlinux kedalam flashdisk menurut versi saya bukan versi orang lain loh ada yang tau archlinux itu apa? kalo menurutku archlinux ,os berkernel linux alias gnu/linux operating system yang mirip lego jadi systemnya bisa dibongkar pasang, sesuka usernya. langsung saja kita mulai tutorialnya sebagai berikut:</p>
-<ol class="arabic simple">
-<li>buat partisi yang akan di install di fd  dengan cfdisk gparted terserah saja hehe kalo saya seperti ini sdb1 1,5g –&gt; swap sdb2 5,5g –&gt; / sdb3 dipake untuk /home</li>
-<li>taruh vmlinuz di flashdisk lain kemudian rename jadi vmlinuz-linux vmlinuz bisa diambil di archlinux.iso /cd installer di folder arch/boot/i686/vmlinuz</li>
-<li>mkswap /dev/sdb1 membuat swap di fd</li>
-<li>mkfs.ext4 /dev/sdb2 membuat file system dengan format ext4</li>
-<li>mkfs.ext4 /dev/sdb3 membuat file system dengan format ext4</li>
-<li>swapon /dev/sdb1 menghidupkan swap di /dev/sdb1</li>
-<li>mkdir /mnt/archlinux membuat folder archlinux di mnt</li>
-<li>mount /dev/sdb2 /mnt/archlinux memuat fd ke folder archlinux</li>
-<li>mkdir -p /mnt/archlinux/proc /mnt/archlinux/sys /mnt/archlinux/mnt /mnt/archlinux/home</li>
-<li>mount /dev/sdb3 /mnt/archlinux/home memuat /dev/sdb3 ke home yang akan dijadikan home di system ente</li>
-<li>cp -r /bin /dev /run /srv /tmp /var /boot /etc /lib /opt /root /sbin /usr /mnt/archlinux/</li>
-<li>mkdir /mnt/file</li>
-<li>mount /dev/sdc /mnt/file memuat fd kedua yang saya miliki</li>
-<li>cp /mnt/file/vmlinuz-linux /mnt/archlinux/boot/</li>
-<li>genfstab -U -p /mnt/archlinux &lt;&lt; /mnt/archlinux/etc/fstab generate file system arch gnu/linux u dipakai untuk dengan uid di fstab</li>
-<li>arch-chroot /mnt/archlinux memindahkan root ke mnt/archlinux</li>
-<li>nano /etc/locale.gen kemudian hapus komen di id_ID.UTF8 tekan ctrl+ x lalu tekan y</li>
-<li>echo LANG=id_ID.UTF-8 &gt;&gt; /etc/locale.conf</li>
-<li>export LANG=id_ID.UTF-8</li>
-<li>hwclock –systohc –utc men set date ke utc</li>
-<li>rm /etc/localtime menghapus localtime</li>
-<li>ln -s /usr/share/zoneinfo/Asia/Jakarta /etc/localtime membuat</li>
-</ol>
-<p>link ke localtime</p>
-<ol class="arabic simple" start="23">
-<li>nano /etc/hostname lalu ketikkan superarch</li>
-<li>rm <a class="reference external" href="mailto:/etc/systemd/system/getty&#64;tty1.service.d/autologin.conf">/etc/systemd/system/getty&#64;tty1.service.d/autologin.conf</a></li>
-<li>nano /etc/passwd ubah dari /usr/bin/zsh menjadi /bin/bash</li>
-<li>passwd root masukkan password arch1234. arch1234.</li>
-<li>useradd -m -g users -s /bin/bash user_name menambah user name</li>
-<li>passwd user_name user2345 user2345</li>
-<li>revisi /etc/mkinitcpio.conf HOOKS=”base udev autodetect modconf block filesystems keyboard fsck ” menjadi HOOKS=”base udev usb autodetect modconf block filesystems keyboard fsck ” kemudian ketik mkinitcpio -p linux</li>
-<li>grub-install –target=i386-pc –no-floppy –recheck –debug /dev/sdb install grub ke flasdisk –target=i386-pc digunakan hanya untuk bios</li>
-<li>grub-mkconfig – /boot/grub/grub.cfg membuat menu grub</li>
-<li>exit –&gt; keluar dari root /mnt/archlinux</li>
-<li>umount /mnt/archlinux/home menutup mnt/archlinux/home akses ke /dev/sdb3</li>
-<li>umount /mnt/archlinux</li>
-<li>umount /mnt/file</li>
-<li>reboot</li>
-<li>keluarkan usb installer</li>
-</ol>
-<p>selesai sudah kita install archlinux ke dalam flashdisk versi saya yang cuma cli , untuk guinya ketikan pacman -S namaprogram</p>
-<p>There are <a href="../cara-install-archlinux-ke-flashdisk.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+saya akan menuliskan cara install archlinux kedalam flashdisk menurut versi saya bukan versi orang lain loh ada yang tau archlinux itu apa? kalo menurutku archlinux ,os berkernel linux alias ...</p>
+                <a class="readmore" href="../cara-install-archlinux-ke-flashdisk.html">read more</a>
+<p>There are <a href="../cara-install-archlinux-ke-flashdisk.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>

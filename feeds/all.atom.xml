@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>gnu/linux info, reviews and log</title><link href="coder212.github.io/" rel="alternate"></link><link href="coder212.github.io/feeds/all.atom.xml" rel="self"></link><id>coder212.github.io/</id><updated>2016-03-16T14:00:00+07:00</updated><entry><title>Cara Install ArchLinux Ke Flashdisk</title><link href="coder212.github.io/cara-install-archlinux-ke-flashdisk.html" rel="alternate"></link><updated>2016-03-16T14:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-16:coder212.github.io/cara-install-archlinux-ke-flashdisk.html</id><summary type="html">&lt;p&gt;Cara install archlinux ke flashdisk&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>gnu/linux info, reviews and log</title><link href="coder212.github.io/" rel="alternate"></link><link href="coder212.github.io/feeds/all.atom.xml" rel="self"></link><id>coder212.github.io/</id><updated>2016-03-18T01:00:00+07:00</updated><entry><title>Review gentoo</title><link href="coder212.github.io/review-gentoo.html" rel="alternate"></link><updated>2016-03-18T01:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-18:coder212.github.io/review-gentoo.html</id><summary type="html">&lt;p&gt;Apa itu gentoo gnu/linux?&lt;/p&gt;
+&lt;p&gt;Gentoo adalah distribusi gnu/linux yang berintikan portage untuk pembaruan system, portage itu hampir serupa dengan port pada bsd system.&lt;/p&gt;
+&lt;p&gt;cara baca gentoo adalah seperti huruf g, untuk kata angel jadi bacanya jentu.&lt;/p&gt;
+&lt;p&gt;Gentoo gnu/linux dibuat oleh Daniels robbins, distro ini lumayan menantang karena, di build dari source code jadi dikompil disystem kita jadi sedikit membantu kecepatan performa hardware.&lt;/p&gt;
+&lt;p&gt;dengan adanya portage make.conf memudahkan kita untuk mengkonfigurasi system kita, ditambah genkernel yang sungguh powerfull, satu hall lagi yang membuat saya jatuh hati dengan gentoo adalah karena systemnya enak dipakai untuk ngompile paket yang source codenya dari git.&lt;/p&gt;
+&lt;p&gt;gentoo gnu/linux emang termasuk dalam kategory distro kelas berat yang powerfull , jadi sangat gila rasanya kalo diajarkan kepada mereka yang pemula tapi bagi mereka yang menyukai tantangan silahkan untuk mencoba dan rasakan sensasinya.&lt;/p&gt;
+&lt;p&gt;setiap hal pasti ada kekurangan dan kelebihan nah saya akan berikan kekurangan dan kelebihannya.&lt;/p&gt;
+&lt;p&gt;kekurangan:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;semua system harus kita kompilasi sendiri.&lt;/li&gt;
+&lt;li&gt;minimal install isonya buggy.&lt;/li&gt;
+&lt;li&gt;membutuhkan kerja keras dan kerja cerdas.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;kelebihan:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;rolling release dan bleeding edge.&lt;/li&gt;
+&lt;li&gt;bisa optimal di performa.&lt;/li&gt;
+&lt;li&gt;multipurpose distro.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;alasan saya menggunakan gentoo untuk sehari-hari adalah karena,&lt;/p&gt;
+&lt;p&gt;sebagai berikut:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;menggunakan openrc untuk boot systemnya.&lt;/li&gt;
+&lt;li&gt;bisa dibuat untuk system yang saya butuhkan.&lt;/li&gt;
+&lt;li&gt;kostumisasinya bener-bener bagus.&lt;/li&gt;
+&lt;/ol&gt;
+</summary><category term="review"></category><category term="gentoo"></category></entry><entry><title>Cara Install ArchLinux Ke Flashdisk</title><link href="coder212.github.io/cara-install-archlinux-ke-flashdisk.html" rel="alternate"></link><updated>2016-03-16T14:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-16:coder212.github.io/cara-install-archlinux-ke-flashdisk.html</id><summary type="html">&lt;p&gt;Cara install archlinux ke flashdisk&lt;/p&gt;
 &lt;p&gt;Terlebih dahulu jalankan liveusb archlinux gunakan unetbootin atau apa saja yang penting bisa membuat bootable archlinux.
 saya akan menuliskan cara install archlinux kedalam flashdisk menurut versi saya bukan versi orang lain loh ada yang tau archlinux itu apa? kalo menurutku archlinux ,os berkernel linux alias gnu/linux operating system yang mirip lego jadi systemnya bisa dibongkar pasang, sesuka usernya. langsung saja kita mulai tutorialnya sebagai berikut:&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
