@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
         <meta charset="utf-8" />
-        <title>ARBA</title>
+        <title>Cara Menggunakan Perintah Mount</title>
         <link rel="stylesheet" href="./theme/css/main.css" />
         <link href="coder212.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="gnu/linux commandline tutorial and review Atom Feed" />
 
@@ -15,38 +15,70 @@
         <header id="banner" class="body">
                 <h1><a href="./">gnu/linux commandline tutorial and review </a></h1>
                 <nav><ul>
-                    <li class="active"><a href="./category/about.html">about</a></li>
+                    <li><a href="./category/about.html">about</a></li>
                     <li><a href="./category/gnulinux.html">GNU/Linux</a></li>
-                    <li><a href="./category/tutorial.html">tutorial</a></li>
+                    <li class="active"><a href="./category/tutorial.html">tutorial</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="./arba.html" rel="bookmark"
-           title="Permalink to ARBA">ARBA</a></h1>
+        <a href="./mount_partisi.html" rel="bookmark"
+           title="Permalink to Cara Menggunakan Perintah Mount">Cara Menggunakan Perintah Mount</a></h1>
     </header>
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2016-03-12T23:24:00+07:00">
-                Published: Sab 12 Maret 2016
+        <abbr class="published" title="2016-03-23T12:00:00+07:00">
+                Published: Rab 23 Maret 2016
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="./author/arba.html">arba</a>
         </address>
-<p>In <a href="./category/about.html">about</a>.</p>
+<p>In <a href="./category/tutorial.html">tutorial</a>.</p>
 
-</footer><!-- /.post-info -->      <p>nama lengkap: arbaun zuhdi ma'arif</p>
-<p>panggilan: arba , arbaun , yudi , arif</p>
-<p>alamat: Congol , Bendungan ,Simo, Boyolali, Jawa Tengah , Indonesia</p>
-<p>hobby: gnu/linux enthusiast , coding , ngoprek elektronika</p>
-<p>pekerjaan: android application developper di xxx</p>
-<p>motto : do if you want to do.</p>
-<p>tujuan: website ini saya bangun untuk sebagai catatan pribadi sekaligus numpang eksis di dunia byte ini.</p>
-<p>contact : <a class="reference external" href="mailto:yujimaarif.ym&#64;gmail.com">yujimaarif.ym&#64;gmail.com</a></p>
+</footer><!-- /.post-info -->      <p>Apa Itu Mount? Mount adalah memuat device kedalam filesistem sistem operasi, mount kita perlukan untuk memuat device - device penyimpanan kedalam filesistem gnu/linux sistem operasi agar kita bisa mengakses isi dari device-device tersebut.</p>
+<p>lalu bagaimanakah cara memuat atau mount device tersebut begini caranya</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">mount -t type device tujuan</td>
+</tr>
+</tbody>
+</table>
+<p>contoh:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">mount -t ntfs /dev/sdb2 /media/username</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">mount /dev/sda1 /</td>
+</tr>
+</tbody>
+</table>
+<p>itu artinya memuat /dev/sda1 sebagai root(/) filesistem biasanya kalo langsung seperti itu menggunakan type ext.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">mount -t proc none /mnt/proc</td>
+</tr>
+</tbody>
+</table>
+<p>perintah ini digunakan untuk memuat isi dari /proc system host kedalam system tamu.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">mount -o bind /sys /mnt/sys</td>
+</tr>
+</tbody>
+</table>
+<p>perintah ini digunakan untuk mereplikasi isi dari /sys host kedalam /sys tamu.</p>
 
     </div><!-- /.entry-content -->
     <div class="comments">
@@ -54,8 +86,8 @@
       <div id="disqus_thread"></div>
       <script type="text/javascript">
         var disqus_shortname = 'site.coder212';
-        var disqus_identifier = 'arba.html';
-        var disqus_url = './arba.html';
+        var disqus_identifier = 'mount_partisi.html';
+        var disqus_url = './mount_partisi.html';
         (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//site.coder212.disqus.com/embed.js';
