@@ -405,7 +405,8 @@ wmname LG3D
  7
  8
  9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">DATETIME</span><span class="o">=</span><span class="sb">`</span>date<span class="sb">`</span>
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">DATETIME</span><span class="o">=</span><span class="sb">`</span>date<span class="sb">`</span>
 <span class="nv">VOLUME</span><span class="o">=</span><span class="k">$(</span> amixer sget Master| grep -e <span class="s2">&quot;%&quot;</span> | sed <span class="s1">&#39;s/.*Playback channels: Mono\s*//&#39;</span>| sed <span class="s1">&#39;s/.*Mono:\s*//&#39;</span><span class="k">)</span>
 <span class="c">#PLAY_NOW=$(ncmpcpp --current-song)</span>
 <span class="nv">CPU_TEMPERATURE</span><span class="o">=</span><span class="k">$(</span>acpi -t | awk <span class="s1">&#39;/Thermal 1/ {print $4}&#39;</span><span class="k">)</span>
@@ -414,7 +415,8 @@ wmname LG3D
 <span class="nv">BATTERYSTATE</span><span class="o">=</span><span class="k">$(</span> acpi -b | awk <span class="s1">&#39;{ split($5,a,&quot;:&quot;); print substr($3,0,2), $4, &quot;[&quot;a[1]&quot;:&quot;a[2]&quot;]&quot; }&#39;</span> | tr -d <span class="s1">&#39;,&#39;</span> <span class="k">)</span>
 <span class="c">#if [ `date +%S` == 30 -o `date +%S` == 00 ]; then</span>
 <span class="c">#python imap_check_unread.py &gt; .unreadmail; fi</span>
-xsetroot -name <span class="s2">&quot;ram free ${RAM_FREE}  | RX ${RX} |  ${VOLUME} | ${DATETIME}| ${BATTERYSTATE} | temperature cpu ${CPU_TEMPERATURE}C&quot;</span>
+xsetroot -name <span class="s2">&quot;ram free ${RAM_FREE}  | RX ${RX} |  ${VOLUME} | ${DATETIME}| ${BATTERYSTATE} |</span>
+<span class="s2">temperature cpu ${CPU_TEMPERATURE}C&quot;</span>
 </pre></div>
 </td></tr></table><p>demikian sharing dari saya</p>
 <p>There are <a href="../cara-install-dan-konfigurasi-dwm-di-gentoo-dan-distro-lain.html#disqus_thread">comments</a>.</p>                </article>

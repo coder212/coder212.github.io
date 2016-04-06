@@ -370,7 +370,8 @@ wmname LG3D
  7
  8
  9
-10&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;DATETIME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;date&lt;span class="sb"&gt;`&lt;/span&gt;
+10
+11&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;DATETIME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;date&lt;span class="sb"&gt;`&lt;/span&gt;
 &lt;span class="nv"&gt;VOLUME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt; amixer sget Master| grep -e &lt;span class="s2"&gt;&amp;quot;%&amp;quot;&lt;/span&gt; | sed &lt;span class="s1"&gt;&amp;#39;s/.*Playback channels: Mono\s*//&amp;#39;&lt;/span&gt;| sed &lt;span class="s1"&gt;&amp;#39;s/.*Mono:\s*//&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
 &lt;span class="c"&gt;#PLAY_NOW=$(ncmpcpp --current-song)&lt;/span&gt;
 &lt;span class="nv"&gt;CPU_TEMPERATURE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;acpi -t | awk &lt;span class="s1"&gt;&amp;#39;/Thermal 1/ {print $4}&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
@@ -379,7 +380,8 @@ wmname LG3D
 &lt;span class="nv"&gt;BATTERYSTATE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt; acpi -b | awk &lt;span class="s1"&gt;&amp;#39;{ split($5,a,&amp;quot;:&amp;quot;); print substr($3,0,2), $4, &amp;quot;[&amp;quot;a[1]&amp;quot;:&amp;quot;a[2]&amp;quot;]&amp;quot; }&amp;#39;&lt;/span&gt; | tr -d &lt;span class="s1"&gt;&amp;#39;,&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;)&lt;/span&gt;
 &lt;span class="c"&gt;#if [ `date +%S` == 30 -o `date +%S` == 00 ]; then&lt;/span&gt;
 &lt;span class="c"&gt;#python imap_check_unread.py &amp;gt; .unreadmail; fi&lt;/span&gt;
-xsetroot -name &lt;span class="s2"&gt;&amp;quot;ram free ${RAM_FREE}  | RX ${RX} |  ${VOLUME} | ${DATETIME}| ${BATTERYSTATE} | temperature cpu ${CPU_TEMPERATURE}C&amp;quot;&lt;/span&gt;
+xsetroot -name &lt;span class="s2"&gt;&amp;quot;ram free ${RAM_FREE}  | RX ${RX} |  ${VOLUME} | ${DATETIME}| ${BATTERYSTATE} |&lt;/span&gt;
+&lt;span class="s2"&gt;temperature cpu ${CPU_TEMPERATURE}C&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;demikian sharing dari saya&lt;/p&gt;
 </summary></entry><entry><title>Cara Menggunakan Perintah Mount</title><link href="coder212.github.io/mount_partisi.html" rel="alternate"></link><updated>2016-03-23T12:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-23:coder212.github.io/mount_partisi.html</id><summary type="html">&lt;p&gt;Apa Itu Mount? Mount adalah memuat device kedalam filesistem sistem operasi, mount kita perlukan untuk memuat device - device penyimpanan kedalam filesistem gnu/linux sistem operasi agar kita bisa mengakses isi dari device-device tersebut.&lt;/p&gt;
