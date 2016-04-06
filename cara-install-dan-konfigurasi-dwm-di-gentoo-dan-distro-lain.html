@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
         <meta charset="utf-8" />
-        <title>gnu/linux commandline tutorial and review</title>
+        <title>CARA INSTALL DAN KONFIGURASI DWM DI GENTOO DAN DISTRO LAIN</title>
         <link rel="stylesheet" href="./theme/css/main.css" />
         <link href="coder212.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="gnu/linux commandline tutorial and review Atom Feed" />
 
@@ -16,14 +16,19 @@
                 <h1><a href="./">gnu/linux commandline tutorial and review </a></h1>
                 <nav><ul>
                     <li><a href="./category/about.html">about</a></li>
-                    <li><a href="./category/gnulinux.html">GNU/Linux</a></li>
+                    <li class="active"><a href="./category/gnulinux.html">GNU/Linux</a></li>
                     <li><a href="./category/tutorial.html">tutorial</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="./cara-install-dan-konfigurasi-dwm-di-gentoo-dan-distro-lain.html" rel="bookmark"
+           title="Permalink to CARA INSTALL DAN KONFIGURASI DWM DI GENTOO DAN DISTRO LAIN">CARA INSTALL DAN KONFIGURASI DWM DI GENTOO DAN DISTRO LAIN</a></h1>
+    </header>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="./cara-install-dan-konfigurasi-dwm-di-gentoo-dan-distro-lain.html">CARA INSTALL DAN KONFIGURASI DWM DI GENTOO DAN DISTRO LAIN</a></h1>
+    <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2016-04-06T14:00:00+07:00">
                 Published: Rab 06 April 2016
@@ -34,7 +39,7 @@
         </address>
 <p>In <a href="./category/gnulinux.html">GNU/Linux</a>.</p>
 
-</footer><!-- /.post-info --><p>Apa itu dwm(dynamic window manager)? dynamic window manager adalah tilling window manager , yang dinamis dan mudah di kostumisasi dwm dibuild dari bahasa c jadi kita harus mengkompilasinya.</p>
+</footer><!-- /.post-info -->      <p>Apa itu dwm(dynamic window manager)? dynamic window manager adalah tilling window manager , yang dinamis dan mudah di kostumisasi dwm dibuild dari bahasa c jadi kita harus mengkompilasinya.</p>
 <p>dwm bisa di install di distro gnu/linux, unix. begini cara installnya kalo di gentoo cukup emerge --ask dwm,
 terus ubah /etc/portage/savedconfig/x11-wm/dwm-6.0.</p>
 <p>atau bisa juga dengan mengunduh source codenya untuk lebih optimal install dulu dependenciesnya,
@@ -417,233 +422,26 @@ wmname LG3D
 xsetroot -name <span class="s2">&quot;ram free ${RAM_FREE}  | RX ${RX} |  ${VOLUME} | ${DATETIME}| ${BATTERYSTATE} | temperature cpu ${CPU_TEMPERATURE}C&quot;</span>
 </pre></div>
 </td></tr></table><p>demikian sharing dari saya</p>
-<p>There are <a href="./cara-install-dan-konfigurasi-dwm-di-gentoo-dan-distro-lain.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="./mount_partisi.html" rel="bookmark"
-                           title="Permalink to Cara Menggunakan Perintah Mount">Cara Menggunakan Perintah Mount</a></h1>
-                </header>
+    </div><!-- /.entry-content -->
+    <div class="comments">
+      <h2>Comments !</h2>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'site.coder212';
+        var disqus_identifier = 'cara-install-dan-konfigurasi-dwm-di-gentoo-dan-distro-lain.html';
+        var disqus_url = './cara-install-dan-konfigurasi-dwm-di-gentoo-dan-distro-lain.html';
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//site.coder212.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the comments.</noscript>
+    </div>
 
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-03-23T12:00:00+07:00">
-                Published: Rab 23 Maret 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="./author/arba.html">arba</a>
-        </address>
-<p>In <a href="./category/tutorial.html">tutorial</a>.</p>
-
-</footer><!-- /.post-info -->                <p>Apa Itu Mount? Mount adalah memuat device kedalam filesistem sistem operasi, mount kita perlukan untuk memuat device - device penyimpanan kedalam filesistem gnu/linux sistem operasi agar kita bisa mengakses isi dari device-device tersebut.</p>
-<p>lalu bagaimanakah cara memuat atau mount device tersebut begini caranya</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">code:</th><td class="field-body">mount -t type device tujuan</td>
-</tr>
-</tbody>
-</table>
-<p>contoh ...</p>
-                <a class="readmore" href="./mount_partisi.html">read more</a>
-<p>There are <a href="./mount_partisi.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="./review-gentoo.html" rel="bookmark"
-                           title="Permalink to Review gentoo">Review gentoo</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-03-18T01:00:00+07:00">
-                Published: Jum 18 Maret 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="./author/arba.html">arba</a>
-        </address>
-<p>In <a href="./category/gnulinux.html">GNU/Linux</a>.</p>
-<p>tags: <a href="./tag/review.html">review</a> <a href="./tag/gentoo.html">gentoo</a> </p>
-</footer><!-- /.post-info -->                <p>Apa itu gentoo gnu/linux?</p>
-<p>Gentoo adalah distribusi gnu/linux yang berintikan portage untuk pembaruan system, portage itu hampir serupa dengan port pada bsd system.</p>
-<p>cara baca gentoo adalah seperti huruf g, untuk kata angel jadi bacanya jentu.</p>
-<p>Gentoo gnu/linux dibuat oleh Daniels robbins, distro ini lumayan menantang karena ...</p>
-                <a class="readmore" href="./review-gentoo.html">read more</a>
-<p>There are <a href="./review-gentoo.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="./cara-install-archlinux-ke-flashdisk.html" rel="bookmark"
-                           title="Permalink to Cara Install ArchLinux Ke Flashdisk">Cara Install ArchLinux Ke Flashdisk</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-03-16T14:00:00+07:00">
-                Published: Rab 16 Maret 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="./author/arba.html">arba</a>
-        </address>
-<p>In <a href="./category/tutorial.html">Tutorial</a>.</p>
-<p>tags: <a href="./tag/gnulinux.html">Gnu/Linux</a> <a href="./tag/install-archlinux.html">install archlinux</a> </p>
-</footer><!-- /.post-info -->                <p>Cara install archlinux ke flashdisk</p>
-<p>Terlebih dahulu jalankan liveusb archlinux gunakan unetbootin atau apa saja yang penting bisa membuat bootable archlinux.
-saya akan menuliskan cara install archlinux kedalam flashdisk menurut versi saya bukan versi orang lain loh ada yang tau archlinux itu apa? kalo menurutku archlinux ,os berkernel linux alias ...</p>
-                <a class="readmore" href="./cara-install-archlinux-ke-flashdisk.html">read more</a>
-<p>There are <a href="./cara-install-archlinux-ke-flashdisk.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="./cara-install-gentoo.html" rel="bookmark"
-                           title="Permalink to Cara Install Gentoo">Cara Install Gentoo</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-03-16T13:00:00+07:00">
-                Published: Rab 16 Maret 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="./author/arba.html">arba</a>
-        </address>
-<p>In <a href="./category/tutorial.html">Tutorial</a>.</p>
-<p>tags: <a href="./tag/gnulinux.html">gnu/linux</a> <a href="./tag/install-gentoo.html">install gentoo</a> </p>
-</footer><!-- /.post-info -->                <p>Cara install gentoo versi saya hehe
-pastikan kamu memiliki distro gnu/linux lainnya atau kamu menggunakan liveusb atau livecd boleh boleh saja dalam hal ini saya menggunakan distro ubuntu 14.04 sebagai hostnya
-pertama lakukan hal ini</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">code:</th><td class="field-body">sudo apt-get install dchroot debootstrap</td>
-</tr>
-</tbody>
-</table>
-<p>akan digunakan untuk melakukan chroot ke system ...</p>
-                <a class="readmore" href="./cara-install-gentoo.html">read more</a>
-<p>There are <a href="./cara-install-gentoo.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="./arba.html" rel="bookmark"
-                           title="Permalink to ARBA">ARBA</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-03-12T23:24:00+07:00">
-                Published: Sab 12 Maret 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="./author/arba.html">arba</a>
-        </address>
-<p>In <a href="./category/about.html">about</a>.</p>
-
-</footer><!-- /.post-info -->                <p>nama lengkap: arbaun zuhdi ma'arif</p>
-<p>panggilan: arba , arbaun , yudi , arif</p>
-<p>alamat: Congol , Bendungan ,Simo, Boyolali, Jawa Tengah , Indonesia</p>
-<p>hobby: gnu/linux enthusiast , coding , ngoprek elektronika</p>
-<p>pekerjaan: android application developper di xxx</p>
-<p>motto : do if you want to do.</p>
-<p>tujuan: website ini saya bangun untuk sebagai catatan pribadi sekaligus numpang ...</p>
-                <a class="readmore" href="./arba.html">read more</a>
-<p>There are <a href="./arba.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="./tutorial-perintah-perintah-terminal-yang-sering-digunakan.html" rel="bookmark"
-                           title="Permalink to Tutorial Perintah - Perintah Terminal Yang Sering Digunakan">Tutorial Perintah - Perintah Terminal Yang Sering Digunakan</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-03-12T23:11:00+07:00">
-                Published: Sab 12 Maret 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="./author/arba.html">arba</a>
-        </address>
-<p>In <a href="./category/tutorial.html">Tutorial</a>.</p>
-<p>tags: <a href="./tag/terminal.html">terminal</a> <a href="./tag/shell.html">shell</a> <a href="./tag/gnulinux.html">gnu/linux</a> </p>
-</footer><!-- /.post-info -->                <p>Perintah terminal yang sering digunakan</p>
-<p>berikut adalah perintah - perintah yang sering digunakan didalam terminal gnu/Linux distro, untuk melakukan suatu pekerjaan tertentu.</p>
-<ol class="arabic simple">
-<li>cp</li>
-</ol>
-<p>cp adalah peralatan yang dipakai untuk copy(salin) dan paste(tempel) pada distro gnu/linux cp bisa digunakan untuk  salin dan tempel file atau pun folder.</p>
-<p>Contoh ...</p>
-                <a class="readmore" href="./tutorial-perintah-perintah-terminal-yang-sering-digunakan.html">read more</a>
-<p>There are <a href="./tutorial-perintah-perintah-terminal-yang-sering-digunakan.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="./review-crux.html" rel="bookmark"
-                           title="Permalink to review crux">review crux</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-03-11T13:25:00+07:00">
-                Published: Jum 11 Maret 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="./author/arba.html">arba</a>
-        </address>
-<p>In <a href="./category/gnulinux.html">GNU/Linux</a>.</p>
-<p>tags: <a href="./tag/crux.html">crux</a> <a href="./tag/gnulinux.html">gnu/linux</a> <a href="./tag/review.html">review</a> </p>
-</footer><!-- /.post-info -->                <p>Apa itu Crux gnu/linux.</p>
-<p>crux gnu/linux adalah distribusi gnu/linux yang kecil dan diperuntukan bagi user berpengalaman karena, semuanya di distribusikan dalam bentuk source code.
-crux gnu/linux enak dipake buat belajar membuat konfigurasi system dan karena sebagian dicompile di komputer kita jadi lebih bagus hasilnya meskipun tak ...</p>
-                <a class="readmore" href="./review-crux.html">read more</a>
-<p>There are <a href="./review-crux.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="./cara-compile-kernel.html" rel="bookmark"
-                           title="Permalink to Cara compile kernel">Cara compile kernel</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-03-10T18:00:00+07:00">
-                Published: Kam 10 Maret 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="./author/arba.html">arba</a>
-        </address>
-<p>In <a href="./category/gnulinux.html">gnu/linux</a>.</p>
-<p>tags: <a href="./tag/kernel-linux.html">kernel linux</a> <a href="./tag/compile.html">compile</a> </p>
-</footer><!-- /.post-info -->                <p>Cara Compile Kernel Di GNU/Linux.</p>
-<p>apa itu kernel? kernel adalah inti dari sistem operasi tiap sistem operasi mempunyai kernelnya masing masing, tergantung bagaimana platform itu diciptakan.
-platform windows tentu berbeda dengan platform gnu karena sifat gnu sendiri yang bebas.</p>
-<p>ok cukup sampai disini saja ngga usah dipanjang lebarin lagi ...</p>
-                <a class="readmore" href="./cara-compile-kernel.html">read more</a>
-<p>There are <a href="./cara-compile-kernel.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
+  </article>
+</section>
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>blogroll</h2>

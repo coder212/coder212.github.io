@@ -1,5 +1,388 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>gnu/linux commandline tutorial and review</title><link href="coder212.github.io/" rel="alternate"></link><link href="coder212.github.io/feeds/all.atom.xml" rel="self"></link><id>coder212.github.io/</id><updated>2016-03-23T12:00:00+07:00</updated><entry><title>Cara Menggunakan Perintah Mount</title><link href="coder212.github.io/mount_partisi.html" rel="alternate"></link><updated>2016-03-23T12:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-23:coder212.github.io/mount_partisi.html</id><summary type="html">&lt;p&gt;Apa Itu Mount? Mount adalah memuat device kedalam filesistem sistem operasi, mount kita perlukan untuk memuat device - device penyimpanan kedalam filesistem gnu/linux sistem operasi agar kita bisa mengakses isi dari device-device tersebut.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>gnu/linux commandline tutorial and review</title><link href="coder212.github.io/" rel="alternate"></link><link href="coder212.github.io/feeds/all.atom.xml" rel="self"></link><id>coder212.github.io/</id><updated>2016-04-06T14:00:00+07:00</updated><entry><title>CARA INSTALL DAN KONFIGURASI DWM DI GENTOO DAN DISTRO LAIN</title><link href="coder212.github.io/cara-install-dan-konfigurasi-dwm-di-gentoo-dan-distro-lain.html" rel="alternate"></link><updated>2016-04-06T14:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-04-06:coder212.github.io/cara-install-dan-konfigurasi-dwm-di-gentoo-dan-distro-lain.html</id><summary type="html">&lt;p&gt;Apa itu dwm(dynamic window manager)? dynamic window manager adalah tilling window manager , yang dinamis dan mudah di kostumisasi dwm dibuild dari bahasa c jadi kita harus mengkompilasinya.&lt;/p&gt;
+&lt;p&gt;dwm bisa di install di distro gnu/linux, unix. begini cara installnya kalo di gentoo cukup emerge --ask dwm,
+terus ubah /etc/portage/savedconfig/x11-wm/dwm-6.0.&lt;/p&gt;
+&lt;p&gt;atau bisa juga dengan mengunduh source codenya untuk lebih optimal install dulu dependenciesnya,
+1. libxcb-xinerama0.&lt;/p&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;libxcb-xinerama0-dev.&lt;/li&gt;
+&lt;li&gt;libxinerama-dev.&lt;/li&gt;
+&lt;li&gt;libxinerama1.&lt;/li&gt;
+&lt;li&gt;xsetroot.&lt;/li&gt;
+&lt;li&gt;nitrogen.&lt;/li&gt;
+&lt;li&gt;acpi.&lt;/li&gt;
+&lt;li&gt;gmrun.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;sekarang unduh source dwm kemudian ketikan git clone  git clone &lt;a class="reference external" href="http://git.suckless.org/dwm"&gt;http://git.suckless.org/dwm&lt;/a&gt; di terminal tunggu sampai selesai di unduh kemudian ketik cd dwm untuk berpindah directory ke dwm, kemudian ketikan ln -s config.def.h config.h.&lt;/p&gt;
+&lt;p&gt;ubah config.h dengan editor text atau pun ide terserah anda kemudian ketikan make &amp;amp;&amp;amp; make install atau make -j3 &amp;amp;&amp;amp; make install.&lt;/p&gt;
+&lt;p&gt;ini isi /etc/portage/savedconfig/x11-wm/dwm-6.0 atau config.h&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;font&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt;     &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;normbordercolor&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;#ead222&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;normbgcolor&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt;     &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;#eaffde&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;bgurxvcolor&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt;     &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;#000000&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;fgurxvcolor&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt;     &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;#ffffff&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;normfgcolor&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt;     &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;#000000&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;selbordercolor&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;#0f0f0f&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;selbgcolor&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt;      &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;#aaaaaa&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;selfgcolor&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt;      &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;#eeeeee&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;unsigned&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;borderpx&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;        &lt;span class="cm"&gt;/* border pixel of windows */&lt;/span&gt;
+  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;unsigned&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;snap&lt;/span&gt;      &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;32&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;       &lt;span class="cm"&gt;/* snap pixel */&lt;/span&gt;
+  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="n"&gt;Bool&lt;/span&gt; &lt;span class="n"&gt;showbar&lt;/span&gt;           &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;True&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;     &lt;span class="cm"&gt;/* False means no bar */&lt;/span&gt;
+  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="n"&gt;Bool&lt;/span&gt; &lt;span class="n"&gt;topbar&lt;/span&gt;            &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;False&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;     &lt;span class="cm"&gt;/* False means bottom bar */&lt;/span&gt;
+
+  &lt;span class="cm"&gt;/* tagging */&lt;/span&gt;
+  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;tags&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;2&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;3&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;4&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;5&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;6&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;7&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;8&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;9&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;};&lt;/span&gt;
+
+  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="n"&gt;Rule&lt;/span&gt; &lt;span class="n"&gt;rules&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="cm"&gt;/* class      instance    title       tags mask     isfloating   monitor */&lt;/span&gt;
+        &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Gimp&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="nb"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;       &lt;span class="nb"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;       &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;            &lt;span class="n"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;        &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+        &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Firefox&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="nb"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;       &lt;span class="nb"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;       &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;       &lt;span class="n"&gt;False&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;       &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="p"&gt;};&lt;/span&gt;
+
+  &lt;span class="cm"&gt;/* layout(s) */&lt;/span&gt;
+  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;float&lt;/span&gt; &lt;span class="n"&gt;mfact&lt;/span&gt;      &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.55&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="cm"&gt;/* factor of master area size [0.05..0.95] */&lt;/span&gt;
+  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;nmaster&lt;/span&gt;      &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;    &lt;span class="cm"&gt;/* number of clients in master area */&lt;/span&gt;
+  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="n"&gt;Bool&lt;/span&gt; &lt;span class="n"&gt;resizehints&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;False&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="cm"&gt;/* True means respect size hints in tiled resizals */&lt;/span&gt;
+
+  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="n"&gt;Layout&lt;/span&gt; &lt;span class="n"&gt;layouts&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+         &lt;span class="cm"&gt;/* symbol     arrange function */&lt;/span&gt;
+         &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;[t]=&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;tile&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;    &lt;span class="cm"&gt;/* first entry is default */&lt;/span&gt;
+         &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;gt;&amp;lt;&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="nb"&gt;NULL&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;    &lt;span class="cm"&gt;/* no layout function means floating behavior */&lt;/span&gt;
+         &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;[M]&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;monocle&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="p"&gt;};&lt;/span&gt;
+
+  &lt;span class="cm"&gt;/* key definitions */&lt;/span&gt;
+  &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt; &lt;span class="n"&gt;Mod1Mask&lt;/span&gt;
+  &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="n"&gt;TAGKEYS&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;TAG&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; \
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                       &lt;span class="n"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;view&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;           &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;ui&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;TAG&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt; \
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;ControlMask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;           &lt;span class="n"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;toggleview&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;ui&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;TAG&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt; \
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;ShiftMask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;             &lt;span class="n"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;tag&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;            &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;ui&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;TAG&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt; \
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;ControlMask&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;ShiftMask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;toggletag&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;ui&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;TAG&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+
+  &lt;span class="cm"&gt;/* helper for spawnin:g shell commands in the pre dwm-5.0 fashion */&lt;/span&gt;
+  &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="n"&gt;SHCMD&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cmd&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;[]){&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;/bin/sh&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;-c&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cmd&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;NULL&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+
+  &lt;span class="cm"&gt;/* commands */&lt;/span&gt;
+  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;upvol&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;amixer&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;set&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Master&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;2+&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;downvol&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;amixer&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;set&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Master&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;2-&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;brightup&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;xbacklight&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;+5&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;brightdown&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;xbacklight&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;-5&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+ &lt;span class="c1"&gt;// untuk membuat screenshot&lt;/span&gt;
+ &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;screenshot&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;scrot&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+ &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;pdfreader&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;evince&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+ &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;dmenucmd&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;dmenu_run&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;-fn&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;font&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;-nb&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;normbgcolor&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;-nf&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;normfgcolor&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;-sb&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;selbgcolor&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;-sf&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;selfgcolor&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;NULL&lt;/span&gt; &lt;span class="p"&gt;};&lt;/span&gt;
+ &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;termcmd&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;urxvt&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;-bg&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;bgurxvcolor&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;-fg&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;fgurxvcolor&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;NULL&lt;/span&gt; &lt;span class="p"&gt;};&lt;/span&gt;
+
+ &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="n"&gt;Key&lt;/span&gt; &lt;span class="n"&gt;keys&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+          &lt;span class="cm"&gt;/* modifier                     key        function        argument */&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                       &lt;span class="n"&gt;XK_p&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;spawn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;          &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;dmenucmd&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;ShiftMask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;             &lt;span class="n"&gt;XK_Return&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;spawn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;          &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;termcmd&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                       &lt;span class="n"&gt;XK_b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;togglebar&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                       &lt;span class="n"&gt;XK_j&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;focusstack&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                       &lt;span class="n"&gt;XK_k&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;focusstack&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                       &lt;span class="n"&gt;XK_i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;incnmaster&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                       &lt;span class="n"&gt;XK_d&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;incnmaster&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                       &lt;span class="n"&gt;XK_h&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;setmfact&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;       &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;0.05&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                       &lt;span class="n"&gt;XK_l&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;setmfact&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;       &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mf"&gt;0.05&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                       &lt;span class="n"&gt;XK_Return&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;zoom&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;           &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                       &lt;span class="n"&gt;XK_Tab&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;    &lt;span class="n"&gt;view&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;           &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;ShiftMask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;             &lt;span class="n"&gt;XK_c&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;killclient&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                       &lt;span class="n"&gt;XK_t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;setlayout&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;layouts&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                       &lt;span class="n"&gt;XK_f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;setlayout&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;layouts&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                       &lt;span class="n"&gt;XK_m&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;setlayout&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;layouts&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                       &lt;span class="n"&gt;XK_space&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="n"&gt;setlayout&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;ShiftMask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;             &lt;span class="n"&gt;XK_space&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="n"&gt;togglefloating&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                       &lt;span class="n"&gt;XK_0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;view&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;           &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;ui&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;ShiftMask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;             &lt;span class="n"&gt;XK_0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;tag&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;            &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;ui&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                       &lt;span class="n"&gt;XK_comma&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="n"&gt;focusmon&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;       &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                       &lt;span class="n"&gt;XK_period&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;focusmon&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;       &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;ShiftMask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;             &lt;span class="n"&gt;XK_comma&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="n"&gt;tagmon&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;         &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;ShiftMask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;             &lt;span class="n"&gt;XK_period&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tagmon&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;         &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="n"&gt;TAGKEYS&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;                        &lt;span class="n"&gt;XK_1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                      &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+          &lt;span class="n"&gt;TAGKEYS&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;                        &lt;span class="n"&gt;XK_2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                      &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+          &lt;span class="n"&gt;TAGKEYS&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;                        &lt;span class="n"&gt;XK_3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                      &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+          &lt;span class="n"&gt;TAGKEYS&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;                        &lt;span class="n"&gt;XK_4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                      &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+          &lt;span class="n"&gt;TAGKEYS&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;                        &lt;span class="n"&gt;XK_5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                      &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+          &lt;span class="n"&gt;TAGKEYS&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;                        &lt;span class="n"&gt;XK_6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                      &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+          &lt;span class="n"&gt;TAGKEYS&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;                        &lt;span class="n"&gt;XK_7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                      &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+          &lt;span class="n"&gt;TAGKEYS&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;                        &lt;span class="n"&gt;XK_8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                      &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+          &lt;span class="n"&gt;TAGKEYS&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;                        &lt;span class="n"&gt;XK_9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                      &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;ShiftMask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;             &lt;span class="n"&gt;XK_q&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;quit&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;           &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                        &lt;span class="n"&gt;XK_u&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="n"&gt;spawn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;           &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;upvol&lt;/span&gt; &lt;span class="p"&gt;}},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                        &lt;span class="n"&gt;XK_w&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="n"&gt;spawn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;           &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;downvol&lt;/span&gt; &lt;span class="p"&gt;}},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;ShiftMask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;              &lt;span class="n"&gt;XK_u&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="n"&gt;spawn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;           &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;brightup&lt;/span&gt; &lt;span class="p"&gt;}},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;ShiftMask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;              &lt;span class="n"&gt;XK_d&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="n"&gt;spawn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;           &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;brightdown&lt;/span&gt; &lt;span class="p"&gt;}},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                        &lt;span class="n"&gt;XK_s&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="n"&gt;spawn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;           &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;screenshot&lt;/span&gt; &lt;span class="p"&gt;}},&lt;/span&gt;
+          &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                        &lt;span class="n"&gt;XK_a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="n"&gt;spawn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;           &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pdfreader&lt;/span&gt; &lt;span class="p"&gt;}},&lt;/span&gt;
+ &lt;span class="p"&gt;};&lt;/span&gt;
+
+ &lt;span class="cm"&gt;/* button definitions */&lt;/span&gt;
+ &lt;span class="cm"&gt;/* click can be ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */&lt;/span&gt;
+ &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="n"&gt;Button&lt;/span&gt; &lt;span class="n"&gt;buttons&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+         &lt;span class="cm"&gt;/* click                event mask      button          function        argument */&lt;/span&gt;
+         &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;ClkLtSymbol&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;          &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;              &lt;span class="n"&gt;Button1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;        &lt;span class="n"&gt;setlayout&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+         &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;ClkLtSymbol&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;          &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;              &lt;span class="n"&gt;Button3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;        &lt;span class="n"&gt;setlayout&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;layouts&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+         &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;ClkWinTitle&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;          &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;              &lt;span class="n"&gt;Button2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;        &lt;span class="n"&gt;zoom&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;           &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+         &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;ClkStatusText&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;        &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;              &lt;span class="n"&gt;Button2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;        &lt;span class="n"&gt;spawn&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;          &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;termcmd&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+         &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;ClkClientWin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;         &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;         &lt;span class="n"&gt;Button1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;        &lt;span class="n"&gt;movemouse&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+         &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;ClkClientWin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;         &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;         &lt;span class="n"&gt;Button2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;        &lt;span class="n"&gt;togglefloating&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+         &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;ClkClientWin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;         &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;         &lt;span class="n"&gt;Button3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;        &lt;span class="n"&gt;resizemouse&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;    &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+         &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;ClkTagBar&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;            &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;              &lt;span class="n"&gt;Button1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;        &lt;span class="n"&gt;view&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;           &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+         &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;ClkTagBar&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;            &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;              &lt;span class="n"&gt;Button3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;        &lt;span class="n"&gt;toggleview&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+         &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;ClkTagBar&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;            &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;         &lt;span class="n"&gt;Button1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;        &lt;span class="n"&gt;tag&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;            &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+         &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;ClkTagBar&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;            &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;         &lt;span class="n"&gt;Button3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;        &lt;span class="n"&gt;toggletag&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+ &lt;span class="p"&gt;};&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;static const char font[]            = &amp;quot;-&lt;em&gt;-terminus-medium-r-&lt;/em&gt;-&lt;em&gt;-16-&lt;/em&gt;-&lt;em&gt;-&lt;/em&gt;-&lt;em&gt;-&lt;/em&gt;-&lt;em&gt;-&lt;/em&gt;&amp;quot;;&lt;/p&gt;
+&lt;p&gt;kode di atas  digunakan untuk mengatur font yang di pakai dwm&lt;/p&gt;
+&lt;p&gt;static const char normbordercolor[] = &amp;quot;#ead222&amp;quot;;&lt;/p&gt;
+&lt;p&gt;kode diatas digunakan untuk mengatur warna berder normal&lt;/p&gt;
+&lt;p&gt;static const char normbgcolor[]     = &amp;quot;#eaffde&amp;quot; ;&lt;/p&gt;
+&lt;p&gt;kode diatas untu mengatur warna backgroud&lt;/p&gt;
+&lt;p&gt;static const char bgurxvcolor[]     = &amp;quot;#000000&amp;quot;;
+ini kode untuk background urxvt yang dipanggil dari alt+shift+enter
+static const char fgurxvcolor[]     = &amp;quot;#ffffff&amp;quot;;
+ini kode untuk foregrund urxvt yang dipanggil dari alt+shift+enter
+static const char normfgcolor[]     = &amp;quot;#000000&amp;quot;;
+ini kode foreground untuk dwm
+static const char selbordercolor[]  = &amp;quot;#0f0f0f&amp;quot;;
+ini untuk border tiap sel
+static const char selbgcolor[]      = &amp;quot;#aaaaaa&amp;quot;;
+ini untuk sel background
+static const char selfgcolor[]      = &amp;quot;#eeeeee&amp;quot;;
+ini untuk sel foreground&lt;/p&gt;
+&lt;p&gt;static const Bool topbar            = False;&lt;/p&gt;
+&lt;p&gt;kode diatas digunakan untuk mengatur posisi bar jika ingin bottom tulis nilai dengan False tapi kalo ingin tob bar True,&lt;/p&gt;
+&lt;p&gt;perintah terminal yang akan kita gunakan untuk menentukan apa yang akan kita lakuin setelah tombol yang kita atur itu dipencet.&lt;/p&gt;
+&lt;p&gt;MODKEY=alt , ShiftMask=Shift keyboard tombol , XK_u or anything = huruf ,angka,symbol dalam keyboard.&lt;/p&gt;
+&lt;p&gt;karena saya menggunakan startx dari tty maka saya mengatur .xinitrc dan .xsetroot.sh untuk membuat status bar.&lt;/p&gt;
+&lt;p&gt;.xinitrc&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; &lt;span class="c"&gt;#!/bin/sh&lt;/span&gt;
+ &lt;span class="c"&gt;# set keyboard layout to Swiss German&lt;/span&gt;
+ setxkbmap us
+ &lt;span class="c"&gt;# Load .Xresources&lt;/span&gt;
+ &lt;span class="c"&gt;#file xrdb -merge ~/.Xresources&lt;/span&gt;
+ Start xbindkeys xbindkeys &amp;amp;
+ &lt;span class="c"&gt;# Set some defaults&lt;/span&gt;
+ &lt;span class="c"&gt;#export BROWSER=chromium &amp;amp;&lt;/span&gt;
+ &lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;EDITOR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;vim &amp;amp;
+ xdg-mime default evince.desktop application/pdf &amp;amp;
+ &lt;span class="c"&gt;# set backlight&lt;/span&gt;
+ &lt;span class="nb"&gt;exec &lt;/span&gt;xbacklight -75 &amp;amp;
+ &lt;span class="c"&gt;# Loop&lt;/span&gt;
+ &lt;span class="k"&gt;while &lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;span class="nb"&gt; &lt;/span&gt;&lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="c"&gt;# Set root title&lt;/span&gt;
+    sh .xsetroot.sh
+    &lt;span class="c"&gt;# Check battery level&lt;/span&gt;
+    &lt;span class="nv"&gt;BATT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt; acpi -b | sed &lt;span class="s1"&gt;&amp;#39;s/.*[charging|unknown], \([0-9]*\)%.*/\1/gi&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nv"&gt;STATUS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt; acpi -b | sed &lt;span class="s1"&gt;&amp;#39;s/.*: \([a-zA-Z]*\),.*/\1/gi&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;([&lt;/span&gt; &lt;span class="nv"&gt;$BATT&lt;/span&gt; -le 5 &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="nv"&gt;$STATUS&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Discharging&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;])&lt;/span&gt;; &lt;span class="k"&gt;then&lt;/span&gt;
+                 &lt;span class="c"&gt;# Beep&lt;/span&gt;
+                 &lt;span class="nb"&gt;echo&lt;/span&gt; -e &lt;span class="s2"&gt;&amp;quot;\007&amp;quot;&lt;/span&gt; &amp;gt;/dev/tty10 &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sleep 0.2
+                 &lt;span class="nb"&gt;echo&lt;/span&gt; -e &lt;span class="s2"&gt;&amp;quot;\007&amp;quot;&lt;/span&gt; &amp;gt;/dev/tty10 &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sleep 0.2
+                 &lt;span class="nb"&gt;echo&lt;/span&gt; -e &lt;span class="s2"&gt;&amp;quot;\007&amp;quot;&lt;/span&gt; &amp;gt;/dev/tty10 &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sleep 0.2
+                 &lt;span class="c"&gt;# Blink&lt;/span&gt;
+                 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;on&amp;#39;&lt;/span&gt; &amp;gt; /proc/acpi/ibm/light &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sleep 1
+                 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;off&amp;#39;&lt;/span&gt; &amp;gt; /proc/acpi/ibm/light
+    &lt;span class="k"&gt;fi&lt;/span&gt;
+    &lt;span class="c"&gt;# Update every 10s&lt;/span&gt;
+sleep 1
+&lt;span class="k"&gt;done&lt;/span&gt; &amp;amp;
+&lt;span class="c"&gt;# Set up rotated dual screen without touching my xorg.conf&lt;/span&gt;
+xrandr --output DVI-1 --auto --rotate left --pos 0x0 --output DVI-0 --auto --pos 1080x720 --rotate normal
+&lt;span class="c"&gt;# Read .xsessionrc&lt;/span&gt;
+&lt;span class="c"&gt;#sh ~/.xsessionrc &amp;amp;&lt;/span&gt;
+&lt;span class="c"&gt;# Set wallpaper&lt;/span&gt;
+feh --bg-scale ~/wallpaper.jpg &amp;amp;
+&lt;span class="c"&gt;# Set WM name (for Java apps)&lt;/span&gt;
+wmname LG3D
+&lt;span class="c"&gt;# run terminal&lt;/span&gt;
+&lt;span class="c"&gt;# xterm -geometry 80x50+494-0 &amp;amp;&lt;/span&gt;
+&lt;span class="c"&gt;# Run dwm&lt;/span&gt;
+&lt;span class="nb"&gt;exec &lt;/span&gt;dwm
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;dan ini .xsetroot.sh&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;DATETIME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;date&lt;span class="sb"&gt;`&lt;/span&gt;
+&lt;span class="nv"&gt;VOLUME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt; amixer sget Master| grep -e &lt;span class="s2"&gt;&amp;quot;%&amp;quot;&lt;/span&gt; | sed &lt;span class="s1"&gt;&amp;#39;s/.*Playback channels: Mono\s*//&amp;#39;&lt;/span&gt;| sed &lt;span class="s1"&gt;&amp;#39;s/.*Mono:\s*//&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="c"&gt;#PLAY_NOW=$(ncmpcpp --current-song)&lt;/span&gt;
+&lt;span class="nv"&gt;CPU_TEMPERATURE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;acpi -t | awk &lt;span class="s1"&gt;&amp;#39;/Thermal 1/ {print $4}&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;RX&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;ifconfig wlo1 | grep -e &lt;span class="s1"&gt;&amp;#39;RX packets&amp;#39;&lt;/span&gt; | sed &lt;span class="s1"&gt;&amp;#39;s/.*RX packets\s*//&amp;#39;&lt;/span&gt; | sed &lt;span class="s1"&gt;&amp;#39;s/.*bytes\s*//&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;RAM_FREE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;$(free  -m | awk &amp;#39;/Mem/ { print $4 }&amp;#39;)&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;BATTERYSTATE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt; acpi -b | awk &lt;span class="s1"&gt;&amp;#39;{ split($5,a,&amp;quot;:&amp;quot;); print substr($3,0,2), $4, &amp;quot;[&amp;quot;a[1]&amp;quot;:&amp;quot;a[2]&amp;quot;]&amp;quot; }&amp;#39;&lt;/span&gt; | tr -d &lt;span class="s1"&gt;&amp;#39;,&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="c"&gt;#if [ `date +%S` == 30 -o `date +%S` == 00 ]; then&lt;/span&gt;
+&lt;span class="c"&gt;#python imap_check_unread.py &amp;gt; .unreadmail; fi&lt;/span&gt;
+xsetroot -name &lt;span class="s2"&gt;&amp;quot;ram free ${RAM_FREE}  | RX ${RX} |  ${VOLUME} | ${DATETIME}| ${BATTERYSTATE} | temperature cpu ${CPU_TEMPERATURE}C&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;demikian sharing dari saya&lt;/p&gt;
+</summary></entry><entry><title>Cara Menggunakan Perintah Mount</title><link href="coder212.github.io/mount_partisi.html" rel="alternate"></link><updated>2016-03-23T12:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-23:coder212.github.io/mount_partisi.html</id><summary type="html">&lt;p&gt;Apa Itu Mount? Mount adalah memuat device kedalam filesistem sistem operasi, mount kita perlukan untuk memuat device - device penyimpanan kedalam filesistem gnu/linux sistem operasi agar kita bisa mengakses isi dari device-device tersebut.&lt;/p&gt;
 &lt;p&gt;lalu bagaimanakah cara memuat atau mount device tersebut begini caranya&lt;/p&gt;
 &lt;table class="docutils field-list" frame="void" rules="none"&gt;
 &lt;col class="field-name" /&gt;
