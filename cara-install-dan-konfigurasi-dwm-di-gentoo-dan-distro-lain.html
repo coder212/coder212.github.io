@@ -171,7 +171,7 @@ terus ubah /etc/portage/savedconfig/x11-wm/dwm-6.0.</p>
 113
 114
 115
-116</pre></div></td><td class="code"><div class="highlight"><pre>  <span class="k">static</span> <span class="k">const</span> <span class="kt">char</span> <span class="n">font</span><span class="p">[]</span>     <span class="o">=</span> <span class="s">&quot;-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*&quot;</span><span class="p">;</span>
+116</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="k">static</span> <span class="k">const</span> <span class="kt">char</span> <span class="n">font</span><span class="p">[]</span>     <span class="o">=</span> <span class="s">&quot;-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*&quot;</span><span class="p">;</span>
   <span class="k">static</span> <span class="k">const</span> <span class="kt">char</span> <span class="n">normbordercolor</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;#ead222&quot;</span><span class="p">;</span>
   <span class="k">static</span> <span class="k">const</span> <span class="kt">char</span> <span class="n">normbgcolor</span><span class="p">[]</span>     <span class="o">=</span> <span class="s">&quot;#eaffde&quot;</span><span class="p">;</span>
   <span class="k">static</span> <span class="k">const</span> <span class="kt">char</span> <span class="n">bgurxvcolor</span><span class="p">[]</span>     <span class="o">=</span> <span class="s">&quot;#000000&quot;</span><span class="p">;</span>
@@ -207,15 +207,15 @@ terus ubah /etc/portage/savedconfig/x11-wm/dwm-6.0.</p>
   <span class="p">};</span>
 
   <span class="cm">/* key definitions */</span>
-  <span class="err">#</span><span class="n">define</span> <span class="n">MODKEY</span> <span class="n">Mod1Mask</span>
-  <span class="err">#</span><span class="n">define</span> <span class="n">TAGKEYS</span><span class="p">(</span><span class="n">KEY</span><span class="p">,</span><span class="n">TAG</span><span class="p">)</span> \
-          <span class="p">{</span> <span class="n">MODKEY</span><span class="p">,</span>                       <span class="n">KEY</span><span class="p">,</span>      <span class="n">view</span><span class="p">,</span>           <span class="p">{.</span><span class="n">ui</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">TAG</span><span class="p">}</span> <span class="p">},</span> \
-          <span class="p">{</span> <span class="n">MODKEY</span><span class="o">|</span><span class="n">ControlMask</span><span class="p">,</span>           <span class="n">KEY</span><span class="p">,</span>      <span class="n">toggleview</span><span class="p">,</span>     <span class="p">{.</span><span class="n">ui</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">TAG</span><span class="p">}</span> <span class="p">},</span> \
-          <span class="p">{</span> <span class="n">MODKEY</span><span class="o">|</span><span class="n">ShiftMask</span><span class="p">,</span>             <span class="n">KEY</span><span class="p">,</span>      <span class="n">tag</span><span class="p">,</span>            <span class="p">{.</span><span class="n">ui</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">TAG</span><span class="p">}</span> <span class="p">},</span> \
-          <span class="p">{</span> <span class="n">MODKEY</span><span class="o">|</span><span class="n">ControlMask</span><span class="o">|</span><span class="n">ShiftMask</span><span class="p">,</span> <span class="n">KEY</span><span class="p">,</span>      <span class="n">toggletag</span><span class="p">,</span>      <span class="p">{.</span><span class="n">ui</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">TAG</span><span class="p">}</span> <span class="p">},</span>
+  <span class="cp">#define MODKEY Mod1Mask</span>
+  <span class="cp">#define TAGKEYS(KEY,TAG) \</span>
+<span class="cp">          { MODKEY,                       KEY,      view,           {.ui = 1 &lt;&lt; TAG} }, \</span>
+<span class="cp">          { MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 &lt;&lt; TAG} }, \</span>
+<span class="cp">          { MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 &lt;&lt; TAG} }, \</span>
+<span class="cp">          { MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 &lt;&lt; TAG} },</span>
 
   <span class="cm">/* helper for spawnin:g shell commands in the pre dwm-5.0 fashion */</span>
-  <span class="err">#</span><span class="n">define</span> <span class="n">SHCMD</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span> <span class="p">{</span> <span class="p">.</span><span class="n">v</span> <span class="o">=</span> <span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">[]){</span> <span class="s">&quot;/bin/sh&quot;</span><span class="p">,</span> <span class="s">&quot;-c&quot;</span><span class="p">,</span> <span class="n">cmd</span><span class="p">,</span> <span class="nb">NULL</span> <span class="p">}</span> <span class="p">}</span>
+  <span class="cp">#define SHCMD(cmd) { .v = (const char*[]){ &quot;/bin/sh&quot;, &quot;-c&quot;, cmd, NULL } }</span>
 
   <span class="cm">/* commands */</span>
   <span class="k">static</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">upvol</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;amixer&quot;</span><span class="p">,</span><span class="s">&quot;set&quot;</span><span class="p">,</span><span class="s">&quot;Master&quot;</span><span class="p">,</span><span class="s">&quot;2+&quot;</span><span class="p">,</span><span class="nb">NULL</span><span class="p">};</span>
@@ -355,50 +355,50 @@ ini untuk sel foreground</p>
 41
 42
 43
-44</pre></div></td><td class="code"><div class="highlight"><pre> <span class="c">#!/bin/sh</span>
- <span class="c"># set keyboard layout to Swiss German</span>
+44</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1">#!/bin/sh</span>
+ <span class="c1"># set keyboard layout to Swiss German</span>
  setxkbmap us
- <span class="c"># Load .Xresources</span>
- <span class="c">#file xrdb -merge ~/.Xresources</span>
- Start xbindkeys xbindkeys &amp;
- <span class="c"># Set some defaults</span>
- <span class="c">#export BROWSER=chromium &amp;</span>
- <span class="nb">export </span><span class="nv">EDITOR</span><span class="o">=</span>vim &amp;
- xdg-mime default evince.desktop application/pdf &amp;
- <span class="c"># set backlight</span>
- <span class="nb">exec </span>xbacklight -75 &amp;
- <span class="c"># Loop</span>
- <span class="k">while </span><span class="nb">true</span>
-<span class="nb"> </span><span class="k">do</span>
-    <span class="c"># Set root title</span>
+ <span class="c1"># Load .Xresources</span>
+ <span class="c1">#file xrdb -merge ~/.Xresources</span>
+ Start xbindkeys xbindkeys <span class="p">&amp;</span>
+ <span class="c1"># Set some defaults</span>
+ <span class="c1">#export BROWSER=chromium &amp;</span>
+ <span class="nb">export</span> <span class="nv">EDITOR</span><span class="o">=</span>vim <span class="p">&amp;</span>
+ xdg-mime default evince.desktop application/pdf <span class="p">&amp;</span>
+ <span class="c1"># set backlight</span>
+ <span class="nb">exec</span> xbacklight -75 <span class="p">&amp;</span>
+ <span class="c1"># Loop</span>
+ <span class="k">while</span> <span class="nb">true</span>
+ <span class="k">do</span>
+    <span class="c1"># Set root title</span>
     sh .xsetroot.sh
-    <span class="c"># Check battery level</span>
-    <span class="nv">BATT</span><span class="o">=</span><span class="k">$(</span> acpi -b | sed <span class="s1">&#39;s/.*[charging|unknown], \([0-9]*\)%.*/\1/gi&#39;</span> <span class="k">)</span>
-    <span class="nv">STATUS</span><span class="o">=</span><span class="k">$(</span> acpi -b | sed <span class="s1">&#39;s/.*: \([a-zA-Z]*\),.*/\1/gi&#39;</span> <span class="k">)</span>
-    <span class="k">if</span> <span class="o">([</span> <span class="nv">$BATT</span> -le 5 <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="nv">$STATUS</span> <span class="o">==</span> <span class="s1">&#39;Discharging&#39;</span> <span class="o">])</span>; <span class="k">then</span>
-                 <span class="c"># Beep</span>
+    <span class="c1"># Check battery level</span>
+    <span class="nv">BATT</span><span class="o">=</span><span class="k">$(</span> acpi -b <span class="p">|</span> sed <span class="s1">&#39;s/.*[charging|unknown], \([0-9]*\)%.*/\1/gi&#39;</span> <span class="k">)</span>
+    <span class="nv">STATUS</span><span class="o">=</span><span class="k">$(</span> acpi -b <span class="p">|</span> sed <span class="s1">&#39;s/.*: \([a-zA-Z]*\),.*/\1/gi&#39;</span> <span class="k">)</span>
+    <span class="k">if</span> <span class="o">([</span> <span class="nv">$BA</span>TT -le <span class="m">5</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> $<span class="nv">STATUS</span> <span class="o">==</span> <span class="s1">&#39;Discharging&#39;</span> <span class="o">])</span><span class="p">;</span> <span class="k">then</span>
+                 <span class="c1"># Beep</span>
                  <span class="nb">echo</span> -e <span class="s2">&quot;\007&quot;</span> &gt;/dev/tty10 <span class="o">&amp;&amp;</span> sleep 0.2
                  <span class="nb">echo</span> -e <span class="s2">&quot;\007&quot;</span> &gt;/dev/tty10 <span class="o">&amp;&amp;</span> sleep 0.2
                  <span class="nb">echo</span> -e <span class="s2">&quot;\007&quot;</span> &gt;/dev/tty10 <span class="o">&amp;&amp;</span> sleep 0.2
-                 <span class="c"># Blink</span>
+                 <span class="c1"># Blink</span>
                  <span class="nb">echo</span> <span class="s1">&#39;on&#39;</span> &gt; /proc/acpi/ibm/light <span class="o">&amp;&amp;</span> sleep 1
                  <span class="nb">echo</span> <span class="s1">&#39;off&#39;</span> &gt; /proc/acpi/ibm/light
     <span class="k">fi</span>
-    <span class="c"># Update every 10s</span>
+    <span class="c1"># Update every 10s</span>
 sleep 1
-<span class="k">done</span> &amp;
-<span class="c"># Set up rotated dual screen without touching my xorg.conf</span>
+<span class="k">done</span> <span class="p">&amp;</span>
+<span class="c1"># Set up rotated dual screen without touching my xorg.conf</span>
 xrandr --output DVI-1 --auto --rotate left --pos 0x0 --output DVI-0 --auto --pos 1080x720 --rotate normal
-<span class="c"># Read .xsessionrc</span>
-<span class="c">#sh ~/.xsessionrc &amp;</span>
-<span class="c"># Set wallpaper</span>
-feh --bg-scale ~/wallpaper.jpg &amp;
-<span class="c"># Set WM name (for Java apps)</span>
+<span class="c1"># Read .xsessionrc</span>
+<span class="c1">#sh ~/.xsessionrc &amp;</span>
+<span class="c1"># Set wallpaper</span>
+feh --bg-scale ~/wallpaper.jpg <span class="p">&amp;</span>
+<span class="c1"># Set WM name (for Java apps)</span>
 wmname LG3D
-<span class="c"># run terminal</span>
-<span class="c"># xterm -geometry 80x50+494-0 &amp;</span>
-<span class="c"># Run dwm</span>
-<span class="nb">exec </span>dwm
+<span class="c1"># run terminal</span>
+<span class="c1"># xterm -geometry 80x50+494-0 &amp;</span>
+<span class="c1"># Run dwm</span>
+<span class="nb">exec</span> dwm
 </pre></div>
 </td></tr></table><p>dan ini .xsetroot.sh</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -411,17 +411,17 @@ wmname LG3D
  8
  9
 10
-11</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">DATETIME</span><span class="o">=</span><span class="sb">`</span>date<span class="sb">`</span>
-<span class="nv">VOLUME</span><span class="o">=</span><span class="k">$(</span> amixer sget Master| grep -e <span class="s2">&quot;%&quot;</span> | sed <span class="s1">&#39;s/.*Playback channels: Mono\s*//&#39;</span>| sed <span class="s1">&#39;s/.*Mono:\s*//&#39;</span><span class="k">)</span>
-<span class="c">#PLAY_NOW=$(ncmpcpp --current-song)</span>
-<span class="nv">CPU_TEMPERATURE</span><span class="o">=</span><span class="k">$(</span>acpi -t | awk <span class="s1">&#39;/Thermal 1/ {print $4}&#39;</span><span class="k">)</span>
-<span class="nv">RX</span><span class="o">=</span><span class="k">$(</span>ifconfig wlo1 | grep -e <span class="s1">&#39;RX packets&#39;</span> | sed <span class="s1">&#39;s/.*RX packets\s*//&#39;</span> | sed <span class="s1">&#39;s/.*bytes\s*//&#39;</span><span class="k">)</span>
-<span class="nv">RAM_FREE</span><span class="o">=</span><span class="s2">&quot;$(free  -m | awk &#39;/Mem/ { print $4 }&#39;)&quot;</span>
-<span class="nv">BATTERYSTATE</span><span class="o">=</span><span class="k">$(</span> acpi -b | awk <span class="s1">&#39;{ split($5,a,&quot;:&quot;); print substr($3,0,2), $4, &quot;[&quot;a[1]&quot;:&quot;a[2]&quot;]&quot; }&#39;</span> | tr -d <span class="s1">&#39;,&#39;</span> <span class="k">)</span>
-<span class="c">#if [ `date +%S` == 30 -o `date +%S` == 00 ]; then</span>
-<span class="c">#python imap_check_unread.py &gt; .unreadmail; fi</span>
-xsetroot -name <span class="s2">&quot;ram free ${RAM_FREE}  | RX ${RX} |  ${VOLUME} | ${DATETIME}| ${BATTERYSTATE} |</span>
-<span class="s2">temperature cpu ${CPU_TEMPERATURE}C&quot;</span>
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nv">DATETIME</span><span class="o">=</span><span class="sb">`</span>date<span class="sb">`</span>
+<span class="nv">VOLUME</span><span class="o">=</span><span class="k">$(</span> amixer sget Master<span class="p">|</span> grep -e <span class="s2">&quot;%&quot;</span> <span class="p">|</span> sed <span class="s1">&#39;s/.*Playback channels: Mono\s*//&#39;</span><span class="p">|</span> sed <span class="s1">&#39;s/.*Mono:\s*//&#39;</span><span class="k">)</span>
+<span class="c1">#PLAY_NOW=$(ncmpcpp --current-song)</span>
+<span class="nv">CPU_TEMPERATURE</span><span class="o">=</span><span class="k">$(</span>acpi -t <span class="p">|</span> awk <span class="s1">&#39;/Thermal 1/ {print $4}&#39;</span><span class="k">)</span>
+<span class="nv">RX</span><span class="o">=</span><span class="k">$(</span>ifconfig wlo1 <span class="p">|</span> grep -e <span class="s1">&#39;RX packets&#39;</span> <span class="p">|</span> sed <span class="s1">&#39;s/.*RX packets\s*//&#39;</span> <span class="p">|</span> sed <span class="s1">&#39;s/.*bytes\s*//&#39;</span><span class="k">)</span>
+<span class="nv">RAM_FREE</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>free  -m <span class="p">|</span> awk <span class="s1">&#39;/Mem/ { print $4 }&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="nv">BATTERYSTATE</span><span class="o">=</span><span class="k">$(</span> acpi -b <span class="p">|</span> awk <span class="s1">&#39;{ split($5,a,&quot;:&quot;); print substr($3,0,2), $4, &quot;[&quot;a[1]&quot;:&quot;a[2]&quot;]&quot; }&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;,&#39;</span> <span class="k">)</span>
+<span class="c1">#if [ `date +%S` == 30 -o `date +%S` == 00 ]; then</span>
+<span class="c1">#python imap_check_unread.py &gt; .unreadmail; fi</span>
+xsetroot -name <span class="s2">&quot;ram free </span><span class="si">${</span><span class="nv">RAM_FREE</span><span class="si">}</span><span class="s2">  | RX </span><span class="si">${</span><span class="nv">RX</span><span class="si">}</span><span class="s2"> |  </span><span class="si">${</span><span class="nv">VOLUME</span><span class="si">}</span><span class="s2"> | </span><span class="si">${</span><span class="nv">DATETIME</span><span class="si">}</span><span class="s2">| </span><span class="si">${</span><span class="nv">BATTERYSTATE</span><span class="si">}</span><span class="s2"> |</span>
+<span class="s2">temperature cpu </span><span class="si">${</span><span class="nv">CPU_TEMPERATURE</span><span class="si">}</span><span class="s2">C&quot;</span>
 </pre></div>
 </td></tr></table><p>demikian sharing dari saya</p>
 

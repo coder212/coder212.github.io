@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>gnu/linux commandline tutorial and review</title><link href="coder212.github.io/" rel="alternate"></link><link href="coder212.github.io/feeds/gnulinux.atom.xml" rel="self"></link><id>coder212.github.io/</id><updated>2016-04-06T14:00:00+07:00</updated><entry><title>CARA INSTALL DAN KONFIGURASI DWM DI GENTOO DAN DISTRO LAIN</title><link href="coder212.github.io/cara-install-dan-konfigurasi-dwm-di-gentoo-dan-distro-lain.html" rel="alternate"></link><updated>2016-04-06T14:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-04-06:coder212.github.io/cara-install-dan-konfigurasi-dwm-di-gentoo-dan-distro-lain.html</id><summary type="html">&lt;p&gt;Apa itu dwm(dynamic window manager)? dynamic window manager adalah tilling window manager , yang dinamis dan mudah di kostumisasi dwm dibuild dari bahasa c jadi kita harus mengkompilasinya.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>gnu/linux commandline tutorial and review</title><link href="coder212.github.io/" rel="alternate"></link><link href="coder212.github.io/feeds/gnulinux.atom.xml" rel="self"></link><id>coder212.github.io/</id><updated>2016-05-10T17:00:00+07:00</updated><entry><title>Mengenal ArchLinux</title><link href="coder212.github.io/mengenal-archlinux.html" rel="alternate"></link><updated>2016-05-10T17:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-05-10:coder212.github.io/mengenal-archlinux.html</id><summary type="html">&lt;p&gt;Archlinux adalah distro GNU/Linux yang menerapkan konsep Keep It Simple Stupid ( KISS ). Jadi kesederhanaan adalah kata kuncinya.
+Kesederhanaan yang dimaksud adalah dari sisi pengembang, jadi distro ini menuntut anda memahami konsep GNU/Linux, tanpa pengetahuan ini anda akan kebingungan dalam menggunakan distro ini.
+Distro mewajibkan anda terhubung ke internet ketika instalasi, tanpa internet mustahil kamu bisa menginstallnya.
+Distro ini dibuat oleh jud vinnet yang terinspirasi oleh CRUX.&lt;/p&gt;
+&lt;p&gt;Archlinux menggunakan Package Manager Pacman, yang sangat powerfull, dan mudah digunakan, pacman adalah nyawa dari archlinux.
+Fitur yang paling istimewa dari arch adalah Arch User Repository ( AUR ), yang bisa diunduh dengan menggunakan yaourt.&lt;/p&gt;
+&lt;p&gt;Berikut ini alasan kenapa Archlinux begitu banyak yang menggunakannya:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Selalu Update.&lt;/li&gt;
+&lt;li&gt;Update Dapat Dilakukan Kapan Saja.&lt;/li&gt;
+&lt;li&gt;Begitu Pengembang Paket Upstream Menperbarui Paketnya Archlinux Langsung mengupdate Sistemnya.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;demikianlah yang bisa saya tuliskan tentang Archlinux, Semoga Bermanfaat.&lt;/p&gt;
+&lt;p&gt;Terima Kasih.&lt;/p&gt;
+</summary><category term="reviews"></category><category term="gnu/linux"></category><category term="archlinux"></category></entry><entry><title>CARA INSTALL DAN KONFIGURASI DWM DI GENTOO DAN DISTRO LAIN</title><link href="coder212.github.io/cara-install-dan-konfigurasi-dwm-di-gentoo-dan-distro-lain.html" rel="alternate"></link><updated>2016-04-06T14:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-04-06:coder212.github.io/cara-install-dan-konfigurasi-dwm-di-gentoo-dan-distro-lain.html</id><summary type="html">&lt;p&gt;Apa itu dwm(dynamic window manager)? dynamic window manager adalah tilling window manager , yang dinamis dan mudah di kostumisasi dwm dibuild dari bahasa c jadi kita harus mengkompilasinya.&lt;/p&gt;
 &lt;p&gt;dwm bisa di install di distro gnu/linux, unix. begini cara installnya kalo di gentoo cukup emerge --ask dwm,
 terus ubah /etc/portage/savedconfig/x11-wm/dwm-6.0.&lt;/p&gt;
 &lt;p&gt;atau bisa juga dengan mengunduh source codenya untuk lebih optimal install dulu dependenciesnya,
@@ -131,7 +145,7 @@ terus ubah /etc/portage/savedconfig/x11-wm/dwm-6.0.&lt;/p&gt;
 113
 114
 115
-116&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;font&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt;     &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+116&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;font&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt;     &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;normbordercolor&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;#ead222&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;normbgcolor&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt;     &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;#eaffde&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;bgurxvcolor&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt;     &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;#000000&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -167,15 +181,15 @@ terus ubah /etc/portage/savedconfig/x11-wm/dwm-6.0.&lt;/p&gt;
   &lt;span class="p"&gt;};&lt;/span&gt;
 
   &lt;span class="cm"&gt;/* key definitions */&lt;/span&gt;
-  &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt; &lt;span class="n"&gt;Mod1Mask&lt;/span&gt;
-  &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="n"&gt;TAGKEYS&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;TAG&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; \
-          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                       &lt;span class="n"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;view&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;           &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;ui&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;TAG&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt; \
-          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;ControlMask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;           &lt;span class="n"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;toggleview&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;ui&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;TAG&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt; \
-          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;ShiftMask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;             &lt;span class="n"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;tag&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;            &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;ui&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;TAG&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt; \
-          &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;MODKEY&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;ControlMask&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;ShiftMask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="n"&gt;toggletag&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;ui&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;TAG&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="cp"&gt;#define MODKEY Mod1Mask&lt;/span&gt;
+  &lt;span class="cp"&gt;#define TAGKEYS(KEY,TAG) \&lt;/span&gt;
+&lt;span class="cp"&gt;          { MODKEY,                       KEY,      view,           {.ui = 1 &amp;lt;&amp;lt; TAG} }, \&lt;/span&gt;
+&lt;span class="cp"&gt;          { MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 &amp;lt;&amp;lt; TAG} }, \&lt;/span&gt;
+&lt;span class="cp"&gt;          { MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 &amp;lt;&amp;lt; TAG} }, \&lt;/span&gt;
+&lt;span class="cp"&gt;          { MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 &amp;lt;&amp;lt; TAG} },&lt;/span&gt;
 
   &lt;span class="cm"&gt;/* helper for spawnin:g shell commands in the pre dwm-5.0 fashion */&lt;/span&gt;
-  &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="n"&gt;SHCMD&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cmd&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;[]){&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;/bin/sh&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;-c&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cmd&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;NULL&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="cp"&gt;#define SHCMD(cmd) { .v = (const char*[]){ &amp;quot;/bin/sh&amp;quot;, &amp;quot;-c&amp;quot;, cmd, NULL } }&lt;/span&gt;
 
   &lt;span class="cm"&gt;/* commands */&lt;/span&gt;
   &lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;upvol&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;amixer&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;set&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Master&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;2+&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
@@ -315,50 +329,50 @@ ini untuk sel foreground&lt;/p&gt;
 41
 42
 43
-44&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; &lt;span class="c"&gt;#!/bin/sh&lt;/span&gt;
- &lt;span class="c"&gt;# set keyboard layout to Swiss German&lt;/span&gt;
+44&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="c1"&gt;#!/bin/sh&lt;/span&gt;
+ &lt;span class="c1"&gt;# set keyboard layout to Swiss German&lt;/span&gt;
  setxkbmap us
- &lt;span class="c"&gt;# Load .Xresources&lt;/span&gt;
- &lt;span class="c"&gt;#file xrdb -merge ~/.Xresources&lt;/span&gt;
- Start xbindkeys xbindkeys &amp;amp;
- &lt;span class="c"&gt;# Set some defaults&lt;/span&gt;
- &lt;span class="c"&gt;#export BROWSER=chromium &amp;amp;&lt;/span&gt;
- &lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;EDITOR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;vim &amp;amp;
- xdg-mime default evince.desktop application/pdf &amp;amp;
- &lt;span class="c"&gt;# set backlight&lt;/span&gt;
- &lt;span class="nb"&gt;exec &lt;/span&gt;xbacklight -75 &amp;amp;
- &lt;span class="c"&gt;# Loop&lt;/span&gt;
- &lt;span class="k"&gt;while &lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
-&lt;span class="nb"&gt; &lt;/span&gt;&lt;span class="k"&gt;do&lt;/span&gt;
-    &lt;span class="c"&gt;# Set root title&lt;/span&gt;
+ &lt;span class="c1"&gt;# Load .Xresources&lt;/span&gt;
+ &lt;span class="c1"&gt;#file xrdb -merge ~/.Xresources&lt;/span&gt;
+ Start xbindkeys xbindkeys &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+ &lt;span class="c1"&gt;# Set some defaults&lt;/span&gt;
+ &lt;span class="c1"&gt;#export BROWSER=chromium &amp;amp;&lt;/span&gt;
+ &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;EDITOR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;vim &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+ xdg-mime default evince.desktop application/pdf &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+ &lt;span class="c1"&gt;# set backlight&lt;/span&gt;
+ &lt;span class="nb"&gt;exec&lt;/span&gt; xbacklight -75 &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+ &lt;span class="c1"&gt;# Loop&lt;/span&gt;
+ &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;
+ &lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="c1"&gt;# Set root title&lt;/span&gt;
     sh .xsetroot.sh
-    &lt;span class="c"&gt;# Check battery level&lt;/span&gt;
-    &lt;span class="nv"&gt;BATT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt; acpi -b | sed &lt;span class="s1"&gt;&amp;#39;s/.*[charging|unknown], \([0-9]*\)%.*/\1/gi&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;)&lt;/span&gt;
-    &lt;span class="nv"&gt;STATUS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt; acpi -b | sed &lt;span class="s1"&gt;&amp;#39;s/.*: \([a-zA-Z]*\),.*/\1/gi&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;([&lt;/span&gt; &lt;span class="nv"&gt;$BATT&lt;/span&gt; -le 5 &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="nv"&gt;$STATUS&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Discharging&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;])&lt;/span&gt;; &lt;span class="k"&gt;then&lt;/span&gt;
-                 &lt;span class="c"&gt;# Beep&lt;/span&gt;
+    &lt;span class="c1"&gt;# Check battery level&lt;/span&gt;
+    &lt;span class="nv"&gt;BATT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt; acpi -b &lt;span class="p"&gt;|&lt;/span&gt; sed &lt;span class="s1"&gt;&amp;#39;s/.*[charging|unknown], \([0-9]*\)%.*/\1/gi&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nv"&gt;STATUS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt; acpi -b &lt;span class="p"&gt;|&lt;/span&gt; sed &lt;span class="s1"&gt;&amp;#39;s/.*: \([a-zA-Z]*\),.*/\1/gi&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;([&lt;/span&gt; &lt;span class="nv"&gt;$BA&lt;/span&gt;TT -le &lt;span class="m"&gt;5&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; $&lt;span class="nv"&gt;STATUS&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Discharging&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;])&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+                 &lt;span class="c1"&gt;# Beep&lt;/span&gt;
                  &lt;span class="nb"&gt;echo&lt;/span&gt; -e &lt;span class="s2"&gt;&amp;quot;\007&amp;quot;&lt;/span&gt; &amp;gt;/dev/tty10 &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sleep 0.2
                  &lt;span class="nb"&gt;echo&lt;/span&gt; -e &lt;span class="s2"&gt;&amp;quot;\007&amp;quot;&lt;/span&gt; &amp;gt;/dev/tty10 &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sleep 0.2
                  &lt;span class="nb"&gt;echo&lt;/span&gt; -e &lt;span class="s2"&gt;&amp;quot;\007&amp;quot;&lt;/span&gt; &amp;gt;/dev/tty10 &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sleep 0.2
-                 &lt;span class="c"&gt;# Blink&lt;/span&gt;
+                 &lt;span class="c1"&gt;# Blink&lt;/span&gt;
                  &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;on&amp;#39;&lt;/span&gt; &amp;gt; /proc/acpi/ibm/light &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sleep 1
                  &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;off&amp;#39;&lt;/span&gt; &amp;gt; /proc/acpi/ibm/light
     &lt;span class="k"&gt;fi&lt;/span&gt;
-    &lt;span class="c"&gt;# Update every 10s&lt;/span&gt;
+    &lt;span class="c1"&gt;# Update every 10s&lt;/span&gt;
 sleep 1
-&lt;span class="k"&gt;done&lt;/span&gt; &amp;amp;
-&lt;span class="c"&gt;# Set up rotated dual screen without touching my xorg.conf&lt;/span&gt;
+&lt;span class="k"&gt;done&lt;/span&gt; &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+&lt;span class="c1"&gt;# Set up rotated dual screen without touching my xorg.conf&lt;/span&gt;
 xrandr --output DVI-1 --auto --rotate left --pos 0x0 --output DVI-0 --auto --pos 1080x720 --rotate normal
-&lt;span class="c"&gt;# Read .xsessionrc&lt;/span&gt;
-&lt;span class="c"&gt;#sh ~/.xsessionrc &amp;amp;&lt;/span&gt;
-&lt;span class="c"&gt;# Set wallpaper&lt;/span&gt;
-feh --bg-scale ~/wallpaper.jpg &amp;amp;
-&lt;span class="c"&gt;# Set WM name (for Java apps)&lt;/span&gt;
+&lt;span class="c1"&gt;# Read .xsessionrc&lt;/span&gt;
+&lt;span class="c1"&gt;#sh ~/.xsessionrc &amp;amp;&lt;/span&gt;
+&lt;span class="c1"&gt;# Set wallpaper&lt;/span&gt;
+feh --bg-scale ~/wallpaper.jpg &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+&lt;span class="c1"&gt;# Set WM name (for Java apps)&lt;/span&gt;
 wmname LG3D
-&lt;span class="c"&gt;# run terminal&lt;/span&gt;
-&lt;span class="c"&gt;# xterm -geometry 80x50+494-0 &amp;amp;&lt;/span&gt;
-&lt;span class="c"&gt;# Run dwm&lt;/span&gt;
-&lt;span class="nb"&gt;exec &lt;/span&gt;dwm
+&lt;span class="c1"&gt;# run terminal&lt;/span&gt;
+&lt;span class="c1"&gt;# xterm -geometry 80x50+494-0 &amp;amp;&lt;/span&gt;
+&lt;span class="c1"&gt;# Run dwm&lt;/span&gt;
+&lt;span class="nb"&gt;exec&lt;/span&gt; dwm
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;dan ini .xsetroot.sh&lt;/p&gt;
 &lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
@@ -371,17 +385,17 @@ wmname LG3D
  8
  9
 10
-11&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;DATETIME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;date&lt;span class="sb"&gt;`&lt;/span&gt;
-&lt;span class="nv"&gt;VOLUME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt; amixer sget Master| grep -e &lt;span class="s2"&gt;&amp;quot;%&amp;quot;&lt;/span&gt; | sed &lt;span class="s1"&gt;&amp;#39;s/.*Playback channels: Mono\s*//&amp;#39;&lt;/span&gt;| sed &lt;span class="s1"&gt;&amp;#39;s/.*Mono:\s*//&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
-&lt;span class="c"&gt;#PLAY_NOW=$(ncmpcpp --current-song)&lt;/span&gt;
-&lt;span class="nv"&gt;CPU_TEMPERATURE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;acpi -t | awk &lt;span class="s1"&gt;&amp;#39;/Thermal 1/ {print $4}&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
-&lt;span class="nv"&gt;RX&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;ifconfig wlo1 | grep -e &lt;span class="s1"&gt;&amp;#39;RX packets&amp;#39;&lt;/span&gt; | sed &lt;span class="s1"&gt;&amp;#39;s/.*RX packets\s*//&amp;#39;&lt;/span&gt; | sed &lt;span class="s1"&gt;&amp;#39;s/.*bytes\s*//&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
-&lt;span class="nv"&gt;RAM_FREE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;$(free  -m | awk &amp;#39;/Mem/ { print $4 }&amp;#39;)&amp;quot;&lt;/span&gt;
-&lt;span class="nv"&gt;BATTERYSTATE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt; acpi -b | awk &lt;span class="s1"&gt;&amp;#39;{ split($5,a,&amp;quot;:&amp;quot;); print substr($3,0,2), $4, &amp;quot;[&amp;quot;a[1]&amp;quot;:&amp;quot;a[2]&amp;quot;]&amp;quot; }&amp;#39;&lt;/span&gt; | tr -d &lt;span class="s1"&gt;&amp;#39;,&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;)&lt;/span&gt;
-&lt;span class="c"&gt;#if [ `date +%S` == 30 -o `date +%S` == 00 ]; then&lt;/span&gt;
-&lt;span class="c"&gt;#python imap_check_unread.py &amp;gt; .unreadmail; fi&lt;/span&gt;
-xsetroot -name &lt;span class="s2"&gt;&amp;quot;ram free ${RAM_FREE}  | RX ${RX} |  ${VOLUME} | ${DATETIME}| ${BATTERYSTATE} |&lt;/span&gt;
-&lt;span class="s2"&gt;temperature cpu ${CPU_TEMPERATURE}C&amp;quot;&lt;/span&gt;
+11&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;DATETIME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;date&lt;span class="sb"&gt;`&lt;/span&gt;
+&lt;span class="nv"&gt;VOLUME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt; amixer sget Master&lt;span class="p"&gt;|&lt;/span&gt; grep -e &lt;span class="s2"&gt;&amp;quot;%&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sed &lt;span class="s1"&gt;&amp;#39;s/.*Playback channels: Mono\s*//&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt; sed &lt;span class="s1"&gt;&amp;#39;s/.*Mono:\s*//&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;#PLAY_NOW=$(ncmpcpp --current-song)&lt;/span&gt;
+&lt;span class="nv"&gt;CPU_TEMPERATURE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;acpi -t &lt;span class="p"&gt;|&lt;/span&gt; awk &lt;span class="s1"&gt;&amp;#39;/Thermal 1/ {print $4}&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;RX&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;ifconfig wlo1 &lt;span class="p"&gt;|&lt;/span&gt; grep -e &lt;span class="s1"&gt;&amp;#39;RX packets&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sed &lt;span class="s1"&gt;&amp;#39;s/.*RX packets\s*//&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sed &lt;span class="s1"&gt;&amp;#39;s/.*bytes\s*//&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;RAM_FREE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;free  -m &lt;span class="p"&gt;|&lt;/span&gt; awk &lt;span class="s1"&gt;&amp;#39;/Mem/ { print $4 }&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;BATTERYSTATE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt; acpi -b &lt;span class="p"&gt;|&lt;/span&gt; awk &lt;span class="s1"&gt;&amp;#39;{ split($5,a,&amp;quot;:&amp;quot;); print substr($3,0,2), $4, &amp;quot;[&amp;quot;a[1]&amp;quot;:&amp;quot;a[2]&amp;quot;]&amp;quot; }&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; tr -d &lt;span class="s1"&gt;&amp;#39;,&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;#if [ `date +%S` == 30 -o `date +%S` == 00 ]; then&lt;/span&gt;
+&lt;span class="c1"&gt;#python imap_check_unread.py &amp;gt; .unreadmail; fi&lt;/span&gt;
+xsetroot -name &lt;span class="s2"&gt;&amp;quot;ram free &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;RAM_FREE&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;  | RX &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;RX&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt; |  &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;VOLUME&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt; | &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;DATETIME&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;| &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;BATTERYSTATE&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt; |&lt;/span&gt;
+&lt;span class="s2"&gt;temperature cpu &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;CPU_TEMPERATURE&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;C&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;demikian sharing dari saya&lt;/p&gt;
 </summary></entry><entry><title>Review gentoo</title><link href="coder212.github.io/review-gentoo.html" rel="alternate"></link><updated>2016-03-18T01:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-18:coder212.github.io/review-gentoo.html</id><summary type="html">&lt;p&gt;Apa itu gentoo gnu/linux?&lt;/p&gt;
