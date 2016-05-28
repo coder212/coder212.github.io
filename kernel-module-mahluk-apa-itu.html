@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
         <meta charset="utf-8" />
-        <title>Cara Menggunakan Perintah Mount</title>
+        <title>Kernel Module Mahluk Apa Itu?</title>
         <link rel="stylesheet" href="./theme/css/main.css" />
         <link href="arba.nothinux.id/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="GNU/Linux Reviews Tutorial and Catatan Pribadi Atom Feed" />
 
@@ -16,69 +16,48 @@
                 <h1><a href="./">GNU/Linux Reviews Tutorial and Catatan Pribadi </a></h1>
                 <nav><ul>
                     <li><a href="./category/about.html">about</a></li>
-                    <li><a href="./category/gnulinux.html">GNU/Linux</a></li>
-                    <li class="active"><a href="./category/tutorial.html">tutorial</a></li>
+                    <li class="active"><a href="./category/gnulinux.html">GNU/Linux</a></li>
+                    <li><a href="./category/tutorial.html">tutorial</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="./mount_partisi.html" rel="bookmark"
-           title="Permalink to Cara Menggunakan Perintah Mount">Cara Menggunakan Perintah Mount</a></h1>
+        <a href="./kernel-module-mahluk-apa-itu.html" rel="bookmark"
+           title="Permalink to Kernel Module Mahluk Apa Itu?">Kernel Module Mahluk Apa Itu?</a></h1>
     </header>
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2016-03-23T12:00:00+07:00">
-                Published: Rab 23 Maret 2016
+        <abbr class="published" title="2016-05-19T15:40:00+07:00">
+                Published: Kam 19 Mei 2016
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="./author/arba.html">arba</a>
         </address>
-<p>In <a href="./category/tutorial.html">tutorial</a>.</p>
-
-</footer><!-- /.post-info -->      <p>Apa Itu Mount? Mount adalah memuat device kedalam filesistem sistem operasi, mount kita perlukan untuk memuat device - device penyimpanan kedalam filesistem gnu/linux sistem operasi agar kita bisa mengakses isi dari device-device tersebut.</p>
-<p>lalu bagaimanakah cara memuat atau mount device tersebut begini caranya</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">code:</th><td class="field-body">mount -t type device tujuan</td>
-</tr>
-</tbody>
-</table>
-<p>contoh:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">code:</th><td class="field-body">mount -t ntfs /dev/sdb2 /media/username</td>
-</tr>
-<tr class="field"><th class="field-name">code:</th><td class="field-body">mount /dev/sda1 /</td>
-</tr>
-</tbody>
-</table>
-<p>itu artinya memuat /dev/sda1 sebagai root(/) filesistem biasanya kalo langsung seperti itu menggunakan type ext.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">code:</th><td class="field-body">mount -t proc none /mnt/proc</td>
-</tr>
-</tbody>
-</table>
-<p>perintah ini digunakan untuk memuat isi dari /proc system host kedalam system tamu.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">code:</th><td class="field-body">mount -o bind /sys /mnt/sys</td>
-</tr>
-</tbody>
-</table>
-<p>perintah ini digunakan untuk mereplikasi isi dari /sys host kedalam /sys tamu.</p>
+<p>In <a href="./category/gnulinux.html">GNU/Linux</a>.</p>
+<p>tags: <a href="./tag/gnulinux.html">gnu/linux</a> <a href="./tag/kernel-modules.html">Kernel modules</a> </p>
+</footer><!-- /.post-info -->      <p>Apa itu kernel module? Kernel module merupakan potongan dari kode yang dapat diload atau tidak diload kedalam kernel, pada saat itu juga tanpa mematikan atau menghidupkan ulang sistem anda.
+Mereka ( Kernel Module ) dapat langsung digunakan tanpa melakukan boot ulang sistem.
+Sebagai contoh, salah satu tipe kernel module adalah supir perangkat, yang mengizinkan kernel untuk dapat menjangkau perangkat keras agar terhubung kedalam sistem.
+Tanpa kernel modul kita akan membangun kernel monolitik dan menambahkan fungsi baru yang dimasukkan kedalam kernel image.</p>
+<p>Disamping memiliki kekurangan image kernel yang membengkak juga kamu harus membangun dan memboot sistem secara terus menerus ketika kita membutuhkan fungsi baru. Ketika kamu mencetak sebuah dokumen dengan mesin
+pencetak ( printer ) yang berperan untuk menjembatani antara mesin pencetak dengan kernel adalah kernel module, alurnya adalah sebagai berikut applikasi --&gt; kernel --&gt; kernel module --&gt; printer.</p>
+<p>Untuk melihat kernel modul apa saja yang sudah siap untuk kamu gunakan lsmod, yang mendapatkan informasi dengan membaca berkas /proc/modules.
+Ketika kernel membutuhkan fitur yang tidak hanya berada dalam wilayah kekuasaan kernel
+maka kamu harus menggunakan perintah modprobe dan jika anda ingin mengistall kernel module panggil insmod.</p>
+<p>Kernel modul adalah solusi agar hardware anda dapat dikenali sekaligus dapat digunakan oleh kernel dan pastinya oleh applikasi atau program yang anda jalankan.
+Tanpa kernel modul rasanya sangat sulit rasanya meciptakan kernel image yang kecil ukurannya. Kernel modul merupakan perangkat lunak yang berfungsi untuk mengendalikan perangkat keras yang anda miliki.
+Kernel modul dihadirkan karena untuk mempermudah dalam pembuatan sistem operasi yang kita mampu menambahkan fungsi baru hardware tanpa kita melakukan boot ulang sistem.
+Kernel modul memanglah bukan hanya untuk  printer saja  ada juga  untuk modem, perangkat audio, perangkat grafis, wifi, usb dan perangkat lainya.</p>
+<p>Artikel ini ditulis berdasarkan ebook The Linux Kernel Module Programming Guide yang ditulis oleh:</p>
+<ol class="arabic simple">
+<li>Peter Jay Salzman.</li>
+<li>Michael Burian.</li>
+<li>Ori Pomerantz.</li>
+</ol>
 
     </div><!-- /.entry-content -->
     <div class="comments">
@@ -86,8 +65,8 @@
       <div id="disqus_thread"></div>
       <script type="text/javascript">
         var disqus_shortname = 'site.coder212';
-        var disqus_identifier = 'mount_partisi.html';
-        var disqus_url = './mount_partisi.html';
+        var disqus_identifier = 'kernel-module-mahluk-apa-itu.html';
+        var disqus_url = './kernel-module-mahluk-apa-itu.html';
         (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//site.coder212.disqus.com/embed.js';

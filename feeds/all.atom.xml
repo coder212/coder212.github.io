@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>gnu/linux commandline tutorial and review</title><link href="coder212.github.io/" rel="alternate"></link><link href="coder212.github.io/feeds/all.atom.xml" rel="self"></link><id>coder212.github.io/</id><updated>2016-05-10T17:00:00+07:00</updated><entry><title>Mengenal ArchLinux</title><link href="coder212.github.io/mengenal-archlinux.html" rel="alternate"></link><updated>2016-05-10T17:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-05-10:coder212.github.io/mengenal-archlinux.html</id><summary type="html">&lt;p&gt;Archlinux adalah distro GNU/Linux yang menerapkan konsep Keep It Simple Stupid ( KISS ). Jadi kesederhanaan adalah kata kuncinya.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>GNU/Linux Reviews Tutorial and Catatan Pribadi</title><link href="arba.nothinux.id/" rel="alternate"></link><link href="arba.nothinux.id/feeds/all.atom.xml" rel="self"></link><id>arba.nothinux.id/</id><updated>2016-05-19T15:40:00+07:00</updated><entry><title>Kernel Module Mahluk Apa Itu?</title><link href="arba.nothinux.id/kernel-module-mahluk-apa-itu.html" rel="alternate"></link><updated>2016-05-19T15:40:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-05-19:arba.nothinux.id/kernel-module-mahluk-apa-itu.html</id><summary type="html">&lt;p&gt;Apa itu kernel module? Kernel module merupakan potongan dari kode yang dapat diload atau tidak diload kedalam kernel, pada saat itu juga tanpa mematikan atau menghidupkan ulang sistem anda.
+Mereka ( Kernel Module ) dapat langsung digunakan tanpa melakukan boot ulang sistem.
+Sebagai contoh, salah satu tipe kernel module adalah supir perangkat, yang mengizinkan kernel untuk dapat menjangkau perangkat keras agar terhubung kedalam sistem.
+Tanpa kernel modul kita akan membangun kernel monolitik dan menambahkan fungsi baru yang dimasukkan kedalam kernel image.&lt;/p&gt;
+&lt;p&gt;Disamping memiliki kekurangan image kernel yang membengkak juga kamu harus membangun dan memboot sistem secara terus menerus ketika kita membutuhkan fungsi baru. Ketika kamu mencetak sebuah dokumen dengan mesin
+pencetak ( printer ) yang berperan untuk menjembatani antara mesin pencetak dengan kernel adalah kernel module, alurnya adalah sebagai berikut applikasi --&amp;gt; kernel --&amp;gt; kernel module --&amp;gt; printer.&lt;/p&gt;
+&lt;p&gt;Untuk melihat kernel modul apa saja yang sudah siap untuk kamu gunakan lsmod, yang mendapatkan informasi dengan membaca berkas /proc/modules.
+Ketika kernel membutuhkan fitur yang tidak hanya berada dalam wilayah kekuasaan kernel
+maka kamu harus menggunakan perintah modprobe dan jika anda ingin mengistall kernel module panggil insmod.&lt;/p&gt;
+&lt;p&gt;Kernel modul adalah solusi agar hardware anda dapat dikenali sekaligus dapat digunakan oleh kernel dan pastinya oleh applikasi atau program yang anda jalankan.
+Tanpa kernel modul rasanya sangat sulit rasanya meciptakan kernel image yang kecil ukurannya. Kernel modul merupakan perangkat lunak yang berfungsi untuk mengendalikan perangkat keras yang anda miliki.
+Kernel modul dihadirkan karena untuk mempermudah dalam pembuatan sistem operasi yang kita mampu menambahkan fungsi baru hardware tanpa kita melakukan boot ulang sistem.
+Kernel modul memanglah bukan hanya untuk  printer saja  ada juga  untuk modem, perangkat audio, perangkat grafis, wifi, usb dan perangkat lainya.&lt;/p&gt;
+&lt;p&gt;Artikel ini ditulis berdasarkan ebook The Linux Kernel Module Programming Guide yang ditulis oleh:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Peter Jay Salzman.&lt;/li&gt;
+&lt;li&gt;Michael Burian.&lt;/li&gt;
+&lt;li&gt;Ori Pomerantz.&lt;/li&gt;
+&lt;/ol&gt;
+</summary><category term="gnu/linux"></category><category term="Kernel modules"></category></entry><entry><title>Mengenal ArchLinux</title><link href="arba.nothinux.id/mengenal-archlinux.html" rel="alternate"></link><updated>2016-05-10T17:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-05-10:arba.nothinux.id/mengenal-archlinux.html</id><summary type="html">&lt;p&gt;Archlinux adalah distro GNU/Linux yang menerapkan konsep Keep It Simple Stupid ( KISS ). Jadi kesederhanaan adalah kata kuncinya.
 Kesederhanaan yang dimaksud adalah dari sisi pengembang, jadi distro ini menuntut anda memahami konsep GNU/Linux, tanpa pengetahuan ini anda akan kebingungan dalam menggunakan distro ini.
 Distro mewajibkan anda terhubung ke internet ketika instalasi, tanpa internet mustahil kamu bisa menginstallnya.
 Distro ini dibuat oleh jud vinnet yang terinspirasi oleh CRUX.&lt;/p&gt;
@@ -13,7 +32,7 @@ Fitur yang paling istimewa dari arch adalah Arch User Repository ( AUR ), yang b
 &lt;/ol&gt;
 &lt;p&gt;demikianlah yang bisa saya tuliskan tentang Archlinux, Semoga Bermanfaat.&lt;/p&gt;
 &lt;p&gt;Terima Kasih.&lt;/p&gt;
-</summary><category term="reviews"></category><category term="gnu/linux"></category><category term="archlinux"></category></entry><entry><title>CARA INSTALL DAN KONFIGURASI DWM DI GENTOO DAN DISTRO LAIN</title><link href="coder212.github.io/cara-install-dan-konfigurasi-dwm-di-gentoo-dan-distro-lain.html" rel="alternate"></link><updated>2016-04-06T14:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-04-06:coder212.github.io/cara-install-dan-konfigurasi-dwm-di-gentoo-dan-distro-lain.html</id><summary type="html">&lt;p&gt;Apa itu dwm(dynamic window manager)? dynamic window manager adalah tilling window manager , yang dinamis dan mudah di kostumisasi dwm dibuild dari bahasa c jadi kita harus mengkompilasinya.&lt;/p&gt;
+</summary><category term="reviews"></category><category term="gnu/linux"></category><category term="archlinux"></category></entry><entry><title>CARA INSTALL DAN KONFIGURASI DWM DI GENTOO DAN DISTRO LAIN</title><link href="arba.nothinux.id/cara-install-dan-konfigurasi-dwm-di-gentoo-dan-distro-lain.html" rel="alternate"></link><updated>2016-04-06T14:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-04-06:arba.nothinux.id/cara-install-dan-konfigurasi-dwm-di-gentoo-dan-distro-lain.html</id><summary type="html">&lt;p&gt;Apa itu dwm(dynamic window manager)? dynamic window manager adalah tilling window manager , yang dinamis dan mudah di kostumisasi dwm dibuild dari bahasa c jadi kita harus mengkompilasinya.&lt;/p&gt;
 &lt;p&gt;dwm bisa di install di distro gnu/linux, unix. begini cara installnya kalo di gentoo cukup emerge --ask dwm,
 terus ubah /etc/portage/savedconfig/x11-wm/dwm-6.0.&lt;/p&gt;
 &lt;p&gt;atau bisa juga dengan mengunduh source codenya untuk lebih optimal install dulu dependenciesnya,
@@ -398,7 +417,7 @@ xsetroot -name &lt;span class="s2"&gt;&amp;quot;ram free &lt;/span&gt;&lt;span c
 &lt;span class="s2"&gt;temperature cpu &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;CPU_TEMPERATURE&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;C&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;demikian sharing dari saya&lt;/p&gt;
-</summary></entry><entry><title>Cara Menggunakan Perintah Mount</title><link href="coder212.github.io/mount_partisi.html" rel="alternate"></link><updated>2016-03-23T12:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-23:coder212.github.io/mount_partisi.html</id><summary type="html">&lt;p&gt;Apa Itu Mount? Mount adalah memuat device kedalam filesistem sistem operasi, mount kita perlukan untuk memuat device - device penyimpanan kedalam filesistem gnu/linux sistem operasi agar kita bisa mengakses isi dari device-device tersebut.&lt;/p&gt;
+</summary></entry><entry><title>Cara Menggunakan Perintah Mount</title><link href="arba.nothinux.id/mount_partisi.html" rel="alternate"></link><updated>2016-03-23T12:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-23:arba.nothinux.id/mount_partisi.html</id><summary type="html">&lt;p&gt;Apa Itu Mount? Mount adalah memuat device kedalam filesistem sistem operasi, mount kita perlukan untuk memuat device - device penyimpanan kedalam filesistem gnu/linux sistem operasi agar kita bisa mengakses isi dari device-device tersebut.&lt;/p&gt;
 &lt;p&gt;lalu bagaimanakah cara memuat atau mount device tersebut begini caranya&lt;/p&gt;
 &lt;table class="docutils field-list" frame="void" rules="none"&gt;
 &lt;col class="field-name" /&gt;
@@ -438,7 +457,7 @@ xsetroot -name &lt;span class="s2"&gt;&amp;quot;ram free &lt;/span&gt;&lt;span c
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;perintah ini digunakan untuk mereplikasi isi dari /sys host kedalam /sys tamu.&lt;/p&gt;
-</summary></entry><entry><title>Review gentoo</title><link href="coder212.github.io/review-gentoo.html" rel="alternate"></link><updated>2016-03-18T01:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-18:coder212.github.io/review-gentoo.html</id><summary type="html">&lt;p&gt;Apa itu gentoo gnu/linux?&lt;/p&gt;
+</summary></entry><entry><title>Review gentoo</title><link href="arba.nothinux.id/review-gentoo.html" rel="alternate"></link><updated>2016-03-18T01:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-18:arba.nothinux.id/review-gentoo.html</id><summary type="html">&lt;p&gt;Apa itu gentoo gnu/linux?&lt;/p&gt;
 &lt;p&gt;Gentoo adalah distribusi gnu/linux yang berintikan portage untuk pembaruan system, portage itu hampir serupa dengan port pada bsd system.&lt;/p&gt;
 &lt;p&gt;cara baca gentoo adalah seperti huruf g, untuk kata angel jadi bacanya jentu.&lt;/p&gt;
 &lt;p&gt;Gentoo gnu/linux dibuat oleh Daniels robbins, distro ini lumayan menantang karena, di build dari source code jadi dikompil disystem kita jadi sedikit membantu kecepatan performa hardware.&lt;/p&gt;
@@ -464,7 +483,7 @@ xsetroot -name &lt;span class="s2"&gt;&amp;quot;ram free &lt;/span&gt;&lt;span c
 &lt;li&gt;bisa dibuat untuk system yang saya butuhkan.&lt;/li&gt;
 &lt;li&gt;kostumisasinya bener-bener bagus.&lt;/li&gt;
 &lt;/ol&gt;
-</summary><category term="review"></category><category term="gentoo"></category></entry><entry><title>Cara Install ArchLinux Ke Flashdisk</title><link href="coder212.github.io/cara-install-archlinux-ke-flashdisk.html" rel="alternate"></link><updated>2016-03-16T14:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-16:coder212.github.io/cara-install-archlinux-ke-flashdisk.html</id><summary type="html">&lt;p&gt;Cara install archlinux ke flashdisk&lt;/p&gt;
+</summary><category term="review"></category><category term="gentoo"></category></entry><entry><title>Cara Install ArchLinux Ke Flashdisk</title><link href="arba.nothinux.id/cara-install-archlinux-ke-flashdisk.html" rel="alternate"></link><updated>2016-03-16T14:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-16:arba.nothinux.id/cara-install-archlinux-ke-flashdisk.html</id><summary type="html">&lt;p&gt;Cara install archlinux ke flashdisk&lt;/p&gt;
 &lt;p&gt;Terlebih dahulu jalankan liveusb archlinux gunakan unetbootin atau apa saja yang penting bisa membuat bootable archlinux.
 saya akan menuliskan cara install archlinux kedalam flashdisk menurut versi saya bukan versi orang lain loh ada yang tau archlinux itu apa? kalo menurutku archlinux ,os berkernel linux alias gnu/linux operating system yang mirip lego jadi systemnya bisa dibongkar pasang, sesuka usernya. langsung saja kita mulai tutorialnya sebagai berikut:&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
@@ -510,7 +529,7 @@ saya akan menuliskan cara install archlinux kedalam flashdisk menurut versi saya
 &lt;li&gt;keluarkan usb installer&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;selesai sudah kita install archlinux ke dalam flashdisk versi saya yang cuma cli , untuk guinya ketikan pacman -S namaprogram&lt;/p&gt;
-</summary><category term="Gnu/Linux"></category><category term="install archlinux"></category></entry><entry><title>Cara Install Gentoo</title><link href="coder212.github.io/cara-install-gentoo.html" rel="alternate"></link><updated>2016-03-16T13:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-16:coder212.github.io/cara-install-gentoo.html</id><summary type="html">&lt;p&gt;Cara install gentoo versi saya hehe
+</summary><category term="Gnu/Linux"></category><category term="install archlinux"></category></entry><entry><title>Cara Install Gentoo</title><link href="arba.nothinux.id/cara-install-gentoo.html" rel="alternate"></link><updated>2016-03-16T13:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-16:arba.nothinux.id/cara-install-gentoo.html</id><summary type="html">&lt;p&gt;Cara install gentoo versi saya hehe
 pastikan kamu memiliki distro gnu/linux lainnya atau kamu menggunakan liveusb atau livecd boleh boleh saja dalam hal ini saya menggunakan distro ubuntu 14.04 sebagai hostnya
 pertama lakukan hal ini&lt;/p&gt;
 &lt;table class="docutils field-list" frame="void" rules="none"&gt;
@@ -806,7 +825,7 @@ Berikut ini langkah-langkahnya
 &lt;p&gt;hehe udah beres gan enakan gan caranya hehehehe.&lt;/p&gt;
 &lt;p&gt;source problem solve: &lt;a class="reference external" href="https://forums.gentoo.org/viewtopic-t-989588-view-next.html?sid=313069c74850025626661e39729cd83a"&gt;https://forums.gentoo.org/viewtopic-t-989588-view-next.html?sid=313069c74850025626661e39729cd83a&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;source install gentoo: &lt;a class="reference external" href="http://dev.gentoo.org/~swift/tmp/handbook-amd64.pdf"&gt;http://dev.gentoo.org/~swift/tmp/handbook-amd64.pdf&lt;/a&gt;&lt;/p&gt;
-</summary><category term="gnu/linux"></category><category term="install gentoo"></category></entry><entry><title>ARBA</title><link href="coder212.github.io/arba.html" rel="alternate"></link><updated>2016-03-12T23:24:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-12:coder212.github.io/arba.html</id><summary type="html">&lt;p&gt;nama lengkap: arbaun zuhdi ma'arif&lt;/p&gt;
+</summary><category term="gnu/linux"></category><category term="install gentoo"></category></entry><entry><title>ARBA</title><link href="arba.nothinux.id/arba.html" rel="alternate"></link><updated>2016-03-12T23:24:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-12:arba.nothinux.id/arba.html</id><summary type="html">&lt;p&gt;nama lengkap: arbaun zuhdi ma'arif&lt;/p&gt;
 &lt;p&gt;panggilan: arba , arbaun , yudi , arif&lt;/p&gt;
 &lt;p&gt;alamat: Congol , Bendungan ,Simo, Boyolali, Jawa Tengah , Indonesia&lt;/p&gt;
 &lt;p&gt;hobby: gnu/linux enthusiast , coding , ngoprek elektronika&lt;/p&gt;
@@ -814,7 +833,7 @@ Berikut ini langkah-langkahnya
 &lt;p&gt;motto : do if you want to do.&lt;/p&gt;
 &lt;p&gt;tujuan: website ini saya bangun untuk sebagai catatan pribadi sekaligus numpang eksis di dunia byte ini.&lt;/p&gt;
 &lt;p&gt;contact : &lt;a class="reference external" href="mailto:yujimaarif.ym&amp;#64;gmail.com"&gt;yujimaarif.ym&amp;#64;gmail.com&lt;/a&gt;&lt;/p&gt;
-</summary></entry><entry><title>Tutorial Perintah - Perintah Terminal Yang Sering Digunakan</title><link href="coder212.github.io/tutorial-perintah-perintah-terminal-yang-sering-digunakan.html" rel="alternate"></link><updated>2016-03-12T23:11:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-12:coder212.github.io/tutorial-perintah-perintah-terminal-yang-sering-digunakan.html</id><summary type="html">&lt;p&gt;Perintah terminal yang sering digunakan&lt;/p&gt;
+</summary></entry><entry><title>Tutorial Perintah - Perintah Terminal Yang Sering Digunakan</title><link href="arba.nothinux.id/tutorial-perintah-perintah-terminal-yang-sering-digunakan.html" rel="alternate"></link><updated>2016-03-12T23:11:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-12:arba.nothinux.id/tutorial-perintah-perintah-terminal-yang-sering-digunakan.html</id><summary type="html">&lt;p&gt;Perintah terminal yang sering digunakan&lt;/p&gt;
 &lt;p&gt;berikut adalah perintah - perintah yang sering digunakan didalam terminal gnu/Linux distro, untuk melakukan suatu pekerjaan tertentu.&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;cp&lt;/li&gt;
@@ -1046,7 +1065,7 @@ Berikut ini langkah-langkahnya
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;untuk berpindah dari current direktori kedalam folder Downloads&lt;/p&gt;
-</summary><category term="terminal"></category><category term="shell"></category><category term="gnu/linux"></category></entry><entry><title>review crux</title><link href="coder212.github.io/review-crux.html" rel="alternate"></link><updated>2016-03-11T13:25:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-11:coder212.github.io/review-crux.html</id><summary type="html">&lt;p&gt;Apa itu Crux gnu/linux.&lt;/p&gt;
+</summary><category term="terminal"></category><category term="shell"></category><category term="gnu/linux"></category></entry><entry><title>review crux</title><link href="arba.nothinux.id/review-crux.html" rel="alternate"></link><updated>2016-03-11T13:25:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-11:arba.nothinux.id/review-crux.html</id><summary type="html">&lt;p&gt;Apa itu Crux gnu/linux.&lt;/p&gt;
 &lt;p&gt;crux gnu/linux adalah distribusi gnu/linux yang kecil dan diperuntukan bagi user berpengalaman karena, semuanya di distribusikan dalam bentuk source code.
 crux gnu/linux enak dipake buat belajar membuat konfigurasi system dan karena sebagian dicompile di komputer kita jadi lebih bagus hasilnya meskipun tak begitu signifikan sih hehe.
 crux gnu/linux sangat minimalis dan enak untuk dikelola dengan manajer paket prt-get dan pkg-utils lumayan membantu.&lt;/p&gt;
@@ -1149,7 +1168,7 @@ uncomment mv /etc/ports/contrib.rsync.inactive /etc/ports/contrib.rsync&lt;/p&gt
 &lt;p&gt;kemudian ketikan perintah ports -u, lalu ports -d untuk melihat perbedaannya, untuk install bisa ketikan prt-get install nama-paket.&lt;/p&gt;
 &lt;p&gt;kemudian login sebagai user name dengan perintah su user-name.&lt;/p&gt;
 &lt;p&gt;ketik nano .xinitrc dan tulis exec openbox atau bisa juga openbox-session, sekian review dari saya semoga bermanfaat.&lt;/p&gt;
-</summary><category term="crux"></category><category term="gnu/linux"></category><category term="review"></category></entry><entry><title>Cara compile kernel</title><link href="coder212.github.io/cara-compile-kernel.html" rel="alternate"></link><updated>2016-03-10T18:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-10:coder212.github.io/cara-compile-kernel.html</id><summary type="html">&lt;p&gt;Cara Compile Kernel Di GNU/Linux.&lt;/p&gt;
+</summary><category term="crux"></category><category term="gnu/linux"></category><category term="review"></category></entry><entry><title>Cara compile kernel</title><link href="arba.nothinux.id/cara-compile-kernel.html" rel="alternate"></link><updated>2016-03-10T18:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-03-10:arba.nothinux.id/cara-compile-kernel.html</id><summary type="html">&lt;p&gt;Cara Compile Kernel Di GNU/Linux.&lt;/p&gt;
 &lt;p&gt;apa itu kernel? kernel adalah inti dari sistem operasi tiap sistem operasi mempunyai kernelnya masing masing, tergantung bagaimana platform itu diciptakan.
 platform windows tentu berbeda dengan platform gnu karena sifat gnu sendiri yang bebas.&lt;/p&gt;
 &lt;p&gt;ok cukup sampai disini saja ngga usah dipanjang lebarin lagi.
