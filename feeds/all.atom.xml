@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>GNU/Linux Reviews, Tutorial, Catatan</title><link href="coder212.github.io/" rel="alternate"></link><link href="coder212.github.io/feeds/all.atom.xml" rel="self"></link><id>coder212.github.io/</id><updated>2016-05-29T15:00:00+07:00</updated><entry><title>Bagaimana Cara Menjadi Seorang Hacker</title><link href="coder212.github.io/bagaimana-cara-menjadi-seorang-hacker.html" rel="alternate"></link><updated>2016-05-29T15:00:00+07:00</updated><author><name>Arba</name></author><id>tag:,2016-05-29:coder212.github.io/bagaimana-cara-menjadi-seorang-hacker.html</id><summary type="html">&lt;p&gt;Menjadi seorang hacker adalah cita-cita hampir semua orang yang ada di penjuru dunia. Menjadi seorang hacker memanglah tidak mudah, kita dituntut untuk terus belajar guna meningkatkan skill atau kemampuan kita.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>GNU/Linux Reviews, Tutorial, Catatan</title><link href="coder212.github.io/" rel="alternate"></link><link href="coder212.github.io/feeds/all.atom.xml" rel="self"></link><id>coder212.github.io/</id><updated>2016-05-31T19:00:00+07:00</updated><entry><title>Kisah GNU/Linux Enthusiast</title><link href="coder212.github.io/kisah-gnulinux-enthusiast.html" rel="alternate"></link><updated>2016-05-31T19:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-05-31:coder212.github.io/kisah-gnulinux-enthusiast.html</id><summary type="html">&lt;p&gt;Cerita Tentang Kehidupan GNU/Linux Enthusiast&lt;/p&gt;
+&lt;p&gt;Saya pertama kali mengenal GNU/Linux tahun 2010 pada waktu kelas dasar pemrograman. Sejak saat itu saya jadi penasaran apa itu GNU/Linux, mengapa GNU/Linux dan lain sebagainya. pada ahirnya saya mencoba Ubuntu 10.10
+ketika menggunakan Ubuntu 10.10 saya mengalami kebingungan karena file audio saya yang kebetulan berformat mp3 tidak dapat diputar di Ubuntu saya, bahkan saya tidak dapat menggunakan printer saya padahal saya sedang
+mengerjakan tugas yang membutuhkan printer untuk mencetak tugas yang sedang saya kerjakan. Hal ini memaksa saya untuk mempelajari teknis bagaimana printer bekerja apa saja yang harus saya penuhi agar printer dapat
+bekerja saya mencari drivernya untuk ubuntu dan lain sebagainya setelah berjam-jam mencari cara untuk dapat membuat printer saya berfungsi dengan baik, ahirnya saya menemukannya dan printer saya sudah berfungsi
+normal tapi masalah file audio yang berformat mp3 masihlah belum ditemukan solusinya.&lt;/p&gt;
+&lt;p&gt;Setelah berjam-jam mencari solusi sampai bingung sendiri belum ketemu juga solusinya sampai saya putus asa, setelah putus asa itulah saya iseng memutar berkas suara yang berformat mp3 dalam posisi terhubung
+ke internet ternyata sang media playernya mencari sendiri kodeknya selesai sudah semua persoalan tersebut, meskipun ketika berkenalan dan menggunakan GNU/Linux mengalami banyak masalah tapi saya tidaklah punya
+keinginan sedikitpun kembali menggunakan windows ataupun macos. Tak berapa lama saya tertarik untuk menginstall sabily alquds yang menurutku sangat enak karena applikasi yang bisa dipergunakan untuk beribadah sudah
+terinstall didalamnya menggunakan sabily saya hampir tak mengalami hambatan satupun dengan sabily inilah saya mengeksplorasi tampilannya mulai dari compiz merubah tampilan ala xp, win7 bahkan macos sempat saya
+lakukan dan itu semua mengajarkan saya untuk terus berkembang.&lt;/p&gt;
+&lt;p&gt;Dengan sabily pulalah saya membuat applikasi untuk android, karena saya penasaran Ubuntu 11.04 ahirnya saya upgrade sabily saya menjadi 11.04, dengan sistem ini saya mengeksplorasi python dan nasm assembler. Ketika
+muncul Ubuntu 11.10 saya update dan upgrade lagi, di system ini saya banyak mengeksplorasi bash script, semua script saya buat untuk memenuhi keingintahuan saya mengenai bash bisa dibuat untuk apa, setelah beli
+laptop baru untuk menunjang pekerjaan laptop tersebut menggunakan Ubuntu 12.04, netbook saya install backtrack5 tapi belum sempet saya gunakan udah berpindah tangan kepada keponakan saya. dengan laptop inilah saya
+berpetualang kebanyak distro. distro tersebut adalah sebagai berikut:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Ubuntu 12.04.&lt;/li&gt;
+&lt;li&gt;BodhiLinux.&lt;/li&gt;
+&lt;li&gt;Kali Linux.&lt;/li&gt;
+&lt;li&gt;ArchLinux.&lt;/li&gt;
+&lt;li&gt;Freebsd ( Unix like sebenarnya bukan distro GNU/Linux ).&lt;/li&gt;
+&lt;li&gt;Slackware.&lt;/li&gt;
+&lt;li&gt;CRUX.&lt;/li&gt;
+&lt;li&gt;Kwort.&lt;/li&gt;
+&lt;li&gt;LFS.&lt;/li&gt;
+&lt;li&gt;OpenSUSE.&lt;/li&gt;
+&lt;li&gt;Gentoo.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Ahirnya saya memutuskan untuk bertahan di Gentoo dengan ditemani oleh archlinux karena hanya dua sistem itu yang pas dihati, meskipun suatu hari nanti saya akan kembali menggunakan LFS tapi setidaknya saya saat ini
+cukup digentoo didalam gentoo ini saya mencoba berpetualang dengan golang sebuah bahasa pemrograman yang dibuat oleh programmer google, bahasa ini sangat enak membuat source code dengan menggunakan golang, dan
+sayapun masih akan tetap mengeksplorasi bahasa pemrograman c dan assembly yang 64bit. Cukup ini yang bisa saya ceritakan tentang kehidupan saya dalam menggunakan GNU/Linux ada suka dan duka tapi itulah GNU/Linux
+sistem yang bebas untuk dieskplorasi.&lt;/p&gt;
+</summary><category term="GNU/Linux"></category></entry><entry><title>Bagaimana Cara Menjadi Seorang Hacker</title><link href="coder212.github.io/bagaimana-cara-menjadi-seorang-hacker.html" rel="alternate"></link><updated>2016-05-29T15:00:00+07:00</updated><author><name>Arba</name></author><id>tag:,2016-05-29:coder212.github.io/bagaimana-cara-menjadi-seorang-hacker.html</id><summary type="html">&lt;p&gt;Menjadi seorang hacker adalah cita-cita hampir semua orang yang ada di penjuru dunia. Menjadi seorang hacker memanglah tidak mudah, kita dituntut untuk terus belajar guna meningkatkan skill atau kemampuan kita.
 Menjadi seorang hacker tidaklah seperti yang yang digambarkan didalam sebuah film who am i. Sama sekali tidak bisa begitu, kita ngga bisa hanya dengan mengetikan nmap blabla langsung dapet username dan password
 dari sistem tersebut. Tidak mungkin, itu mustahil terjadi wahai saudaraku. Karena menjadi hacker membutuhkan seluruh waktu kita inilah yang menyebabkan saya baru bisa menuliskannya sekarang. Meskipun sudah ada
 Buku how to became a hacker karya Erics S. Raymond yang juga telah diterjemahkan kedalam bahasa Indonesia.&lt;/p&gt;
@@ -34,7 +66,7 @@ bagaimana cara mendapatkan GNU/Linux dan bagaimana menginstallnya hubungi Komuni
 &lt;/ol&gt;
 &lt;p&gt;Mempelajari bahasa pemrograman adalah penting, bagi mereka yang ingin menjadi seorang hacker. Pelajari bahasa pemrograman dimulai dari go ( bahasa
 pemrograman buatan google ), kemudian python, kemudian ruby, kemudian php, kemudian perl, kemudian Java, kemudian c++, kemudian c dan yang terakhir
-adalah assembly, dan jika kamu ngga bisa menguasai semuanya maka jadilah ahli disalah satu bahasa pemrograman yang saya sebutkan tadi.&lt;/p&gt;
+adalah assembly, dan jika kamu tidak bisa menguasai semuanya maka jadilah ahli di salah satu bahasa pemrograman yang saya sebutkan tadi.&lt;/p&gt;
 &lt;ol class="arabic simple" start="3"&gt;
 &lt;li&gt;Belajar Menulis Dengan Baik Dan Benar Sesuai Kaidah Bahasa.&lt;/li&gt;
 &lt;/ol&gt;
@@ -46,21 +78,21 @@ membaca tulisan kita tidak dapat menangkap apa yang kita tuliskan.&lt;/p&gt;
 &lt;p&gt;Buatlah Sebuah Web yang berisi informasi yang bermanfaat bagi masyarakat. membuat Web adalah sebuah latihan untuk mendokumentasikan hal-hal apa saja
 yang telah kita kerjakan. Dan usahakan hal tersebut yang bermanfaat bagi orang lain.&lt;/p&gt;
 &lt;p&gt;Tanya Jawab Seputar Hacking.&lt;/p&gt;
-&lt;p&gt;Saya sering sekali mendapatkan pertanyaan mengenai hacking. oleh karena itu sayaakan menuliskan pertanyaan apa saja yang sering saya temui.&lt;/p&gt;
-&lt;p&gt;T: Bagaimana Cara Mendeface Website?
-J: Itu Kriminal Bro, berhentilah bertanya begini.&lt;/p&gt;
-&lt;p&gt;T: Bagaimana Cara Hack Facebook?
-J: Itu Imajinasi Yang Sia-sia Bro,hentikan pertanyaan seperti ini belajarlah yang giat mengenai GNU/Linux.&lt;/p&gt;
-&lt;p&gt;T: Bagaimana Cara Hack Email?
-J: Hentikan Pikiran Yang Tidak Baik, hidupmu sia-sia bro kalo terus begini.&lt;/p&gt;
+&lt;p&gt;Saya sering sekali mendapatkan pertanyaan mengenai hacking. oleh karena itu saya akan menuliskan pertanyaan apa saja yang sering saya temui.&lt;/p&gt;
+&lt;p&gt;T: Bagaimana Cara Mendeface Website?&lt;/p&gt;
+&lt;p&gt;J: Itu Kriminal Bro, berhentilah bertanya begini.&lt;/p&gt;
+&lt;p&gt;T: Bagaimana Cara Hack Facebook?&lt;/p&gt;
+&lt;p&gt;J: Itu Imajinasi Yang Sia-sia Bro,hentikan pertanyaan seperti ini belajarlah yang giat mengenai GNU/Linux.&lt;/p&gt;
+&lt;p&gt;T: Bagaimana Cara Hack Email?&lt;/p&gt;
+&lt;p&gt;J: Hentikan Pikiran Yang Tidak Baik, hidupmu sia-sia bro kalo terus begini.&lt;/p&gt;
 &lt;p&gt;T: Bagaimana caranya Phising?
 J: Pergi sana bodoh apa yang kamu tanyakan ngga berguna.&lt;/p&gt;
-&lt;p&gt;T: Bagaimana caranya mengatasi virus windows?
-J: Hapus Windowsnya dan ganti GNU/Linux&lt;/p&gt;
-&lt;p&gt;T: Bagaimana caranya hack wifi tetangga?
-J: Haduh bro tinggal minta passwordnya saja kok repot tanya ke saya.&lt;/p&gt;
-&lt;p&gt;T: Bagaimana Hack PLN?
-J: Hadeh bangun dari mimpimu lah mblo mblo jangan kebanyakan nonton film deh kan jadinya terlalu banyak menghayal.&lt;/p&gt;
+&lt;p&gt;T: Bagaimana caranya mengatasi virus windows?&lt;/p&gt;
+&lt;p&gt;J: Hapus Windowsnya dan ganti GNU/Linux&lt;/p&gt;
+&lt;p&gt;T: Bagaimana caranya hack wifi tetangga?&lt;/p&gt;
+&lt;p&gt;J: Haduh bro tinggal minta passwordnya saja kok repot tanya ke saya.&lt;/p&gt;
+&lt;p&gt;T: Bagaimana Hack PLN?&lt;/p&gt;
+&lt;p&gt;J: Hadeh bangun dari mimpimu lah mblo mblo jangan kebanyakan nonton film deh kan jadinya terlalu banyak menghayal.&lt;/p&gt;
 &lt;p&gt;Tulisan ini terinspirasi oleh tulisan Eric S. Raymond yang berjudul How To Become a Hacker yang legendaris dan telah diterjemahkan kedalam berbagai
 bahasa termasuk bahasa Indonesia.&lt;/p&gt;
 </summary><category term="hacker"></category><category term="GNU/Linux&#10;&#10;Bagaimana Cara Menjadi Seorang Hacker"></category></entry><entry><title>Kernel Module Mahluk Apa Itu?</title><link href="coder212.github.io/kernel-module-mahluk-apa-itu.html" rel="alternate"></link><updated>2016-05-19T15:40:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-05-19:coder212.github.io/kernel-module-mahluk-apa-itu.html</id><summary type="html">&lt;p&gt;Apa itu kernel module? Kernel module merupakan potongan dari kode yang dapat diload atau tidak diload kedalam kernel, pada saat itu juga tanpa mematikan atau menghidupkan ulang sistem anda.

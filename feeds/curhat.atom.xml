@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>GNU/Linux Reviews, Tutorial, Catatan</title><link href="coder212.github.io/" rel="alternate"></link><link href="coder212.github.io/feeds/curhat.atom.xml" rel="self"></link><id>coder212.github.io/</id><updated>2016-05-31T19:00:00+07:00</updated><entry><title>Kisah GNU/Linux Enthusiast</title><link href="coder212.github.io/kisah-gnulinux-enthusiast.html" rel="alternate"></link><updated>2016-05-31T19:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-05-31:coder212.github.io/kisah-gnulinux-enthusiast.html</id><summary type="html">&lt;p&gt;Cerita Tentang Kehidupan GNU/Linux Enthusiast&lt;/p&gt;
+&lt;p&gt;Saya pertama kali mengenal GNU/Linux tahun 2010 pada waktu kelas dasar pemrograman. Sejak saat itu saya jadi penasaran apa itu GNU/Linux, mengapa GNU/Linux dan lain sebagainya. pada ahirnya saya mencoba Ubuntu 10.10
+ketika menggunakan Ubuntu 10.10 saya mengalami kebingungan karena file audio saya yang kebetulan berformat mp3 tidak dapat diputar di Ubuntu saya, bahkan saya tidak dapat menggunakan printer saya padahal saya sedang
+mengerjakan tugas yang membutuhkan printer untuk mencetak tugas yang sedang saya kerjakan. Hal ini memaksa saya untuk mempelajari teknis bagaimana printer bekerja apa saja yang harus saya penuhi agar printer dapat
+bekerja saya mencari drivernya untuk ubuntu dan lain sebagainya setelah berjam-jam mencari cara untuk dapat membuat printer saya berfungsi dengan baik, ahirnya saya menemukannya dan printer saya sudah berfungsi
+normal tapi masalah file audio yang berformat mp3 masihlah belum ditemukan solusinya.&lt;/p&gt;
+&lt;p&gt;Setelah berjam-jam mencari solusi sampai bingung sendiri belum ketemu juga solusinya sampai saya putus asa, setelah putus asa itulah saya iseng memutar berkas suara yang berformat mp3 dalam posisi terhubung
+ke internet ternyata sang media playernya mencari sendiri kodeknya selesai sudah semua persoalan tersebut, meskipun ketika berkenalan dan menggunakan GNU/Linux mengalami banyak masalah tapi saya tidaklah punya
+keinginan sedikitpun kembali menggunakan windows ataupun macos. Tak berapa lama saya tertarik untuk menginstall sabily alquds yang menurutku sangat enak karena applikasi yang bisa dipergunakan untuk beribadah sudah
+terinstall didalamnya menggunakan sabily saya hampir tak mengalami hambatan satupun dengan sabily inilah saya mengeksplorasi tampilannya mulai dari compiz merubah tampilan ala xp, win7 bahkan macos sempat saya
+lakukan dan itu semua mengajarkan saya untuk terus berkembang.&lt;/p&gt;
+&lt;p&gt;Dengan sabily pulalah saya membuat applikasi untuk android, karena saya penasaran Ubuntu 11.04 ahirnya saya upgrade sabily saya menjadi 11.04, dengan sistem ini saya mengeksplorasi python dan nasm assembler. Ketika
+muncul Ubuntu 11.10 saya update dan upgrade lagi, di system ini saya banyak mengeksplorasi bash script, semua script saya buat untuk memenuhi keingintahuan saya mengenai bash bisa dibuat untuk apa, setelah beli
+laptop baru untuk menunjang pekerjaan laptop tersebut menggunakan Ubuntu 12.04, netbook saya install backtrack5 tapi belum sempet saya gunakan udah berpindah tangan kepada keponakan saya. dengan laptop inilah saya
+berpetualang kebanyak distro. distro tersebut adalah sebagai berikut:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Ubuntu 12.04.&lt;/li&gt;
+&lt;li&gt;BodhiLinux.&lt;/li&gt;
+&lt;li&gt;Kali Linux.&lt;/li&gt;
+&lt;li&gt;ArchLinux.&lt;/li&gt;
+&lt;li&gt;Freebsd ( Unix like sebenarnya bukan distro GNU/Linux ).&lt;/li&gt;
+&lt;li&gt;Slackware.&lt;/li&gt;
+&lt;li&gt;CRUX.&lt;/li&gt;
+&lt;li&gt;Kwort.&lt;/li&gt;
+&lt;li&gt;LFS.&lt;/li&gt;
+&lt;li&gt;OpenSUSE.&lt;/li&gt;
+&lt;li&gt;Gentoo.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Ahirnya saya memutuskan untuk bertahan di Gentoo dengan ditemani oleh archlinux karena hanya dua sistem itu yang pas dihati, meskipun suatu hari nanti saya akan kembali menggunakan LFS tapi setidaknya saya saat ini
+cukup digentoo didalam gentoo ini saya mencoba berpetualang dengan golang sebuah bahasa pemrograman yang dibuat oleh programmer google, bahasa ini sangat enak membuat source code dengan menggunakan golang, dan
+sayapun masih akan tetap mengeksplorasi bahasa pemrograman c dan assembly yang 64bit. Cukup ini yang bisa saya ceritakan tentang kehidupan saya dalam menggunakan GNU/Linux ada suka dan duka tapi itulah GNU/Linux
+sistem yang bebas untuk dieskplorasi.&lt;/p&gt;
+</summary><category term="GNU/Linux"></category></entry></feed>
