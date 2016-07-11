@@ -1,5 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>GNU/Linux Reviews, Tutorial, Catatan</title><link href="coder212.github.io/" rel="alternate"></link><link href="coder212.github.io/feeds/all.atom.xml" rel="self"></link><id>coder212.github.io/</id><updated>2016-05-31T19:00:00+07:00</updated><entry><title>Kisah GNU/Linux Enthusiast</title><link href="coder212.github.io/kisah-gnulinux-enthusiast.html" rel="alternate"></link><updated>2016-05-31T19:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-05-31:coder212.github.io/kisah-gnulinux-enthusiast.html</id><summary type="html">&lt;p&gt;Cerita Tentang Kehidupan GNU/Linux Enthusiast&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>GNU/Linux Reviews, Tutorial, Catatan</title><link href="coder212.github.io/" rel="alternate"></link><link href="coder212.github.io/feeds/all.atom.xml" rel="self"></link><id>coder212.github.io/</id><updated>2016-07-01T15:00:00+07:00</updated><entry><title>Bahasa Pemrograman Go</title><link href="coder212.github.io/bahasa-pemrograman-go.html" rel="alternate"></link><updated>2016-07-01T15:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-07-01:coder212.github.io/bahasa-pemrograman-go.html</id><summary type="html">&lt;p&gt;Sejarah Bahasa Pemrograman Go&lt;/p&gt;
+&lt;p&gt;Go adalah bahasa untuk berbagai tujuan didesain dengan sistem
+pemrograman dalam pikiran. Go pertamakali dikembangkan di Google pada
+tahun 2007 oleh Robert Griesemer, Rob Pike dan Ken Thompson. Bahasa
+pemrograman ini sangat kuat dan memiliki tipe statis, mendukung garbage
+collection secara builtin, dan mendukung pemrograman konkurensi.&lt;/p&gt;
+&lt;p&gt;program dikonstruksi berdasarkan paket-paket, untuk efisiensi pengaturan
+dependensi. Pemrograman go mengimplementasikan penggunaan cara
+kompilasi tradisional dan model link untuk menggenerate eksekutable
+biner. Bahasa pemrograman go diumumkan pada November 2009 dan digunakan
+dalam beberapa system produksi Google.&lt;/p&gt;
+&lt;p&gt;Fitur-fitur yang dimiliki  Bahasa Pemrograman Go&lt;/p&gt;
+&lt;p&gt;Berikut ini fitur penting yang di miliki pemrograman go:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Mendukung enviroment yang diadopsi oleh pattern yang sama dengan bahasa pemrograman dinamis. contohnya, type inference (x:=5.0 deklarasi ini sah untuk variabel x dengan tipe float)&lt;/li&gt;
+&lt;li&gt;Proses Kompilasi Cepat.&lt;/li&gt;
+&lt;li&gt;Secara builtin mendukung konkurensi: proses yang ringan ( melalui go routines),channels,select statment.&lt;/li&gt;
+&lt;li&gt;Go program sederhana, concise dan aman.&lt;/li&gt;
+&lt;li&gt;mendukung interfaces dan tipe embedding.&lt;/li&gt;
+&lt;li&gt;produksi statis link native biner tanpa dependensi luar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Fitur tambahan&lt;/p&gt;
+&lt;p&gt;untuk menjaga bahasa tetap sederhana dan concise, berikut ini fitur yang
+secara umum tersedia pada bahasa pemrograman lain yang sama dan juga
+dimiliki go:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Mendukung inheritence tipe.&lt;/li&gt;
+&lt;li&gt;Mendukung metode atau operator overloading.&lt;/li&gt;
+&lt;li&gt;Mendukung sirkulasi dependensi diantara paket.&lt;/li&gt;
+&lt;li&gt;Mendukung pointer aritmatika.&lt;/li&gt;
+&lt;li&gt;Mendukung assertions.&lt;/li&gt;
+&lt;li&gt;Mendukung generic programming.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Kamu dapat menulis program go dengan menggunakan teks editor
+vi, vim, gedit, emacs, dan lain-lain.
+dan berikut ini contoh kode sumbernya.&lt;/p&gt;
+&lt;p&gt;arba&amp;#64;gentux$ vim hello.go&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;     &lt;span class="kn"&gt;package&lt;/span&gt; &lt;span class="nx"&gt;main&lt;/span&gt;
+
+     &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;fmt&amp;quot;&lt;/span&gt;
+
+     &lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="nx"&gt;main&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;
+
+         &lt;span class="nx"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello, World!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+     &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;arba&amp;#64;gentux$ go run hello.go&lt;/p&gt;
+&lt;p&gt;Hello, World!&lt;/p&gt;
+&lt;p&gt;arba&amp;#64;gentux$ go build hello.go&lt;/p&gt;
+&lt;p&gt;arba&amp;#64;gentux$ ./hello&lt;/p&gt;
+&lt;p&gt;Hello, World!&lt;/p&gt;
+</summary><category term="golang series"></category><category term="go language"></category></entry><entry><title>Kisah GNU/Linux Enthusiast</title><link href="coder212.github.io/kisah-gnulinux-enthusiast.html" rel="alternate"></link><updated>2016-05-31T19:00:00+07:00</updated><author><name>arba</name></author><id>tag:,2016-05-31:coder212.github.io/kisah-gnulinux-enthusiast.html</id><summary type="html">&lt;p&gt;Cerita Tentang Kehidupan GNU/Linux Enthusiast&lt;/p&gt;
 &lt;p&gt;Saya pertama kali mengenal GNU/Linux tahun 2010 pada waktu kelas dasar pemrograman. Sejak saat itu saya jadi penasaran apa itu GNU/Linux, mengapa GNU/Linux dan lain sebagainya. pada ahirnya saya mencoba Ubuntu 10.10
 ketika menggunakan Ubuntu 10.10 saya mengalami kebingungan karena file audio saya yang kebetulan berformat mp3 tidak dapat diputar di Ubuntu saya, bahkan saya tidak dapat menggunakan printer saya padahal saya sedang
 mengerjakan tugas yang membutuhkan printer untuk mencetak tugas yang sedang saya kerjakan. Hal ini memaksa saya untuk mempelajari teknis bagaimana printer bekerja apa saja yang harus saya penuhi agar printer dapat
