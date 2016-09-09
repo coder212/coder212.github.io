@@ -24,7 +24,81 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="./bahasa-pemrograman-go.html">Bahasa Pemrograman Go</a></h1>
+                    <h1 class="entry-title"><a href="./mengatur-use-flag-hanya-untuk-satu-applikasi-tertentu.html">Mengatur USE FLAG Hanya Untuk Satu Applikasi Tertentu</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2016-09-09T19:00:00+07:00">
+                Published: Jum 09 September 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="./author/arba.html">arba</a>
+        </address>
+<p>In <a href="./category/gnulinux.html">GNU/Linux</a>.</p>
+<p>tags: <a href="./tag/gnulinux.html">GNU/Linux</a> <a href="./tag/use-flag.html">USE FLAG</a> </p>
+</footer><!-- /.post-info --><p>Sebelum mengompilasi suatu system kadangkala diperlukan mengeksekusi ./configure -enable a bla bla.
+Untuk melakukan hal itu gentoo yang menggunakan alat bantu yang bernama portage. Agar Pengguna tetap
+dapat menyesuaikan dengan kebutuhan pengguna maka portage menyediakan use flag yang bisa diatur pada
+/etc/portage/make.conf, namun kekurangan menggunakan ini adalah diakan berlaku dan digunakan untuk
+semua proses kompilasi yang dilakukan oleh portage dalam hal di wakili oleh emerge. Bagaimana caranya
+agar kita hanya menggunakan use flag hanya untuk kompilasi satu paket saja dan tidak berlaku untuk
+paket yang lain, kenapa ini perlu karena ada suatu fitur yang akan saya buang atau ada satu dependensi
+yang ngga perlu disuatu paket tapi dibutuhkan paket lain, dan agar paket tersebut tidak terganggu
+maka kita perlu mengatur use flag hanya untuk satu paket tersebut. Ada beberapa cara yang bisa dipake
+untuk melakukan hal tersebut, sebagai contoh boleh saja dituliskan ketika melakukan emerge.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">emerge --ask media-sound/ncmpcpp USE=&quot;clock visualizer curl&quot;</td>
+</tr>
+</tbody>
+</table>
+<p>Boleh juga dengan membuat file ncmpcpp dan ditaruh di /etc/portage/package.use/ , saya akan
+menggunakan applikasi lain lagi sebagai contohnya buat file ratpoison, kemudian buat aturan untuk
+disable suatu dependensi beserta fitur yang tidak diperlukan ataupun enable suatu dependensi dan fitur
+yang dibutuhkan</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">nano /etc/portage/package.use/ratpoison</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">x11-wm/ratpoison  debug -emacs sloppy</td>
+</tr>
+<tr class="field"><th class="field-name">code:</th><td class="field-body">ctrl x, ctrl y, enter</td>
+</tr>
+</tbody>
+</table>
+<p>tanda - berfungsi untuk mendisable suatu dependensi ataupun suatu fitur, sedangkan kalo tidak
+menggunakan tanda - artinya mengenable fitur ataupun dependensi tersebut mudahkan, dan gentoo
+menyenangkan bukan, jadi kita bisa mendisable atau tidak menggunakan suatu dependensi atau fitur yang
+bloated pada suatu applikasi suatu keunggulan yang tidak di miliki distro lain, ada sih yang punya
+fitur seperti ini yaitu lfs akan tetapi di lfs sangatlah ribet yaitu menggunakan perintah seperti ini</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">./configure -disable emacs -enable debug -enable sloppy</td>
+</tr>
+</tbody>
+</table>
+<p>untuk mendapatkan panduan yang lebih tentang apa saja yang bisa ditambah dan dikurangi pada suatu
+applikasi baca gentoo wiki tiap applikasi tersebut. Ahir kata semoga apa yang saya bagikan bermaanfaat
+untuk kita semua amin.</p>
+<p>There are <a href="./mengatur-use-flag-hanya-untuk-satu-applikasi-tertentu.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="./bahasa-pemrograman-go.html" rel="bookmark"
+                           title="Permalink to Bahasa Pemrograman Go">Bahasa Pemrograman Go</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2016-07-11T15:19:00+07:00">
                 Published: Sen 11 Juli 2016
@@ -35,72 +109,15 @@
         </address>
 <p>In <a href="./category/tutorial.html">Tutorial</a>.</p>
 <p>tags: <a href="./tag/golang-series.html">golang series</a> <a href="./tag/go-language.html">go language</a> </p>
-</footer><!-- /.post-info --><p>Sejarah Bahasa Pemrograman Go</p>
+</footer><!-- /.post-info -->                <p>Sejarah Bahasa Pemrograman Go</p>
 <p>Go adalah bahasa untuk berbagai tujuan didesain dengan sistem
 pemrograman dalam pikiran. Go pertamakali dikembangkan di Google pada
 tahun 2007 oleh Robert Griesemer, Rob Pike dan Ken Thompson. Bahasa
 pemrograman ini sangat kuat dan memiliki tipe statis, mendukung garbage
-collection secara builtin, dan mendukung pemrograman konkurensi.</p>
-<p>program dikonstruksi berdasarkan paket-paket, untuk efisiensi pengaturan
-dependensi. Pemrograman go mengimplementasikan penggunaan cara
-kompilasi tradisional dan model link untuk menggenerate eksekutable
-biner. Bahasa pemrograman go diumumkan pada November 2009 dan digunakan
-dalam beberapa system produksi Google.</p>
-<p>Fitur-fitur yang dimiliki  Bahasa Pemrograman Go</p>
-<p>Berikut ini fitur penting yang di miliki pemrograman go:</p>
-<ul class="simple">
-<li>Mendukung enviroment yang diadopsi oleh pattern yang sama dengan bahasa pemrograman dinamis. contohnya, type inference (x:=5.0 deklarasi ini sah untuk variabel x dengan tipe float)</li>
-<li>Proses Kompilasi Cepat.</li>
-<li>Secara builtin mendukung konkurensi: proses yang ringan ( melalui go routines),channels,select statment.</li>
-<li>Go program sederhana, concise dan aman.</li>
-<li>mendukung interfaces dan tipe embedding.</li>
-<li>produksi statis link native biner tanpa dependensi luar</li>
-</ul>
-<p>Fitur tambahan</p>
-<p>untuk menjaga bahasa tetap sederhana dan concise, berikut ini fitur yang
-secara umum tersedia pada bahasa pemrograman lain yang sama dan juga
-dimiliki go:</p>
-<ul class="simple">
-<li>Mendukung inheritence tipe.</li>
-<li>Mendukung metode atau operator overloading.</li>
-<li>Mendukung sirkulasi dependensi diantara paket.</li>
-<li>Mendukung pointer aritmatika.</li>
-<li>Mendukung assertions.</li>
-<li>Mendukung generic programming.</li>
-</ul>
-<p>Kamu dapat menulis program go dengan menggunakan teks editor
-vi, vim, gedit, emacs, dan lain-lain.
-dan berikut ini contoh kode sumbernya.</p>
-<p>arba&#64;gentux$ vim hello.go</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="highlight"><pre><span></span>     <span class="kn">package</span> <span class="nx">main</span>
-
-     <span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
-
-     <span class="kd">func</span> <span class="nx">main</span><span class="p">(){</span>
-
-         <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span>
-
-     <span class="p">}</span>
-</pre></div>
-</td></tr></table><p>arba&#64;gentux$ go run hello.go</p>
-<p>Hello, World!</p>
-<p>arba&#64;gentux$ go build hello.go</p>
-<p>arba&#64;gentux$ ./hello</p>
-<p>Hello, World!</p>
-<p>There are <a href="./bahasa-pemrograman-go.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+collection secara builtin, dan mendukung pemrograman konkurensi ...</p>
+                <a class="readmore" href="./bahasa-pemrograman-go.html">read more</a>
+<p>There are <a href="./bahasa-pemrograman-go.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -302,39 +319,6 @@ terus ubah /etc ...</p>
 saya akan menuliskan cara install archlinux kedalam flashdisk menurut versi saya bukan versi orang lain loh ada yang tau archlinux itu apa? kalo menurutku archlinux ,os berkernel linux alias ...</p>
                 <a class="readmore" href="./cara-install-archlinux-ke-flashdisk.html">read more</a>
 <p>There are <a href="./cara-install-archlinux-ke-flashdisk.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="./cara-install-gentoo.html" rel="bookmark"
-                           title="Permalink to Cara Install Gentoo">Cara Install Gentoo</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-03-16T13:00:00+07:00">
-                Published: Rab 16 Maret 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="./author/arba.html">arba</a>
-        </address>
-<p>In <a href="./category/tutorial.html">Tutorial</a>.</p>
-<p>tags: <a href="./tag/gnulinux.html">gnu/linux</a> <a href="./tag/install-gentoo.html">install gentoo</a> </p>
-</footer><!-- /.post-info -->                <p>Cara install gentoo versi saya hehe
-pastikan kamu memiliki distro gnu/linux lainnya atau kamu menggunakan liveusb atau livecd boleh boleh saja dalam hal ini saya menggunakan distro ubuntu 14.04 sebagai hostnya
-pertama lakukan hal ini</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">code:</th><td class="field-body">sudo apt-get install dchroot debootstrap</td>
-</tr>
-</tbody>
-</table>
-<p>akan digunakan untuk melakukan chroot ke system ...</p>
-                <a class="readmore" href="./cara-install-gentoo.html">read more</a>
-<p>There are <a href="./cara-install-gentoo.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->
 <p class="paginator">
