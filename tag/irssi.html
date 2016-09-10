@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
         <meta charset="utf-8" />
-        <title>GNU/Linux Reviews, Tutorial, Catatan - kernel linux</title>
+        <title>GNU/Linux Reviews, Tutorial, Catatan - irssi</title>
         <link rel="stylesheet" href="../theme/css/main.css" />
         <link href="http://arba.nothinux.id/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="GNU/Linux Reviews, Tutorial, Catatan Atom Feed" />
 
@@ -25,41 +25,29 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../cara-compile-kernel.html">Cara compile kernel</a></h1>
+                    <h1 class="entry-title"><a href="../chat-dengan-menggunakan-irssi-irc-client-didalam-distro-gentoo-gnulinux.html">Chat dengan Menggunakan Irssi Irc Client didalam Distro Gentoo GNU/Linux</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2016-03-10T18:00:00+07:00">
-                Published: Kam 10 Maret 2016
+        <abbr class="published" title="2016-09-10T14:25:00+07:00">
+                Published: Sab 10 September 2016
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="../author/arba.html">arba</a>
         </address>
-<p>In <a href="../category/gnulinux.html">GNU/Linux</a>.</p>
-<p>tags: <a href="../tag/kernel-linux.html">kernel linux</a> <a href="../tag/compile.html">compile</a> </p>
-</footer><!-- /.post-info --><p>Cara Compile Kernel Di GNU/Linux.</p>
-<p>apa itu kernel? kernel adalah inti dari sistem operasi tiap sistem operasi mempunyai kernelnya masing masing, tergantung bagaimana platform itu diciptakan.
-platform windows tentu berbeda dengan platform gnu karena sifat gnu sendiri yang bebas.</p>
-<p>ok cukup sampai disini saja ngga usah dipanjang lebarin lagi.
-langkah-langkah compile kernel adalah sebagai berikut:</p>
-<ol class="arabic simple">
-<li>make mrproper (dilakukan jika udah pernah melakukan compile di source yang saat ini dpakai, kalau belum langsung langkah kedua).</li>
-<li>make allyesconfig, allmodulesconfig atau pun menuconfig.</li>
-<li>make  &amp;&amp; make install.</li>
-</ol>
-<p>3a. make &amp;&amp; make modules_install &amp;&amp; make install jika kita pilih config sebagai modules.</p>
-<p>catatan :</p>
-<ol class="arabic simple">
-<li>pastikan sebagai root (#) atau superuser bukan ($) user kalo sebagai user gunakan sudo.</li>
-<li>mkinitrd sesuai dengan distro yang digunakan.</li>
-<li>update grub jika menggunakan grub berdasarkan dengan distro.</li>
-</ol>
-<p>saya menggunakan crux gnu linux jadi saya mengetikan perintah berikut ini saya dalam posisi sebagai root.
-nano /boot/grub/grub.cfg lalu tekan enter.
-kemudian saya ketikan &quot; menuentry &quot; CRUX kernel 4.5&quot;{
-linux(hd0,msdos1)/boot/vmlinuz-4.5.0-rc6-Asboot root=/dev/sda1 quiet
-} tergantung type partisi jenis memory yang kamu install gnu/linuxnya terus masuk /dev/sda1 atau yang lainnya root partisinya, bisa juga vmlinuz saja liat apa yang ada dalam /boot.
-demikian catatan saya semoga bermanfaat.</p>
-<p>There are <a href="../cara-compile-kernel.html#disqus_thread">comments</a>.</p>                </article>
+<p>In <a href="../category/review.html">Review</a>.</p>
+<p>tags: <a href="../tag/gnulinux.html">GNU/Linux</a> <a href="../tag/irssi.html">irssi</a> <a href="../tag/gentoo.html">gentoo</a> </p>
+</footer><!-- /.post-info --><p>Irc adalah tempat chat yang tertua yang saya ketahui, chatting di irc juga menyenangkan kok ngga kalah sama telegram dan lain-lain. Yang membuat saya tertarik karena saya bisa memilih mau akses dari web kah, desktopkah atau dari CLI(terminal, console dll), semua terserah penggunanya, ada banyak sekali fitur dari Internet Relay Chat. Salah satu Client Irc yang mampu memikat saya adalah Irssi, Irssi adalah Irc client yang berbasis pada commandline sehingga ukurannya relative kecil jika dibandingkan dengan irc client yang berbasis gui. saya menggunakan Gentoo GNU/Linux dengan wm awesome jadi untuk melakukan installasi saya cukup mengetikkan</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">emerge --ask irssi</td>
+</tr>
+</tbody>
+</table>
+<p>untuk menggunakan cukup buka terminal, xterm, urxvt kemudian ketikan irssi -c freenode atau server yang mana saja yang ingin kamu pakai layanannya kemudian ketikan /join nama kanalnya misalnya saya ingin join ke kanal gentoo maka saya mengetikkan /join gentoo maka saya sudah masuk kedalam kanal gentoo.
+lakukanlah chat seperti biasanya, untuk keluar /quit.  menurut saya irssi adalah client irc yang terbaik, kalo saya boleh kasih rating maka saya akan memberikan nilai 9. semoga bermanfaat dan menarik buat kalian, kalo ngga menarik hajar saja penulisnya hehehe bye ketemu di alam lainnya ya.</p>
+<p>There are <a href="../chat-dengan-menggunakan-irssi-irc-client-didalam-distro-gentoo-gnulinux.html#disqus_thread">comments</a>.</p>                </article>
 <p class="paginator">
     Page 1 / 1
 </p>

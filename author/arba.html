@@ -18,13 +18,49 @@
                     <li><a href="../category/about.html">about</a></li>
                     <li><a href="../category/curhat.html">Curhat</a></li>
                     <li><a href="../category/gnulinux.html">GNU/Linux</a></li>
+                    <li><a href="../category/review.html">Review</a></li>
                     <li><a href="../category/tutorial.html">Tutorial</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../mengatur-use-flag-hanya-untuk-satu-applikasi-tertentu.html">Mengatur USE FLAG Hanya Untuk Satu Applikasi Tertentu</a></h1>
+                    <h1 class="entry-title"><a href="../chat-dengan-menggunakan-irssi-irc-client-didalam-distro-gentoo-gnulinux.html">Chat dengan Menggunakan Irssi Irc Client didalam Distro Gentoo GNU/Linux</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2016-09-10T14:25:00+07:00">
+                Published: Sab 10 September 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/arba.html">arba</a>
+        </address>
+<p>In <a href="../category/review.html">Review</a>.</p>
+<p>tags: <a href="../tag/gnulinux.html">GNU/Linux</a> <a href="../tag/irssi.html">irssi</a> <a href="../tag/gentoo.html">gentoo</a> </p>
+</footer><!-- /.post-info --><p>Irc adalah tempat chat yang tertua yang saya ketahui, chatting di irc juga menyenangkan kok ngga kalah sama telegram dan lain-lain. Yang membuat saya tertarik karena saya bisa memilih mau akses dari web kah, desktopkah atau dari CLI(terminal, console dll), semua terserah penggunanya, ada banyak sekali fitur dari Internet Relay Chat. Salah satu Client Irc yang mampu memikat saya adalah Irssi, Irssi adalah Irc client yang berbasis pada commandline sehingga ukurannya relative kecil jika dibandingkan dengan irc client yang berbasis gui. saya menggunakan Gentoo GNU/Linux dengan wm awesome jadi untuk melakukan installasi saya cukup mengetikkan</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">code:</th><td class="field-body">emerge --ask irssi</td>
+</tr>
+</tbody>
+</table>
+<p>untuk menggunakan cukup buka terminal, xterm, urxvt kemudian ketikan irssi -c freenode atau server yang mana saja yang ingin kamu pakai layanannya kemudian ketikan /join nama kanalnya misalnya saya ingin join ke kanal gentoo maka saya mengetikkan /join gentoo maka saya sudah masuk kedalam kanal gentoo.
+lakukanlah chat seperti biasanya, untuk keluar /quit.  menurut saya irssi adalah client irc yang terbaik, kalo saya boleh kasih rating maka saya akan memberikan nilai 9. semoga bermanfaat dan menarik buat kalian, kalo ngga menarik hajar saja penulisnya hehehe bye ketemu di alam lainnya ya.</p>
+<p>There are <a href="../chat-dengan-menggunakan-irssi-irc-client-didalam-distro-gentoo-gnulinux.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../mengatur-use-flag-hanya-untuk-satu-applikasi-tertentu.html" rel="bookmark"
+                           title="Permalink to Mengatur USE FLAG Hanya Untuk Satu Applikasi Tertentu">Mengatur USE FLAG Hanya Untuk Satu Applikasi Tertentu</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2016-09-09T19:00:00+07:00">
                 Published: Jum 09 September 2016
@@ -35,62 +71,13 @@
         </address>
 <p>In <a href="../category/gnulinux.html">GNU/Linux</a>.</p>
 <p>tags: <a href="../tag/gnulinux.html">GNU/Linux</a> <a href="../tag/use-flag.html">USE FLAG</a> </p>
-</footer><!-- /.post-info --><p>Sebelum mengompilasi suatu system kadangkala diperlukan mengeksekusi ./configure -enable a bla bla.
+</footer><!-- /.post-info -->                <p>Sebelum mengompilasi suatu system kadangkala diperlukan mengeksekusi ./configure -enable a bla bla.
 Untuk melakukan hal itu gentoo yang menggunakan alat bantu yang bernama portage. Agar Pengguna tetap
 dapat menyesuaikan dengan kebutuhan pengguna maka portage menyediakan use flag yang bisa diatur pada
-/etc/portage/make.conf, namun kekurangan menggunakan ini adalah diakan berlaku dan digunakan untuk
-semua proses kompilasi yang dilakukan oleh portage dalam hal di wakili oleh emerge. Bagaimana caranya
-agar kita hanya menggunakan use flag hanya untuk kompilasi satu paket saja dan tidak berlaku untuk
-paket yang lain, kenapa ini perlu karena ada suatu fitur yang akan saya buang atau ada satu dependensi
-yang ngga perlu disuatu paket tapi dibutuhkan paket lain, dan agar paket tersebut tidak terganggu
-maka kita perlu mengatur use flag hanya untuk satu paket tersebut. Ada beberapa cara yang bisa dipake
-untuk melakukan hal tersebut, sebagai contoh boleh saja dituliskan ketika melakukan emerge.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">code:</th><td class="field-body">emerge --ask media-sound/ncmpcpp USE=&quot;clock visualizer curl&quot;</td>
-</tr>
-</tbody>
-</table>
-<p>Boleh juga dengan membuat file ncmpcpp dan ditaruh di /etc/portage/package.use/ , saya akan
-menggunakan applikasi lain lagi sebagai contohnya buat file ratpoison, kemudian buat aturan untuk
-disable suatu dependensi beserta fitur yang tidak diperlukan ataupun enable suatu dependensi dan fitur
-yang dibutuhkan</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">code:</th><td class="field-body">nano /etc/portage/package.use/ratpoison</td>
-</tr>
-<tr class="field"><th class="field-name">code:</th><td class="field-body">x11-wm/ratpoison  debug -emacs sloppy</td>
-</tr>
-<tr class="field"><th class="field-name">code:</th><td class="field-body">ctrl x, ctrl y, enter</td>
-</tr>
-</tbody>
-</table>
-<p>tanda - berfungsi untuk mendisable suatu dependensi ataupun suatu fitur, sedangkan kalo tidak
-menggunakan tanda - artinya mengenable fitur ataupun dependensi tersebut mudahkan, dan gentoo
-menyenangkan bukan, jadi kita bisa mendisable atau tidak menggunakan suatu dependensi atau fitur yang
-bloated pada suatu applikasi suatu keunggulan yang tidak di miliki distro lain, ada sih yang punya
-fitur seperti ini yaitu lfs akan tetapi di lfs sangatlah ribet yaitu menggunakan perintah seperti ini</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">code:</th><td class="field-body">./configure -disable emacs -enable debug -enable sloppy</td>
-</tr>
-</tbody>
-</table>
-<p>untuk mendapatkan panduan yang lebih tentang apa saja yang bisa ditambah dan dikurangi pada suatu
-applikasi baca gentoo wiki tiap applikasi tersebut. Ahir kata semoga apa yang saya bagikan bermaanfaat
-untuk kita semua amin.</p>
-<p>There are <a href="../mengatur-use-flag-hanya-untuk-satu-applikasi-tertentu.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+/etc/portage/make.conf, namun kekurangan menggunakan ini adalah ...</p>
+                <a class="readmore" href="../mengatur-use-flag-hanya-untuk-satu-applikasi-tertentu.html">read more</a>
+<p>There are <a href="../mengatur-use-flag-hanya-untuk-satu-applikasi-tertentu.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -295,30 +282,6 @@ terus ubah /etc ...</p>
 <p>Gentoo gnu/linux dibuat oleh Daniels robbins, distro ini lumayan menantang karena ...</p>
                 <a class="readmore" href="../review-gentoo.html">read more</a>
 <p>There are <a href="../review-gentoo.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="../cara-install-archlinux-ke-flashdisk.html" rel="bookmark"
-                           title="Permalink to Cara Install ArchLinux Ke Flashdisk">Cara Install ArchLinux Ke Flashdisk</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-03-16T14:00:00+07:00">
-                Published: Rab 16 Maret 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="../author/arba.html">arba</a>
-        </address>
-<p>In <a href="../category/tutorial.html">Tutorial</a>.</p>
-<p>tags: <a href="../tag/gnulinux.html">Gnu/Linux</a> <a href="../tag/install-archlinux.html">install archlinux</a> </p>
-</footer><!-- /.post-info -->                <p>Cara install archlinux ke flashdisk</p>
-<p>Terlebih dahulu jalankan liveusb archlinux gunakan unetbootin atau apa saja yang penting bisa membuat bootable archlinux.
-saya akan menuliskan cara install archlinux kedalam flashdisk menurut versi saya bukan versi orang lain loh ada yang tau archlinux itu apa? kalo menurutku archlinux ,os berkernel linux alias ...</p>
-                <a class="readmore" href="../cara-install-archlinux-ke-flashdisk.html">read more</a>
-<p>There are <a href="../cara-install-archlinux-ke-flashdisk.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->
 <p class="paginator">
