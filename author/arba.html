@@ -25,7 +25,100 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../bermain-main-dengan-python.html">Bermain-main dengan Python</a></h1>
+                    <h1 class="entry-title"><a href="../bermain-dengan-list-python.html">Bermain dengan List Python</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2016-09-27T14:00:00+07:00">
+                Published: Sel 27 September 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/arba.html">arba</a>
+        </address>
+<p>In <a href="../category/tutorial.html">Tutorial</a>.</p>
+
+</footer><!-- /.post-info --><p>Sekarang kita akan mencoba bereksperimen atau membuat percobaan
+melakukan operasi pertambahan pada list yang berisi integer, jadi setiap item
+dari list a akan di lakukan pertambahan dengan indeks yang sama dari list b.
+Kemudian hasil ditampilkan dalam bentuk list. Hal yang pertama kita
+lakukan adalah sebuah fungsi untuk mengambil dua buah list, setelah
+mendapatkan dua buah list maka dilakukan operasi peertambahan dari tiap
+item dari 2 list tersebut tepat pada indeks yang sama.
+Jadi list a indeks 0 akan ditambahkan dengan list b indeks 0.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3.5</span>
+<span class="k">def</span> <span class="nf">buatListBaru</span><span class="p">(</span><span class="n">ls</span><span class="p">,</span><span class="n">als</span><span class="p">):</span>
+
+    <span class="n">temp</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">ls</span><span class="p">):</span>
+        <span class="n">temp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ls</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">als</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">temp</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">ls</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
+    <span class="n">als</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">buatListBaru</span><span class="p">(</span><span class="n">ls</span><span class="p">,</span><span class="n">als</span><span class="p">)</span>
+    <span class="k">print</span> <span class="p">(</span><span class="n">ls</span><span class="p">)</span>
+    <span class="k">print</span> <span class="p">(</span><span class="n">als</span><span class="p">)</span>
+    <span class="k">print</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</td></tr></table><p>for digunakan untuk melakukan operasi pertambahan dimulai dari indeks 0 sampai indeks jumlah item dalam list tersebut.
+kemudian dimasukkan kedalam list temporary dengan menggunakan append jadi append akan menulis kedalam temp dan membentuk list dengan jumlah element sama seperti jumlah perulangan yang dilakukan. kemudian mengembalikan nilai temp kepada variable c.
+Sekarang saya akan mengubah kode diatas kedalam kode sumber python2.7 supaya bisa dipelajari oleh mereka yang masih menggunakan python2.7 berikut ini kode sumber dari python2.7.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python2.7</span>
+<span class="k">def</span> <span class="nf">buatListBaru</span><span class="p">(</span><span class="n">ls</span><span class="p">,</span><span class="n">als</span><span class="p">):</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">ls</span><span class="p">)):</span>
+        <span class="n">temp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ls</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">als</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">temp</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">ls</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
+    <span class="n">als</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">buatListBaru</span><span class="p">(</span><span class="n">ls</span><span class="p">,</span><span class="n">als</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">ls</span>
+    <span class="k">print</span> <span class="n">als</span>
+    <span class="k">print</span> <span class="n">c</span>
+</pre></div>
+</td></tr></table><p>Demikianlah sedikit percobaan saya dengan python semoga berkenan dan bermanfaat untuk kita semua.
+Terima Kasih.</p>
+<p>There are <a href="../bermain-dengan-list-python.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../bermain-main-dengan-python.html" rel="bookmark"
+                           title="Permalink to Bermain-main dengan Python">Bermain-main dengan Python</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2016-09-26T14:00:00+07:00">
                 Published: Sen 26 September 2016
@@ -36,53 +129,10 @@
         </address>
 <p>In <a href="../category/tutorial.html">Tutorial</a>.</p>
 
-</footer><!-- /.post-info --><p>Python adalah bahasa pemrograman tingkat tinggi yang bagus dan menarik untuk dioprek. bahasa ini membutuhkan python intepreter untuk menerjemahkan kode sumber python kedalam bahasa yang di mengerti oleh komputer. Intepreter itu seperti halnya seorang penerjemah yang menerjemahkan apapun yang kita katakan secara langsung. Bahasa Python bisa digunakan di semua sistem operasi yang ada, python bisa dipakai untuk tujuan apa saja.</p>
-<p>baiklah kita mulai bermain dengan python 3.5 dan python 2.7, langkah pertama sebelum membuat sebuah kode sumber adalah mencari-cari masalah setelah ketemu pecahkan masalah dengan menggunakan algoritma setelah jadi algoritma baru diterjemahkan kedalam sebuah kode sumber perangkat lunak. permasalahan yang saya hadapi adalah ketika saya memasukkan kata 'gah','tidak','no''0' tidak secara langsung  berubah menjadi boolean padahal saya ingin menjadikan kata-kata tersebut diatas menjadi boolean yaitu false. Bolean itu kalo tidak True pasti False atau kalo tidak1 pasti 0. ok yuk langsung dibuat kode sumbernya pada python 3.5, algoritmanya kalian buat sendiri bisa kan.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3.5</span>
-
-<span class="k">def</span> <span class="nf">kataJadiBoolean</span><span class="p">(</span><span class="n">kata</span><span class="p">):</span>
-    <span class="k">return</span> <span class="ow">not</span> <span class="n">kata</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;tidak&#39;</span><span class="p">,</span><span class="s1">&#39;salah&#39;</span><span class="p">,</span><span class="s1">&#39;no&#39;</span><span class="p">,</span><span class="s1">&#39;gah&#39;</span><span class="p">,</span><span class="s1">&#39;0&#39;</span><span class="p">,</span><span class="s1">&#39;false&#39;</span><span class="p">,</span><span class="s1">&#39;ora&#39;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">kata</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;masukkan kata-kata yang akan dirubah menjadi boolean &#39;</span><span class="p">)</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">kataJadiBoolean</span><span class="p">(</span><span class="n">kata</span><span class="p">)</span>
-    <span class="n">iB</span> <span class="o">=</span> <span class="n">b</span><span class="o">*</span><span class="mi">1</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">kata</span><span class="p">,</span><span class="s1">&#39; diubah menjadi boolean &#39;</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="s1">&#39; dan menjadi integer boolean &#39;</span><span class="p">,</span><span class="n">iB</span><span class="p">)</span>
-</pre></div>
-</td></tr></table><p>fungsi dari kataJadiBolean(kata) yang kita definisikan sebagai function untuk merubah kata menjadi boolean. Return artinya mengembalikan kata menjadi True atau False namun karene sebelumnya telah di negasikan maka yang dikembalikan adalah lawannya jadi jika bernilai True maka yang kita terima sebagai kembalian adalah False dan jika bernilai False maka yang kita terima adalah True. begitulah penjelasannya mudahkan? ok sekarang kita ubah kode tersebut kedalam python2.7 karena ada diantara pembaca yang masih menggunakan python2.7.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python2.7</span>
-<span class="k">def</span> <span class="nf">kataJadiBoolean</span><span class="p">(</span><span class="n">kata</span><span class="p">):</span>
-    <span class="k">return</span> <span class="ow">not</span> <span class="n">kata</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;tidak&#39;</span><span class="p">,</span><span class="s1">&#39;salah&#39;</span><span class="p">,</span><span class="s1">&#39;no&#39;</span><span class="p">,</span><span class="s1">&#39;gah&#39;</span><span class="p">,</span><span class="s1">&#39;0&#39;</span><span class="p">,</span><span class="s1">&#39;false&#39;</span><span class="p">,</span><span class="s1">&#39;ora&#39;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">kata</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s1">&#39;Masukkan kata yang akan di ubah menjadi Boolean &#39;</span><span class="p">)</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">kataJadiBoolean</span><span class="p">(</span><span class="n">kata</span><span class="p">)</span>
-    <span class="n">iB</span> <span class="o">=</span> <span class="n">b</span><span class="o">*</span><span class="mi">1</span>
-    <span class="k">print</span> <span class="n">kata</span><span class="p">,</span><span class="s1">&#39; diubah menjadi boolean &#39;</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="s1">&#39; diubah lagi menjadi boolean integer &#39;</span><span class="p">,</span><span class="n">iB</span>
-</pre></div>
-</td></tr></table><p>Demikianlah artikel bermain dengan python semoga bermanfaat.
-Terima Kasih.</p>
-<p>There are <a href="../bermain-main-dengan-python.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+</footer><!-- /.post-info -->                <p>Python adalah bahasa pemrograman tingkat tinggi yang bagus dan menarik untuk dioprek. bahasa ini membutuhkan python intepreter untuk menerjemahkan kode sumber python kedalam bahasa yang di mengerti oleh komputer. Intepreter itu seperti halnya seorang penerjemah yang menerjemahkan apapun yang kita katakan secara langsung. Bahasa Python bisa digunakan di semua sistem ...</p>
+                <a class="readmore" href="../bermain-main-dengan-python.html">read more</a>
+<p>There are <a href="../bermain-main-dengan-python.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -275,30 +325,6 @@ Kesederhanaan yang dimaksud adalah dari sisi pengembang, jadi distro ini menuntu
 Distro mewajibkan anda terhubung ke internet ...</p>
                 <a class="readmore" href="../mengenal-archlinux.html">read more</a>
 <p>There are <a href="../mengenal-archlinux.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="../cara-install-dan-konfigurasi-dwm-di-gentoo-dan-distro-lain.html" rel="bookmark"
-                           title="Permalink to CARA INSTALL DAN KONFIGURASI DWM DI GENTOO DAN DISTRO LAIN">CARA INSTALL DAN KONFIGURASI DWM DI GENTOO DAN DISTRO LAIN</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-04-06T14:00:00+07:00">
-                Published: Rab 06 April 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="../author/arba.html">arba</a>
-        </address>
-<p>In <a href="../category/gnulinux.html">GNU/Linux</a>.</p>
-
-</footer><!-- /.post-info -->                <p>Apa itu dwm(dynamic window manager)? dynamic window manager adalah tilling window manager , yang dinamis dan mudah di kostumisasi dwm dibuild dari bahasa c jadi kita harus mengkompilasinya.</p>
-<p>dwm bisa di install di distro gnu/linux, unix. begini cara installnya kalo di gentoo cukup emerge --ask dwm,
-terus ubah /etc ...</p>
-                <a class="readmore" href="../cara-install-dan-konfigurasi-dwm-di-gentoo-dan-distro-lain.html">read more</a>
-<p>There are <a href="../cara-install-dan-konfigurasi-dwm-di-gentoo-dan-distro-lain.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->
 <p class="paginator">
