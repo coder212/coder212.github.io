@@ -76,7 +76,6 @@ membuat sebuah perangkat lunak yang powerfull.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;contoh untuk python 2.7&lt;/p&gt;
 &lt;!-- code-block::python
-
 :linenos:
 
 #!/usr/bin/python2.7
