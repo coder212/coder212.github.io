@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+        <meta charset="utf-8" />
+        <title>Macam-macam Gaya Memasukan Modul pada python</title>
+        <link rel="stylesheet" href="./theme/css/main.css" />
+        <link href="http://arba.nothinux.id/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="GNU/Linux Reviews, Tutorial, Catatan Atom Feed" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="./">GNU/Linux Reviews, Tutorial, Catatan </a></h1>
+                <nav><ul>
+                    <li><a href="./category/about.html">about</a></li>
+                    <li><a href="./category/curhat.html">Curhat</a></li>
+                    <li><a href="./category/gnulinux.html">GNU/Linux</a></li>
+                    <li><a href="./category/review.html">Review</a></li>
+                    <li class="active"><a href="./category/tutorial.html">Tutorial</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="./macam-macam-gaya-memasukan-modul-pada-python.html" rel="bookmark"
+           title="Permalink to Macam-macam Gaya Memasukan Modul pada python">Macam-macam Gaya Memasukan Modul pada python</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-09-29T14:00:00+07:00">
+                Published: Kam 29 September 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="./author/arba.html">arba</a>
+        </address>
+<p>In <a href="./category/tutorial.html">Tutorial</a>.</p>
+<p>tags: <a href="./tag/python.html">Python</a> <a href="./tag/import-python.html">Import python</a> <a href="./tag/python-in-gnulinux.html">python in GNU/Linux</a> </p>
+</footer><!-- /.post-info -->      <p>ada banyak gaya yang dilakukan untuk memasukan modul kedalam kode sumber dengan bahasa pemrograman python, setidaknya saya menemukan dua gaya yang dipakai untuk memasukan modul. setiap gaya bebas digunakan sesuai dengan keperluan dan gayamu, apakah kamu suka keribetan? Atau mau yang simple? Semua itu bisa dipilih sendiri.</p>
+<p>memasukkan library dilakukan dengan menggunakan keywords import disertai nama modul  yang akan dimasukan kedalam phyton. Jadi import itu sangat krusial untuk dipelajari tanpa kamu menguasai kemampuan importing maka kamu harus menulis semua modul atau fungsi itu sendiri cukup merepotkan bukan? apalagi buat mereka yang dikejar deadline.</p>
+<p>pada python kita hanya bisa memasukan modul buatan kita atau pihak ketiga lainnya hanya pada current directory atau pada directori yang sama tak bisa beda direktori tapi dengan sedikit trik kita bisa memasukan modul dari direktori yang berbeda dengan cara sys.path.insert(0,'/path/direktori/') atau path.insert(0,'/path/direktori/') 0 menunjukan root, gampangkan?</p>
+<p>buat file /home/username/iseng.py</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">xPangkatY</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+
+   <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="n">y</span>
+</pre></div>
+</td></tr></table><p>buatlah file yang kedua yaitu /home/username/Latian_python/expe.py</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3.4</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;home/username/&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">iseng</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+
+   <span class="n">tes</span> <span class="o">=</span> <span class="n">iseng</span><span class="o">.</span><span class="n">xPangkatY</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+   <span class="k">print</span> <span class="p">(</span><span class="s1">&#39;</span><span class="si">%3d</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">tes</span><span class="p">)</span>
+</pre></div>
+</td></tr></table><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3.4</span>
+<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;/home/username/&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">iseng</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+
+   <span class="n">tes</span> <span class="o">=</span> <span class="n">xPangkatY</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+   <span class="k">print</span> <span class="p">(</span><span class="s1">&#39;</span><span class="si">%3d</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">tes</span><span class="p">)</span>
+</pre></div>
+</td></tr></table><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python2.7</span>
+<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;/home/username/&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">iseng</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+
+   <span class="n">tes</span> <span class="o">=</span> <span class="n">xPangkatY</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+   <span class="k">print</span> <span class="s1">&#39;</span><span class="si">%3d</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">tes</span>
+</pre></div>
+</td></tr></table><p>Sebagai catatan username merupakan username anda atau lokasi dimana file iseng berada. Cukup sampai disini mengenai import mengimport, semoga bermanfaat. Jika ada usulan ide bisa kirim ke <a class="reference external" href="mailto:arbadev&#64;yandex.com">arbadev&#64;yandex.com</a> Terima Kasih.</p>
+
+    </div><!-- /.entry-content -->
+    <div class="comments">
+      <h2>Comments !</h2>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'arbanothinuxid';
+        var disqus_identifier = 'macam-macam-gaya-memasukan-modul-pada-python.html';
+        var disqus_url = './macam-macam-gaya-memasukan-modul-pada-python.html';
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//arbanothinuxid.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the comments.</noscript>
+    </div>
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://bocahjenius-programmer.blogspot.com/">blogger</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://arba.nothinux.id/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="http://github.com/coder212">github</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'arbanothinuxid';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

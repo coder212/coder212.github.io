@@ -25,7 +25,95 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="./parsing-argument-menggunakan-getopt.html">Parsing Argument menggunakan Getopt</a></h1>
+                    <h1 class="entry-title"><a href="./macam-macam-gaya-memasukan-modul-pada-python.html">Macam-macam Gaya Memasukan Modul pada python</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2016-09-29T14:00:00+07:00">
+                Published: Kam 29 September 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="./author/arba.html">arba</a>
+        </address>
+<p>In <a href="./category/tutorial.html">Tutorial</a>.</p>
+<p>tags: <a href="./tag/python.html">Python</a> <a href="./tag/import-python.html">Import python</a> <a href="./tag/python-in-gnulinux.html">python in GNU/Linux</a> </p>
+</footer><!-- /.post-info --><p>ada banyak gaya yang dilakukan untuk memasukan modul kedalam kode sumber dengan bahasa pemrograman python, setidaknya saya menemukan dua gaya yang dipakai untuk memasukan modul. setiap gaya bebas digunakan sesuai dengan keperluan dan gayamu, apakah kamu suka keribetan? Atau mau yang simple? Semua itu bisa dipilih sendiri.</p>
+<p>memasukkan library dilakukan dengan menggunakan keywords import disertai nama modul  yang akan dimasukan kedalam phyton. Jadi import itu sangat krusial untuk dipelajari tanpa kamu menguasai kemampuan importing maka kamu harus menulis semua modul atau fungsi itu sendiri cukup merepotkan bukan? apalagi buat mereka yang dikejar deadline.</p>
+<p>pada python kita hanya bisa memasukan modul buatan kita atau pihak ketiga lainnya hanya pada current directory atau pada directori yang sama tak bisa beda direktori tapi dengan sedikit trik kita bisa memasukan modul dari direktori yang berbeda dengan cara sys.path.insert(0,'/path/direktori/') atau path.insert(0,'/path/direktori/') 0 menunjukan root, gampangkan?</p>
+<p>buat file /home/username/iseng.py</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">xPangkatY</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+
+   <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="n">y</span>
+</pre></div>
+</td></tr></table><p>buatlah file yang kedua yaitu /home/username/Latian_python/expe.py</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3.4</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;home/username/&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">iseng</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+
+   <span class="n">tes</span> <span class="o">=</span> <span class="n">iseng</span><span class="o">.</span><span class="n">xPangkatY</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+   <span class="k">print</span> <span class="p">(</span><span class="s1">&#39;</span><span class="si">%3d</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">tes</span><span class="p">)</span>
+</pre></div>
+</td></tr></table><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3.4</span>
+<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;/home/username/&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">iseng</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+
+   <span class="n">tes</span> <span class="o">=</span> <span class="n">xPangkatY</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+   <span class="k">print</span> <span class="p">(</span><span class="s1">&#39;</span><span class="si">%3d</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">tes</span><span class="p">)</span>
+</pre></div>
+</td></tr></table><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python2.7</span>
+<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;/home/username/&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">iseng</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+
+   <span class="n">tes</span> <span class="o">=</span> <span class="n">xPangkatY</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+   <span class="k">print</span> <span class="s1">&#39;</span><span class="si">%3d</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">tes</span>
+</pre></div>
+</td></tr></table><p>Sebagai catatan username merupakan username anda atau lokasi dimana file iseng berada. Cukup sampai disini mengenai import mengimport, semoga bermanfaat. Jika ada usulan ide bisa kirim ke <a class="reference external" href="mailto:arbadev&#64;yandex.com">arbadev&#64;yandex.com</a> Terima Kasih.</p>
+<p>There are <a href="./macam-macam-gaya-memasukan-modul-pada-python.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="./parsing-argument-menggunakan-getopt.html" rel="bookmark"
+                           title="Permalink to Parsing Argument menggunakan Getopt">Parsing Argument menggunakan Getopt</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2016-09-28T14:00:00+07:00">
                 Published: Rab 28 September 2016
@@ -36,94 +124,14 @@
         </address>
 <p>In <a href="./category/tutorial.html">Tutorial</a>.</p>
 
-</footer><!-- /.post-info --><p>Saya kali ini, akan mengajak anda membuat eksperimen untuk melakukan parsing
+</footer><!-- /.post-info -->                <p>Saya kali ini, akan mengajak anda membuat eksperimen untuk melakukan parsing
 argument yang ditulis ketika menjalankan suatu perangkat lunak. Misalnya
 test.py arg1 arg2 arg4, kadang bukan hanya argument tapi juga options
 juga bisa ditulis ketika menjalankan suatu perintah misalnya test.py -e
-fileA. Lalu bagaimanakah caranya untuk melakukan parsing? bagaimana
-membedakan argument dan options? jawabannya adalah python menyediakan
-library getopt yang bisa kita pakai untuk memparsing argument dan
-option.</p>
-<p>Cara menggunakan getopt adalah import dulu library getopt kemudian
-getopt(argv,shortoption,longoption), getopt memudahkan kita untuk
-melakukan parsing option dan argument sehingga dapat dengan mudah
-membuat sebuah perangkat lunak yang powerfull.</p>
-<p>ayo kita mulai coding.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python2.7</span>
-
-<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">getopt</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="k">def</span> <span class="nf">guna</span><span class="p">():</span>
-   <span class="k">print</span> <span class="s1">&#39;pilihan yang bisa kamu pilih yaitu:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">+</span><span class="s1">&#39;-h atau --help untuk bantuan</span><span class="se">\n</span><span class="s1">&#39;</span>
-   <span class="o">+</span><span class="s1">&#39;-e atau --encode &lt;yang akan dienkripsi&gt;  untuk melakukan enkripsi</span><span class="se">\n</span><span class="s1">&#39;</span>
-   <span class="o">+</span><span class="s1">&#39;-d atau --decode &lt;yang akan dideskripsi&gt; untuk melakukan deskripsi&#39;</span>
-<span class="k">def</span> <span class="nf">encoder</span><span class="p">(</span><span class="n">ptext</span><span class="p">):</span>
-   <span class="n">temp</span> <span class="o">=</span> <span class="n">ptext</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;base64&#39;</span><span class="p">,</span><span class="s1">&#39;strict&#39;</span><span class="p">)</span>
-   <span class="k">return</span> <span class="n">temp</span>
-<span class="k">def</span> <span class="nf">decoder</span><span class="p">(</span><span class="n">enkripsi</span><span class="p">):</span>
-   <span class="n">temp</span> <span class="o">=</span> <span class="n">enkripsi</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;base64&#39;</span><span class="p">,</span><span class="s1">&#39;strict&#39;</span><span class="p">)</span>
-   <span class="k">return</span> <span class="n">temp</span>
-<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">argv</span><span class="p">):</span>
-   <span class="k">try</span><span class="p">:</span>
-      <span class="n">opts</span><span class="p">,</span> <span class="n">argv</span> <span class="o">=</span> <span class="n">getopt</span><span class="p">(</span><span class="n">argv</span><span class="p">,</span><span class="s1">&#39;he:d:&#39;</span><span class="p">,[</span><span class="s1">&#39;help&#39;</span><span class="p">,</span><span class="s1">&#39;encode=&#39;</span><span class="p">,</span><span class="s1">&#39;decode=&#39;</span><span class="p">])</span>
-   <span class="k">except</span> <span class="n">GetoptError</span><span class="p">:</span>
-      <span class="k">print</span> <span class="s1">&#39;ketikan ./endecode -h untuk mendapatkan bantuan&#39;</span>
-      <span class="nb">exit</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-   <span class="k">for</span> <span class="n">opt</span><span class="p">,</span> <span class="n">arg</span> <span class="ow">in</span>  <span class="n">opts</span><span class="p">:</span>
-      <span class="k">if</span> <span class="n">opt</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;-h&#39;</span><span class="p">,</span><span class="s1">&#39;--help&#39;</span><span class="p">):</span>
-         <span class="n">guna</span><span class="p">()</span>
-         <span class="nb">exit</span><span class="p">()</span>
-      <span class="k">elif</span> <span class="n">opt</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;-e&#39;</span><span class="p">,</span><span class="s1">&#39;--encode&#39;</span><span class="p">):</span>
-         <span class="n">encodeString</span> <span class="o">=</span> <span class="n">encoder</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
-         <span class="k">print</span> <span class="s1">&#39;hasil enkripsinya: &#39;</span><span class="p">,</span><span class="n">encodeString</span>
-      <span class="k">elif</span> <span class="n">opt</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;-d&#39;</span><span class="p">,</span><span class="s1">&#39;--decode&#39;</span><span class="p">):</span>
-         <span class="n">decodeString</span> <span class="o">=</span> <span class="n">decoder</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
-         <span class="k">print</span> <span class="s1">&#39;hasil deskripsinya: &#39;</span><span class="p">,</span><span class="n">decodeString</span>
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-   <span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
-</pre></div>
-</td></tr></table><p>demikianlah ngoprek kita kali ini aku ahiri jika ada usul ngoprek sebuah
-library python atau apapun yang berkaitan dengan python dapat kamu kirim ke
-email <a class="reference external" href="mailto:arbadev&#64;yandex.com">arbadev&#64;yandex.com</a> Terima Kasih.</p>
-<p>There are <a href="./parsing-argument-menggunakan-getopt.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+fileA. Lalu bagaimanakah caranya untuk melakukan parsing ...</p>
+                <a class="readmore" href="./parsing-argument-menggunakan-getopt.html">read more</a>
+<p>There are <a href="./parsing-argument-menggunakan-getopt.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -317,33 +325,9 @@ Menjadi seorang hacker tidaklah seperti yang yang digambarkan didalam sebuah fil
                 <a class="readmore" href="./bagaimana-cara-menjadi-seorang-hacker.html">read more</a>
 <p>There are <a href="./bagaimana-cara-menjadi-seorang-hacker.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="./kernel-module-mahluk-apa-itu.html" rel="bookmark"
-                           title="Permalink to Kernel Module Mahluk Apa Itu?">Kernel Module Mahluk Apa Itu?</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-05-19T15:40:00+07:00">
-                Published: Kam 19 Mei 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="./author/arba.html">arba</a>
-        </address>
-<p>In <a href="./category/gnulinux.html">GNU/Linux</a>.</p>
-<p>tags: <a href="./tag/gnulinux.html">gnu/linux</a> <a href="./tag/kernel-modules.html">Kernel modules</a> </p>
-</footer><!-- /.post-info -->                <p>Apa itu kernel module? Kernel module merupakan potongan dari kode yang dapat diload atau tidak diload kedalam kernel, pada saat itu juga tanpa mematikan atau menghidupkan ulang sistem anda.
-Mereka ( Kernel Module ) dapat langsung digunakan tanpa melakukan boot ulang sistem.
-Sebagai contoh, salah satu tipe kernel module adalah perangkat lunak ...</p>
-                <a class="readmore" href="./kernel-module-mahluk-apa-itu.html">read more</a>
-<p>There are <a href="./kernel-module-mahluk-apa-itu.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
                 </ol><!-- /#posts-list -->
 <p class="paginator">
-    Page 1 / 2
+    Page 1 / 3
         <a href="./index2.html">&raquo;</a>
 </p>
                 </section><!-- /#content -->
